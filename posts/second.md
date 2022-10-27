@@ -1,7 +1,7 @@
 ---
-title: 첫 게시글
-summary: 새로운 포스트입니다!
-date: 2022-10-26 12:00:00
+title: 두번째 게시글
+summary: 그다음 포스트입니다!
+date: 2022-10-28 12:00:00
 tags: test, blog
 ---
 
