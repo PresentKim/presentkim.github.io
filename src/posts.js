@@ -1,7 +1,6 @@
 import _ from 'lodash'
 // noinspection JSFileReferences
 import all from '../posts/*.md'
-console.log(all);
 
 export const posts = _.chain(all) // begin a chain
 	.map(transform) // transform the shape of each post
