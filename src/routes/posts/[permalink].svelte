@@ -7,9 +7,12 @@
 </script>
 
 <script>
+    import Tags from "../../components/Tags.svelte";
+
     export let post;
 </script>
 
 <h1>{post.title}</h1>
+<Tags tags={post.tags}/>
 
 {@html post.html}
