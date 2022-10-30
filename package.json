@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "highlight.js": "^11.6.0",
     "polka": "next",
     "sirv": "^1.0.0"
   },
