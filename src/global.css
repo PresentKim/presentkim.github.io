@@ -1,0 +1,139 @@
+/* Color variables */
+.light {
+    --background-color: hsl(0, 0%, 98%);
+    --border-color: hsl(240, 2%, 92%);
+    --block-color: hsl(0, 0%, 90%);
+
+    --text-color: hsl(0, 0%, 22%);
+    --comment-color: #8c8c8c;
+    --keyword-color: #a626a4;
+    --name-color: #e45649;
+    --literal-color: #0184bc;
+    --meta-color: #50a14f;
+    --number-color: #986801;
+    --link-color: #4078f2;
+    --class-color: #e6c07b;
+}
+
+.dark {
+    --background-color: hsl(216, 13%, 15%);
+    --border-color: hsl(221, 15%, 20%);
+    --block-color: hsl(220, 13%, 18%);
+
+    --text-color: hsl(0, 0%, 98%);
+    --comment-color: #7d828c;
+    --keyword-color: #c678dd;
+    --name-color: #e06c75;
+    --literal-color: #56b6c2;
+    --meta-color: #98c379;
+    --number-color: #d19a66;
+    --link-color: #61aeee;
+    --class-color: #e6c07b;
+}
+
+/* Fonts */
+@font-face {
+    src: url(/font/D2CodingLight.ttf);
+    font-family: "D2CodingLight";
+    font-display: swap;
+}
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5em 0;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+a {
+    display: block;
+    font-weight: bold;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+main {
+    margin: 1rem 2rem;
+}
+
+
+@media (min-width: 540px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* highlight.js styles */
+.hljs {
+    display: block;
+    overflow-x: auto;
+    font-family: "D2CodingLight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+    padding: 1em;
+    border-radius: 2px;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: 700;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
+
+
+.hljs {
+    color: var(--text-color);
+    background: var(--block-color);
+}
+
+.hljs-comment, .hljs-quote {
+    color: var(--comment-color);
+    font-style: italic;
+}
+
+.hljs-doctag, .hljs-formula, .hljs-keyword {
+    color: var(--keyword-color);
+}
+
+.hljs-deletion, .hljs-name, .hljs-section, .hljs-selector-tag, .hljs-subst {
+    color: var(--name-color);
+}
+
+.hljs-literal {
+    color: var(--literal-color);
+}
+
+.hljs-addition, .hljs-attribute, .hljs-meta .hljs-string, .hljs-regexp {
+    color: var(--meta-color);
+}
+
+.hljs-attr, .hljs-number, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-pseudo, .hljs-template-variable, .hljs-type, .hljs-variable {
+    color: var(--number-color);
+}
+
+.hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-symbol, .hljs-title {
+    color: var(--link-color);
+}
+
+.hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ {
+    color: var(--class-color);
+}
