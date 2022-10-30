@@ -75,8 +75,6 @@
   });
 </script>
 
-
-<link rel="stylesheet" title="Default" href="highlight.js/styles/a11y-dark.css">
 <style>
     div {
         width: 1.5rem;

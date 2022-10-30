@@ -22,7 +22,6 @@
   onMount(() => {
     document.querySelectorAll('pre code').forEach((el) => {
       el.innerHTML = el.innerHTML.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
-      console.log(el.innerHTML);
       hljs.highlightElement(el);
     });
   });
