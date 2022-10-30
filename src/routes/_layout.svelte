@@ -1,7 +1,6 @@
 <script>
   import '../global.css';
 
-  import Nav from '../components/Nav.svelte';
   import hljs from 'highlight.js/lib/core';
   import javascript from 'highlight.js/lib/languages/javascript';
   import java from 'highlight.js/lib/languages/java';
@@ -14,12 +13,12 @@
   for (const [name, language] of Object.entries(languages)) {
     hljs.registerLanguage(name, language);
   }
+
+  import Header from '../components/Header.svelte';
   import {onMount} from 'svelte';
 
   export let segment;
-</script>
 
-<Nav {segment}/>
   onMount(() => {
     document.querySelectorAll('pre code').forEach((el) => {
       el.innerHTML = el.innerHTML.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
