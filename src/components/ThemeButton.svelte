@@ -15,29 +15,7 @@
     [COLOR_SCHEME.LIGHT]: faMoon,
   };
 
-  let windowColorScheme = null;
-  let colorScheme = COLOR_SCHEME.LIGHT;
-  let size = spring(1.0, {
-    stiffness: 0.5,
-    damping: 0.1,
-  });
-
   function applyColorScheme() {
-    if (colorScheme === COLOR_SCHEME.DARK) {
-      document.body.classList.remove(COLOR_SCHEME.LIGHT);
-      document.body.classList.add(COLOR_SCHEME.DARK);
-    } else {
-      document.body.classList.remove(COLOR_SCHEME.DARK);
-      document.body.classList.add(COLOR_SCHEME.LIGHT);
-    }
-  }
-
-  const toggleColorScheme = e => {
-    //toggle the color scheme
-    colorScheme = colorScheme === COLOR_SCHEME.DARK
-        ? COLOR_SCHEME.LIGHT
-        : COLOR_SCHEME.DARK;
-
     const stored = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
     if (stored && colorScheme === windowColorScheme) {
       //remove the stored color scheme if it matches the current window color scheme
@@ -47,8 +25,31 @@
       localStorage.setItem(COLOR_SCHEME_STORE_KEY, colorScheme);
     }
 
+    if (colorScheme === COLOR_SCHEME.DARK) {
+      document.body.classList.remove(COLOR_SCHEME.LIGHT);
+      document.body.classList.add(COLOR_SCHEME.DARK);
+    } else {
+      document.body.classList.remove(COLOR_SCHEME.DARK);
+      document.body.classList.add(COLOR_SCHEME.LIGHT);
+    }
+  }
+
+  function toggleColorScheme() {
+
+    //toggle the color scheme
+    colorScheme = colorScheme === COLOR_SCHEME.DARK
+        ? COLOR_SCHEME.LIGHT
+        : COLOR_SCHEME.DARK;
+
     applyColorScheme();
-  };
+  }
+
+  let windowColorScheme = null;
+  let colorScheme = COLOR_SCHEME.LIGHT;
+  let size = spring(1.0, {
+    stiffness: 0.5,
+    damping: 0.2,
+  });
 
   onMount(() => {
     if (window && window.matchMedia) {
@@ -92,8 +93,8 @@
 </style>
 
 <div on:mousedown={toggleColorScheme}
-     on:mouseenter="{() => size.set(1.5)}"
-     on:mouseleave="{() => size.set(1.0)}">
+     on:mouseenter={() => size.set(1.5)}
+     on:mouseleave={() => size.set(1.0)}>
     <Fa {...$$props} size="1x" style="transform: scale({$size})"
         icon={COLOR_SCHEME_ICON[colorScheme]}/>
 </div>
