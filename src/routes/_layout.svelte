@@ -8,14 +8,15 @@
   import php from 'highlight.js/lib/languages/php';
   import cpp from 'highlight.js/lib/languages/cpp';
 
+  import ThemeButton from '../components/ThemeButton.svelte';
+  import LogoButton from '../components/LogoButton.svelte';
+  import {onMount} from 'svelte';
+
   /** @type {Record<string, import('highlight.js').LanguageFn>} */
   const languages = {js: javascript, javascript, java, kotlin, php, cpp};
   for (const [name, language] of Object.entries(languages)) {
     hljs.registerLanguage(name, language);
   }
-
-  import Header from '../components/Header.svelte';
-  import {onMount} from 'svelte';
 
   export let segment;
 
@@ -27,9 +28,28 @@
   });
 </script>
 
-{#if segment !== undefined }
-    <Header/>
-{/if}
+<style>
+    header {
+        margin: 0 0;
+        width: 100%;
+
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    main {
+        margin: 0 0;
+        width: 100%;
+    }
+</style>
+
+<header>
+    <LogoButton {segment}/>
+    <ThemeButton/>
+</header>
+
 <main>
     <slot></slot>
 </main>
