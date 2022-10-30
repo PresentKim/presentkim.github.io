@@ -1,6 +1,6 @@
 <script>
-    // it takes an array of posts as a prop
-    export let posts;
+  // it takes an array of posts as a prop
+  export let posts;
 </script>
 
 <!-- iterate thru each post and output an <article> tag -->

@@ -1,6 +1,6 @@
 <script>
-    // take in tags as a prop
-    export let tags;
+  // take in tags as a prop
+  export let tags;
 </script>
 
 <nav>

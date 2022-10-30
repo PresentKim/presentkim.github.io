@@ -1,5 +1,5 @@
 <script>
-    import {tags, findPostsByTag} from '../../posts'
+  import {tags, findPostsByTag} from '../../posts';
 </script>
 
 <style>
