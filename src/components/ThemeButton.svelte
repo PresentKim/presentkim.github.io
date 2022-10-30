@@ -34,7 +34,14 @@
     }
   }
 
-  function toggleColorScheme() {
+  function toggleColorScheme(e) {
+    if (e) {
+      if (e instanceof TouchEvent) {
+        //make animation more responsive on touch devices
+        size.set(1.5).then(() => size.set(1.0));
+      }
+      e.preventDefault();
+    }
 
     //toggle the color scheme
     colorScheme = colorScheme === COLOR_SCHEME.DARK
@@ -93,6 +100,7 @@
 </style>
 
 <div on:mousedown={toggleColorScheme}
+     on:touchstart={toggleColorScheme}
      on:mouseenter={() => size.set(1.5)}
      on:mouseleave={() => size.set(1.0)}>
     <Fa {...$$props} size="1x" style="transform: scale({$size})"
