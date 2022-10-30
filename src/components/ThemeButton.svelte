@@ -2,6 +2,7 @@
   import Fa from 'svelte-fa';
   import {faSun, faMoon} from '@fortawesome/free-regular-svg-icons';
   import {onMount} from 'svelte';
+  import {spring} from 'svelte/motion';
 
   const COLOR_SCHEME_STORE_KEY = 'color-scheme';
   const COLOR_SCHEME_MEDIA_QUERY = '(prefers-color-scheme: dark)';
@@ -9,9 +10,17 @@
     DARK: 'dark',
     LIGHT: 'light',
   };
+  const COLOR_SCHEME_ICON = {
+    [COLOR_SCHEME.DARK]: faSun,
+    [COLOR_SCHEME.LIGHT]: faMoon,
+  };
 
   let windowColorScheme = null;
-  export let colorScheme = COLOR_SCHEME.LIGHT;
+  let colorScheme = COLOR_SCHEME.LIGHT;
+  let size = spring(1.0, {
+    stiffness: 0.5,
+    damping: 0.1,
+  });
 
   function applyColorScheme() {
     if (colorScheme === COLOR_SCHEME.DARK) {
@@ -49,7 +58,7 @@
       colorScheme = windowColorScheme = mediaQuery.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
 
       const storedColorScheme = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
-      if(storedColorScheme) {
+      if (storedColorScheme) {
         //get the color scheme from local storage
         colorScheme = storedColorScheme;
       }
@@ -77,17 +86,12 @@
         font-size: 1.5rem;
         border-radius: 25%;
         cursor: pointer;
-
-        transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-        transition-duration: 3s;
-    }
-
-    div:hover {
-        background-color: var(--border-color);
-        transform: scale(1.2);
     }
 </style>
 
-<div on:click={toggleColorScheme}>
-    <Fa {...$$props} style=" width: 1.5rem;  height: 1.5rem;" icon={colorScheme === COLOR_SCHEME.DARK ? faMoon : faSun}/>
+<div on:mousedown={toggleColorScheme}
+     on:mouseenter="{() => size.set(1.5)}"
+     on:mouseleave="{() => size.set(1.0)}">
+    <Fa {...$$props} size="1x" style="transform: scale({$size})"
+        icon={COLOR_SCHEME_ICON[colorScheme]}/>
 </div>
