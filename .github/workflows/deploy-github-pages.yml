@@ -41,6 +41,10 @@ jobs:
       - name: Build project
         run: yarn export
 
+      # move 404/index.html to 404.html
+      - name: Move 404/index.html to 404.html
+        run: mv __sapper__/export/404/index.html __sapper__/export/404.html
+
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
