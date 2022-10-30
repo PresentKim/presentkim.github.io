@@ -3,6 +3,7 @@
   import {faSun, faMoon} from '@fortawesome/free-regular-svg-icons';
   import {onMount} from 'svelte';
   import {spring} from 'svelte/motion';
+  import readableRangeLimiter from '../utils/readable-range-limiter';
 
   const COLOR_SCHEME_STORE_KEY = 'color-scheme';
   const COLOR_SCHEME_MEDIA_QUERY = '(prefers-color-scheme: dark)';
@@ -57,6 +58,7 @@
     stiffness: 0.5,
     damping: 0.2,
   });
+  size.subscribe(readableRangeLimiter(size, 1.0, 1.5));
 
   onMount(() => {
     if (window && window.matchMedia) {
