@@ -1,6 +1,5 @@
 <script>
   import Logo from './Logo.svelte';
-  import ThemeButton from './ThemeButton.svelte';
 </script>
 
 <style>
@@ -21,12 +20,6 @@
         display: block;
         text-align: center;
     }
-
-    #theme-button {
-        display: block;
-        text-align: center;
-        margin: 0 .5rem;
-    }
 </style>
 
 <header>
@@ -34,8 +27,5 @@
         <a href="/">
             <Logo size="32"/>
         </a>
-    </div>
-    <div id="theme-button">
-        <ThemeButton/>
     </div>
 </header>

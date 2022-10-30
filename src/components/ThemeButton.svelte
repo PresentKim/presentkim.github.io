@@ -77,6 +77,10 @@
 
 <style>
     div {
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
         width: 1.5rem;
         height: 1.5rem;
         padding: .3rem;
