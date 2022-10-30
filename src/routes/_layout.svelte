@@ -1,5 +1,5 @@
 <script>
-  import '../global.css';
+  import '../assets/global.css';
 
   import hljs from 'highlight.js/lib/core';
   import javascript from 'highlight.js/lib/languages/javascript';

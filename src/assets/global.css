@@ -33,13 +33,13 @@
 
 /* Fonts */
 @font-face {
-    src: url(fonts/D2CodingLight.ttf);
+    src: url(D2CodingLight.ttf);
     font-family: "D2CodingLight";
     font-display: swap;
 }
 
 @font-face {
-    src: url(fonts/D2CodingBold.ttf);
+    src: url(D2CodingBold.ttf);
     font-family: "D2CodingBold";
     font-display: swap;
 }
