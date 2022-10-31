@@ -2,8 +2,6 @@
   import Fa from 'svelte-fa';
   import {faSun, faMoon} from '@fortawesome/free-regular-svg-icons';
   import {onMount} from 'svelte';
-  import {spring} from 'svelte/motion';
-  import readableRangeLimiter from '../utils/readable-range-limiter';
 
   const COLOR_SCHEME_STORE_KEY = 'color-scheme';
   const COLOR_SCHEME_MEDIA_QUERY = '(prefers-color-scheme: dark)';
@@ -36,13 +34,7 @@
   }
 
   function toggleColorScheme(e) {
-    if (e) {
-      if (e instanceof TouchEvent) {
-        //make animation more responsive on touch devices
-        size.set(1.5).then(() => size.set(1.0));
-      }
-      e.preventDefault();
-    }
+    e.preventDefault();
 
     //toggle the color scheme
     colorScheme = colorScheme === COLOR_SCHEME.DARK
@@ -54,11 +46,6 @@
 
   let windowColorScheme = null;
   let colorScheme = COLOR_SCHEME.LIGHT;
-  let size = spring(1.0, {
-    stiffness: 0.5,
-    damping: 0.2,
-  });
-  size.subscribe(readableRangeLimiter(size, 1.0, 1.5));
 
   onMount(() => {
     if (window && window.matchMedia) {
@@ -93,18 +80,23 @@
         right: 0.5rem;
         width: 1.5rem;
         height: 1.5rem;
-        padding: .3rem;
+        padding: .5rem .5rem .6rem .5rem;
         line-height: 1.5rem;
         font-size: 1.5rem;
-        border-radius: 25%;
         cursor: pointer;
+
+        background-color: var(--block-color);
+        border-radius: 50%;
+
+        opacity: .5;
+        transition: opacity .2s ease-in-out;
+    }
+
+    div:hover {
+        opacity: 1;
     }
 </style>
 
-<div on:mousedown={toggleColorScheme}
-     on:touchstart={toggleColorScheme}
-     on:mouseenter={() => size.set(1.5)}
-     on:mouseleave={() => size.set(1.0)}>
-    <Fa {...$$props} size="1x" style="transform: scale({$size})"
-        icon={COLOR_SCHEME_ICON[colorScheme]}/>
+<div on:mousedown={toggleColorScheme}>
+    <Fa {...$$props} icon={COLOR_SCHEME_ICON[colorScheme]}/>
 </div>
