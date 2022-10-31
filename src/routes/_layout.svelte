@@ -11,7 +11,6 @@
   import ThemeButton from '../components/ThemeButton.svelte';
   import LogoButton from '../components/LogoButton.svelte';
   import {onMount} from 'svelte';
-  import {fly} from 'svelte/transition';
 
   /** @type {Record<string, import('highlight.js').LanguageFn>} */
   const languages = {js: javascript, javascript, java, kotlin, php, cpp};
@@ -52,12 +51,5 @@
 </header>
 
 <main>
-    {#key segment}
-        <div
-                in:fly="{{ y: -50, duration: 250}}"
-                out:fly="{{ y: 50, duration: 250 }}"
-        >
-            <slot></slot>
-        </div>
-    {/key}
+    <slot></slot>
 </main>
