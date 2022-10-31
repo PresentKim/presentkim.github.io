@@ -12,6 +12,12 @@
   export let post;
 </script>
 
+<svelte:head>
+    <title>{post.title}</title>
+    <meta og:title={post.title}/>
+    <meta og:description={post.summary}/>
+</svelte:head>
+
 <h1>{post.title}</h1>
 <Tags tags={post.tags}/>
 

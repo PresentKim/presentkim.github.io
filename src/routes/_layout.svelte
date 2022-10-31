@@ -45,6 +45,12 @@
     }
 </style>
 
+<svelte:head>
+    <title>PresentKim Blog</title>
+    <meta og:title="PresentKim Blog"/>
+    <meta og:description="PresentKim's Blog"/>
+</svelte:head>
+
 <header>
     <LogoButton {segment}/>
     <ThemeButton/>

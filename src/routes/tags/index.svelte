@@ -8,6 +8,12 @@
     }
 </style>
 
+<svelte:head>
+    <title>PresentKim Blog Tags</title>
+    <meta og:title="PresentKim Blog Tags"/>
+    <meta og:description="Tags of PresentKim Blog"/>
+</svelte:head>
+
 {#each tags as tag}
     <div>
         <!-- link article to /tags/$tag -->

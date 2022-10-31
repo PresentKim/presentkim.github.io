@@ -15,6 +15,12 @@
   export let tag, posts;
 </script>
 
+<svelte:head>
+    <title>PresentKim Blog : {tag}</title>
+    <meta og:title="PresentKim Blog Tag: {tag}"/>
+    <meta og:description="PresentKim Blog Tag: {tag}"/>
+</svelte:head>
+
 <!-- show #tag as title -->
 <h1>#{tag}</h1>
 
