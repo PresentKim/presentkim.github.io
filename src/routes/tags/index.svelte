@@ -11,6 +11,7 @@
 <svelte:head>
     <title>PresentKim Blog Tags</title>
     <meta og:title="PresentKim Blog Tags"/>
+    <meta name="description" content="Tags of PresentKim Blog"/>
     <meta og:description="Tags of PresentKim Blog"/>
 </svelte:head>
 

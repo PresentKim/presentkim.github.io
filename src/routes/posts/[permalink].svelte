@@ -15,6 +15,7 @@
 <svelte:head>
     <title>{post.title}</title>
     <meta og:title={post.title}/>
+    <meta name="description" content={post.summary}/>
     <meta og:description={post.summary}/>
 </svelte:head>
 
