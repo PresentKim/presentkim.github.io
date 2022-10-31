@@ -4,7 +4,6 @@
   export let segment;
 
   import {spring} from 'svelte/motion';
-  import readableRangeLimiter from '../utils/readable-range-limiter';
 
   let isHome = segment === undefined, isMobile = false;
   let innerWidth = 0, innerHeight = 0;
@@ -12,7 +11,6 @@
     stiffness: 0.01,
     damping: 0.2,
   });
-  duration.subscribe(readableRangeLimiter(duration, 0, 1));
 
   let el, vmin, size, marginTop, marginLeft, backgroundOpacity;
   $: {
