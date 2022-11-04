@@ -19,7 +19,19 @@
     <meta og:description={post.summary}/>
 </svelte:head>
 
+<style>
+    h1 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-top: 0;
+        color: var(--comment-color);
+    }
+</style>
+
 <h1>{post.title}</h1>
+<p>{post.formattedDate}</p>
 <Tags tags={post.tags}/>
 
 {@html post.html}
