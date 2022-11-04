@@ -1,8 +1,4 @@
 <script>
-  let innerWidth = 0;
-  let innerHeight = 0;
-
-  $: vmin = Math.min(innerWidth, innerHeight) / 100;
 </script>
 
 <style>
@@ -18,11 +14,14 @@
     }
 </style>
 
-<svelte:window bind:innerWidth={innerWidth} bind:innerHeight={innerHeight}/>
+<svelte:head>
+    <title>PresentKim Blog</title>
+    <meta og:title="PresentKim Blog"/>
+    <meta name="description" content="PresentKim's Blog"/>
+    <meta og:description="PresentKim's Blog"/>
+</svelte:head>
 
-<div class="container"
-     style:font-size=" {vmin * 2}px">
-
+<div class="container">
     <h1>PresentKim</h1>
     <p>My first paragraph.</p>
 
