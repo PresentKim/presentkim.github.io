@@ -85,7 +85,7 @@
         font-size: 1.5rem;
         cursor: pointer;
 
-        background-color: var(--block-color);
+        background-color: var(--code-bg-color);
         border-radius: 50%;
 
         opacity: .5;

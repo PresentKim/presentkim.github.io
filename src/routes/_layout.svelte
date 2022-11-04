@@ -52,11 +52,6 @@
         -webkit-user-select: none;
         -ms-user-select: none;
     }
-
-    main {
-        margin: 0 0;
-        width: 100%;
-    }
 </style>
 
 <svelte:head>
