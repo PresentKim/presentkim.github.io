@@ -10,7 +10,7 @@
 
   import ThemeButton from '../components/ThemeButton.svelte';
   import LogoButton from '../components/LogoButton.svelte';
-  import {onMount} from 'svelte';
+  import {onMount, afterUpdate} from 'svelte';
 
   /** @type {Record<string, import('highlight.js').LanguageFn>} */
   const languages = {js: javascript, javascript, java, kotlin, php, cpp};
@@ -20,8 +20,10 @@
 
   export let segment;
 
-  onMount(() => {
+  const applyHighlight = () => {
     document.querySelectorAll('pre code').forEach((el) => {
+      if (el.classList.contains('hljs')) return;
+
       el.innerHTML = el.innerHTML.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
       hljs.highlightElement(el);
 
@@ -39,7 +41,9 @@
         el.append(document.createElement('br'));
       }
     });
-  });
+  };
+  onMount(applyHighlight);
+  afterUpdate(applyHighlight);
 </script>
 
 <style>
