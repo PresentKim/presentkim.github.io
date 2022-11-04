@@ -24,6 +24,20 @@
     document.querySelectorAll('pre code').forEach((el) => {
       el.innerHTML = el.innerHTML.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
       hljs.highlightElement(el);
+
+      let language = 'undefined';
+      for (let clazz of el.classList) {
+        if (clazz.startsWith('language-')) {
+          language = clazz.substring('language-'.length).replaceAll('_', ' ');
+          break;
+        }
+      }
+      if (language !== 'undefined') {
+        el.parentElement.insertAdjacentHTML('afterbegin', `<label>${language}</label>`);
+      }
+      if (el.innerHTML.trim() === '') {
+        el.append(document.createElement('br'));
+      }
     });
   });
 </script>
