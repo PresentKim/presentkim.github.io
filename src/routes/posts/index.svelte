@@ -1,6 +1,8 @@
 <script>
   import {posts} from '../../posts';
   import PostList from '../../components/PostList.svelte';
+
+  posts.sort((a, b) => b.date - a.date);
 </script>
 
 <svelte:head>

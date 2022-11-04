@@ -13,6 +13,8 @@
   import PostList from '../../components/PostList.svelte';
 
   export let tag, posts;
+
+  posts.sort((a, b) => b.date - a.date);
 </script>
 
 <svelte:head>
