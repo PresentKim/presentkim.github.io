@@ -46,18 +46,6 @@
   afterUpdate(applyHighlight);
 </script>
 
-<style>
-    header {
-        margin: 0 0;
-        width: 100%;
-
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-    }
-</style>
-
 <header>
     <LogoButton {segment}/>
     <ThemeButton/>
