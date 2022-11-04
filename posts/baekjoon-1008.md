@@ -2,7 +2,7 @@
 title: "백준 1008 :: A/B"
 summary: "백준 단계별로 문제 풀기 - 01단계 05번 문제: A/B"
 date: 2022-11-04 14:02:00
-tags: baekjoon, algorithm, cpp, php, javscript
+tags: [baekjoon, algorithm, cpp, php, javscript]
 ---
 
 ## 문제

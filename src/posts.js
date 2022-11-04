@@ -18,15 +18,14 @@ for (let post of all) {
 }
 
 function transform({filename, html, metadata}) {
-  const permalink = filename.replace(/\.md$/, '');
-  const date = new Date(metadata.date);
-  const formattedDate = dayjs(date).format("YYYY년 MM월 DD일 HH:mm");
-
-  let tags = [];
-  if (metadata.tags) {
-    tags = metadata.tags.split(',').map(str => str.trim());
-  }
-  return {...metadata, filename, html, permalink, date, formattedDate, tags};
+  return {
+    ...metadata,
+    filename,
+    html,
+    permalink: filename.replace(/\.md$/, ''),
+    date: new Date(metadata.date),
+    formattedDate: dayjs(metadata.date).format('YYYY년 MM월 DD일 HH:mm'),
+  };
 }
 
 export const posts = Array.from(postMap.values());
