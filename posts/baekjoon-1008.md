@@ -45,7 +45,7 @@ tags: [baekjoon, algorithm, cpp, php, javscript]
 
 한줄로 입력된 두 숫자를 구하고 결과를 출력한다
 
-```php
+```PHP
 <?
 fscanf(STDIN, "%d %d", $a, $b);
 echo $a / $b;
@@ -53,7 +53,7 @@ echo $a / $b;
 
 출력 소수 자릿수가 9개 이상 나와야하기 때문에 `iomanip`의 `setprecision`을 사용해야한다
 
-```cpp
+```C++
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -68,7 +68,7 @@ int main(){
 ```
 
 > 사실 그냥 `scanf`와 `printf`를 사용하는 방법이 더 간단하다
-> ```cpp
+> ```C++
 > #include <ios>
 > 
 > int main(){
@@ -84,7 +84,7 @@ int main(){
 >
 >
 
-```javascript
+```JavaScript
 const fs = require('fs');
 const inputData = fs.readFileSync(0, 'utf8').toString().split(' ');
 const a = parseInt(inputData[0]), b = parseInt(inputData[1]);

@@ -35,16 +35,16 @@ Hello World!
 
 단순히 Hello World! 를 출력하면 된다
 
-```php
+```PHP
 <? echo "Hello World!";
 ```
 
 > 사실 php는 `<?` 태그로 열지 않으면 문자 그대로 출력하기 때문에 아래 코드도 정답으로 처리된다
-> ```php
+> ```PHP
 > Hello World!
 > ```
 
-```cpp
+```C++
 #include <iostream>
 using namespace std;
 
@@ -54,6 +54,6 @@ int main() {
 }
 ```
 
-```javascript
+```JavaScript
 console.log("Hello World!");
 ```

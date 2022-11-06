@@ -37,18 +37,18 @@ tags: [baekjoon, algorithm, cpp, php, javscript]
 
 한줄로 입력된 두 숫자를 구하고 결과를 출력한다
 
-```php
+```PHP
 <?
 fscanf(STDIN,"%d %d", $a, $b);
 echo $a + $b;
 ```
 
 > 아예 `array_sum`을 사용할 수도 있다
-> ```php
+> ```PHP
 > <? echo array_sum(fscanf(STDIN, "%d%d"));
 > ```
 
-```cpp
+```C++
 #include <iostream>
 using namespace std;
 
@@ -60,7 +60,7 @@ int main(){
 }
 ```
 
-```javascript
+```JavaScript
 const fs = require('fs');
 const inputData = fs.readFileSync(0, 'utf8').toString().split(' ');
 const a = parseInt(inputData[0]), b = parseInt(inputData[1]);
