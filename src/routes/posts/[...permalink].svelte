@@ -2,7 +2,7 @@
   import {findPost} from '../../utils/posts';
 
   export function preload(page) {
-    return {post: findPost(page.params.permalink)};
+    return {post: findPost(page.params.permalink.join('/'))};
   }
 </script>
 

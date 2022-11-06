@@ -1,5 +1,5 @@
 // noinspection JSFileReferences
-import all from '../../posts/*.md';
+import all from '../../posts/**/**.md';
 import dayjs from 'dayjs';
 import codeHighlight from './code-highlight';
 
@@ -18,13 +18,25 @@ for (let post of all) {
   }
 }
 
-function transform({filename, html, metadata}) {
-  const codeRegex = /<pre><code(.*?)>([\w\W]*?)<\/code><\/pre>/igm;
-  const languageRegex = /.*?language-([^ '"]+)?.*/ig;
+function parsePermalink(path) {
+  const POST_PATH_REGEX = /\/posts\/(.*?)\.md/ig;
 
-  html = html.replaceAll(codeRegex, (match, codeProps, code) => {
+  path = path.replaceAll('\\', '\/');
+  let permalink = Array.from(path.matchAll(POST_PATH_REGEX))[0][1];
+
+  //ignore [{name}] path in permalink (Features for easy file management)
+  permalink = permalink.replaceAll(/\[.*?]\//ig, '');
+
+  return permalink;
+}
+
+function transform({path, html, metadata}) {
+  const CODE_ELEMENT_REGEX = /<pre><code(.*?)>([\w\W]*?)<\/code><\/pre>/igm;
+  const LANGUAGE_REGEX = /.*?language-([^ '"]+)?.*/ig;
+
+  html = html.replaceAll(CODE_ELEMENT_REGEX, (match, codeProps, code) => {
     // get language info from <code> elements props
-    let language = codeProps.replaceAll(languageRegex, '$1').trim();
+    let language = codeProps.replaceAll(LANGUAGE_REGEX, '$1').trim();
 
     // show language if it's not empty
     let showLanguage = language !== '';
@@ -56,9 +68,8 @@ function transform({filename, html, metadata}) {
 
   return {
     ...metadata,
-    filename,
     html,
-    permalink: filename.replace(/\.md$/, ''),
+    permalink: metadata.permalink ?? parsePermalink(path),
     date: new Date(metadata.date),
     formattedDate: dayjs(metadata.date).format('YYYY년 MM월 DD일 HH:mm'),
   };
