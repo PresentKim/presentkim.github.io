@@ -100,6 +100,12 @@ code {
     padding: 0.3em;
 }
 
+hr{
+    margin: 3em 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+}
+
 blockquote code {
     background: var(--code-inner-bg-color);
 }

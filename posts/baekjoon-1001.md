@@ -31,9 +31,7 @@ tags: [baekjoon, algorithm, cpp, php, javscript]
 - 구현
 - 사칙연산
 
-<br/>
-<hr/>
-<br/>
+---
 
 ## 풀이
 
