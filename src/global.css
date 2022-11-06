@@ -36,9 +36,16 @@
 
 /* Fonts */
 @font-face {
-    src: url(/font/D2CodingLight.ttf);
-    font-family: "D2CodingLight";
+    font-family: "D2 coding";
     font-display: swap;
+    font-weight: 400;
+    src: url("/fonts/D2Coding.eot");
+    src: local("D2Coding"),
+    url("/fonts/D2Coding.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/D2Coding.woff2") format("woff2"),
+    url("/fonts/D2Coding.woff") format("woff"),
+    url("/fonts/D2Coding.ttf") format("truetype"),
+    url("/fonts/D2Coding.svg") format("svg");
 }
 
 * {
@@ -47,7 +54,7 @@
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+    font-family: "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
     font-size: 1.125rem;
     line-height: 1.5;
     background-color: var(--base-bg-color);
@@ -164,7 +171,7 @@ main {
 
 /* highlight.js styles */
 pre * {
-    font-family: "D2CodingLight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+    font-family: "D2Coding", "D2 coding", "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
 }
 
 .hljs {
