@@ -1,49 +1,10 @@
 <script>
   import '../global.css';
 
-  import hljs from 'highlight.js/lib/core';
-  import javascript from 'highlight.js/lib/languages/javascript';
-  import java from 'highlight.js/lib/languages/java';
-  import kotlin from 'highlight.js/lib/languages/kotlin';
-  import php from 'highlight.js/lib/languages/php';
-  import cpp from 'highlight.js/lib/languages/cpp';
-
   import ThemeButton from '../components/ThemeButton.svelte';
   import LogoButton from '../components/LogoButton.svelte';
-  import {onMount, afterUpdate} from 'svelte';
-
-  /** @type {Record<string, import('highlight.js').LanguageFn>} */
-  const languages = {js: javascript, javascript, java, kotlin, php, cpp};
-  for (const [name, language] of Object.entries(languages)) {
-    hljs.registerLanguage(name, language);
-  }
 
   export let segment;
-
-  const applyHighlight = () => {
-    document.querySelectorAll('pre code').forEach((el) => {
-      if (el.classList.contains('hljs')) return;
-
-      el.innerHTML = el.innerHTML.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
-      hljs.highlightElement(el);
-
-      let language = 'undefined';
-      for (let clazz of el.classList) {
-        if (clazz.startsWith('language-')) {
-          language = clazz.substring('language-'.length).replaceAll('_', ' ');
-          break;
-        }
-      }
-      if (language !== 'undefined') {
-        el.parentElement.insertAdjacentHTML('afterbegin', `<label>${language}</label>`);
-      }
-      if (el.innerHTML.trim() === '') {
-        el.append(document.createElement('br'));
-      }
-    });
-  };
-  onMount(applyHighlight);
-  afterUpdate(applyHighlight);
 </script>
 
 <header>
