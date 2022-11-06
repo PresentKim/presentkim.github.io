@@ -214,7 +214,7 @@ pre label + .hljs {
     color: var(--literal-color);
 }
 
-.hljs-addition, .hljs-attribute, .hljs-meta .hljs-string, .hljs-regexp {
+.hljs-addition, .hljs-attribute, .hljs-meta, .hljs-string, .hljs-regexp {
     color: var(--meta-color);
 }
 
