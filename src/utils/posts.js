@@ -1,5 +1,5 @@
 // noinspection JSFileReferences
-import all from '../posts/*.md';
+import all from '../../posts/*.md';
 import dayjs from 'dayjs';
 import codeHighlight from './code-highlight';
 

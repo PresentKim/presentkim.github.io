@@ -1,5 +1,5 @@
 <script>
-  import {posts} from '../../posts';
+  import {posts} from '../../utils/posts';
   import PostList from '../../components/PostList.svelte';
 
   posts.sort((a, b) => b.date - a.date);
