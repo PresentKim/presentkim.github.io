@@ -19,12 +19,12 @@
 }
 
 .dark {
-    --bg-page: #121212;
-    --bg-block1: #1F1F1F;
-    --bg-block2: #2B2B2B;
-    --bg-label: #3F3F3F;
+    --bg-page: #1C1C1C;
+    --bg-block1: #212121;
+    --bg-block2: #262626;
+    --bg-label: #2E2E2E;
 
-    --border-color: #303030;
+    --border-color: #2E2E2E;
 
     --text-color: #FEFEFE;
     --comment-color: #7D828C;
