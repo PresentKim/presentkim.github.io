@@ -39,16 +39,16 @@
 
 /* Fonts */
 @font-face {
-    font-family: "D2 coding";
+    font-family: "SourceCodePro";
     font-display: swap;
     font-weight: 400;
-    src: url("/fonts/D2Coding.eot");
-    src: local("D2Coding"),
-    url("/fonts/D2Coding.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/D2Coding.woff2") format("woff2"),
-    url("/fonts/D2Coding.woff") format("woff"),
-    url("/fonts/D2Coding.ttf") format("truetype"),
-    url("/fonts/D2Coding.svg") format("svg");
+    src: url("/fonts/SourceCodePro-SemiBold-SubSet.eot");
+    src: local("SourceCodePro"),
+    url("/fonts/SourceCodePro-SemiBold-SubSet.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/SourceCodePro-SemiBold-SubSet.woff2") format("woff2"),
+    url("/fonts/SourceCodePro-SemiBold-SubSet.woff") format("woff"),
+    url("/fonts/SourceCodePro-SemiBold-SubSet.ttf") format("truetype"),
+    url("/fonts/SourceCodePro-SemiBold-SubSet.svg") format("svg");
 }
 
 
@@ -98,14 +98,13 @@ blockquote {
     margin: 0;
     padding: 0.2em 1em;
     color: var(--text-color);
-    background: var(--bg-block1);
 
     border-left: 4px solid var(--meta-color);
     border-radius: 2px;
 }
 
 code {
-    font-family: D2Coding, "D2 coding", monospace;
+    font-family: "SourceCodePro", monospace;
     color: var(--text-color);
     background: var(--bg-block1);
     border-radius: 2px;
@@ -176,7 +175,7 @@ main {
 
 /* highlight.js styles */
 pre * {
-    font-family: "D2Coding", "D2 coding", "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
+    font-family: "SourceCodePro", "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
 }
 
 .hljs {
