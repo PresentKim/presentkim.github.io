@@ -42,6 +42,19 @@
     font-family: "SourceCodePro";
     font-display: swap;
     font-weight: 400;
+    src: url("/fonts/SourceCodePro-Regular-SubSet.eot");
+    src: local("SourceCodePro"),
+    url("/fonts/SourceCodePro-Regular-SubSet.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/SourceCodePro-Regular-SubSet.woff2") format("woff2"),
+    url("/fonts/SourceCodePro-Regular-SubSet.woff") format("woff"),
+    url("/fonts/SourceCodePro-Regular-SubSet.ttf") format("truetype"),
+    url("/fonts/SourceCodePro-Regular-SubSet.svg") format("svg");
+}
+
+@font-face {
+    font-family: "SourceCodePro";
+    font-display: swap;
+    font-weight: 500;
     src: url("/fonts/SourceCodePro-SemiBold-SubSet.eot");
     src: local("SourceCodePro"),
     url("/fonts/SourceCodePro-SemiBold-SubSet.eot?#iefix") format("embedded-opentype"),
@@ -49,6 +62,19 @@
     url("/fonts/SourceCodePro-SemiBold-SubSet.woff") format("woff"),
     url("/fonts/SourceCodePro-SemiBold-SubSet.ttf") format("truetype"),
     url("/fonts/SourceCodePro-SemiBold-SubSet.svg") format("svg");
+}
+
+@font-face {
+    font-family: "SourceCodePro";
+    font-display: swap;
+    font-weight: 700;
+    src: url("/fonts/SourceCodePro-Bold-SubSet.eot");
+    src: local("SourceCodePro"),
+    url("/fonts/SourceCodePro-Bold-SubSet.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/SourceCodePro-Bold-SubSet.woff2") format("woff2"),
+    url("/fonts/SourceCodePro-Bold-SubSet.woff") format("woff"),
+    url("/fonts/SourceCodePro-Bold-SubSet.ttf") format("truetype"),
+    url("/fonts/SourceCodePro-Bold-SubSet.svg") format("svg");
 }
 
 
@@ -61,6 +87,7 @@ body {
     margin: 0;
     font-family: "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
     font-size: 1.125rem;
+    font-weight: 400;
     line-height: 1.5;
     background-color: var(--bg-page);
     color: var(--text-color);
@@ -176,6 +203,7 @@ main {
 /* highlight.js styles */
 pre * {
     font-family: "SourceCodePro", "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
+    font-weight: 500;
 }
 
 .hljs {
