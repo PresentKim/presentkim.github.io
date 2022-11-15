@@ -1,8 +1,7 @@
 /* Color variables */
 .light {
-    --bg-page: #FEFEFE;
-    --bg-block1: #F8F8F8;
-    --bg-block2: #EFEFEF;
+    --bg-page: #FFFFFF;
+    --bg-block: #F5F7F9;
     --bg-label: #EAEAEA;
 
     --border-color: #EAEAEA;
@@ -19,9 +18,8 @@
 }
 
 .dark {
-    --bg-page: #1C1C1C;
-    --bg-block1: #212121;
-    --bg-block2: #262626;
+    --bg-page: #191C1F;
+    --bg-block: #212427;
     --bg-label: #2E2E2E;
 
     --border-color: #2E2E2E;
@@ -133,7 +131,7 @@ blockquote {
 code {
     font-family: "SourceCodePro", monospace;
     color: var(--text-color);
-    background: var(--bg-block1);
+    background: var(--bg-block);
     border-radius: 2px;
     padding: 0.3em;
 }
@@ -142,10 +140,6 @@ hr {
     margin: 3em 0;
     border: 0;
     border-top: 1px solid var(--border-color);
-}
-
-blockquote code {
-    background: var(--bg-block2);
 }
 
 a {
