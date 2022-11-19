@@ -1,8 +1,8 @@
 {
   "background_color": "#ffffff",
-  "theme_color": "#333333",
-  "name": "presentkim-sapper-blog",
-  "short_name": "presentkim-sapper-blog",
+  "theme_color": "#2b313a",
+  "name": "presentkim.github.io",
+  "short_name": "presentkim.github.io",
   "display": "standalone",
   "start_url": "/",
   "icons": [
