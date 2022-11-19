@@ -36,44 +36,111 @@
 }
 
 /* Fonts */
-@font-face {
-    font-family: "SourceCodePro";
-    font-display: swap;
-    font-weight: 400;
-    src: url("/fonts/SourceCodePro-Regular-SubSet.eot");
-    src: local("SourceCodePro"),
-    url("/fonts/SourceCodePro-Regular-SubSet.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/SourceCodePro-Regular-SubSet.woff2") format("woff2"),
-    url("/fonts/SourceCodePro-Regular-SubSet.woff") format("woff"),
-    url("/fonts/SourceCodePro-Regular-SubSet.ttf") format("truetype"),
-    url("/fonts/SourceCodePro-Regular-SubSet.svg") format("svg");
+@supports (font-variation-settings: 'wght' 1) {
+    @font-face {
+        font-family: 'SourceCodeProVariable';
+        font-display: swap;
+        font-style: normal;
+        font-weight: 1 900;
+        src: url('/font/SourceCodePro/VariableFont.woff2') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'SourceCodeProVariable';
+        font-display: swap;
+        font-style: italic;
+        font-weight: 1 900;
+        src: url('/font/SourceCodePro/VariableFont-Italic.woff2') format('woff2');
+    }
 }
 
 @font-face {
-    font-family: "SourceCodePro";
+    font-family: 'SourceCodePro';
     font-display: swap;
+    font-style: normal;
     font-weight: 500;
-    src: url("/fonts/SourceCodePro-SemiBold-SubSet.eot");
-    src: local("SourceCodePro"),
-    url("/fonts/SourceCodePro-SemiBold-SubSet.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/SourceCodePro-SemiBold-SubSet.woff2") format("woff2"),
-    url("/fonts/SourceCodePro-SemiBold-SubSet.woff") format("woff"),
-    url("/fonts/SourceCodePro-SemiBold-SubSet.ttf") format("truetype"),
-    url("/fonts/SourceCodePro-SemiBold-SubSet.svg") format("svg");
+    src: url('/font/SourceCodePro/SemiBold-Subset.eot');
+    src: local('SourceCodePro'),
+    url('/font/SourceCodePro/SemiBold-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/SemiBold-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/SemiBold-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/SemiBold-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/SemiBold-Subset.svg') format('svg');
+    unicode-range: U+20-7E;
 }
 
 @font-face {
-    font-family: "SourceCodePro";
+    font-family: 'SourceCodePro';
     font-display: swap;
+    font-style: normal;
     font-weight: 700;
-    src: url("/fonts/SourceCodePro-Bold-SubSet.eot");
-    src: local("SourceCodePro"),
-    url("/fonts/SourceCodePro-Bold-SubSet.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/SourceCodePro-Bold-SubSet.woff2") format("woff2"),
-    url("/fonts/SourceCodePro-Bold-SubSet.woff") format("woff"),
-    url("/fonts/SourceCodePro-Bold-SubSet.ttf") format("truetype"),
-    url("/fonts/SourceCodePro-Bold-SubSet.svg") format("svg");
+    src: url('/font/SourceCodePro/Bold-Subset.eot');
+    src: local('SourceCodePro'),
+    url('/font/SourceCodePro/Bold-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/Bold-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/Bold-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/Bold-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/Bold-Subset.svg') format('svg');
+    unicode-range: U+20-7E;
 }
+
+@font-face {
+    font-family: 'SourceCodePro';
+    font-display: swap;
+    font-style: italic;
+    font-weight: 500;
+    src: url('/font/SourceCodePro/SemiBoldItalic-Subset.eot');
+    src: local('SourceCodePro'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.svg') format('svg');
+    unicode-range: U+20-7E;
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    font-display: swap;
+    font-style: italic;
+    font-weight: 700;
+    src: url('/font/SourceCodePro/BoldItalic-Subset.eot');
+    src: local('SourceCodePro'),
+    url('/font/SourceCodePro/BoldItalic-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/BoldItalic-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/BoldItalic-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/BoldItalic-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/BoldItalic-Subset.svg') format('svg');
+    unicode-range: U+20-7E;
+}
+
+@font-face {
+    font-family: 'D2Coding';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 500;
+    src: url('/font/D2Coding/Regular-Subset.eot');
+    src: local('D2Coding'),
+    url('/font/D2Coding/Regular-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/D2Coding/Regular-Subset.woff2') format('woff2'),
+    url('/font/D2Coding/Regular-Subset.woff') format('woff'),
+    url('/font/D2Coding/Regular-Subset.ttf') format('truetype'),
+    url('/font/D2Coding/Regular-Subset.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'D2Coding';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url('/font/D2Coding/Bold-Subset.eot');
+    src: local('D2Coding'), url('/font/D2Coding/Bold-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/D2Coding/Bold-Subset.woff2') format('woff2'),
+    url('/font/D2Coding/Bold-Subset.woff') format('woff'),
+    url('/font/D2Coding/Bold-Subset.ttf') format('truetype'),
+    url('/font/D2Coding/Bold-Subset.svg') format('svg');
+}
+
 
 
 /* Global styles */
@@ -83,7 +150,7 @@
 
 body {
     margin: 0;
-    font-family: "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
+    font-family: SourceCodeProVariable, 'SourceCodePro', 'D2Coding', arial, Tahoma, Geneva, sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.5;
@@ -129,7 +196,6 @@ blockquote {
 }
 
 code {
-    font-family: "SourceCodePro", monospace;
     color: var(--text-color);
     background: var(--bg-block);
     border-radius: 2px;
@@ -196,8 +262,7 @@ main {
 
 /* highlight.js styles */
 pre * {
-    font-family: "SourceCodePro", "Malgun Gothic", "맑은 고딕", "나눔고딕", "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, Tahoma, Geneva, sans-serif;
-    font-weight: 500;
+   font-weight: 500;
 }
 
 .hljs {
