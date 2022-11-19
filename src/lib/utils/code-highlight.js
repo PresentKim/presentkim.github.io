@@ -11,7 +11,7 @@ import yaml from 'highlight.js/lib/languages/yaml';
 import json from 'highlight.js/lib/languages/json';
 
 /** @type {Record<string, import('highlight.js').LanguageFn>} */
-const languages = {javascript, java, kotlin, php, cpp, bash, markdown, plaintext, yaml, json};
+const languages = { javascript, java, kotlin, php, cpp, bash, markdown, plaintext, yaml, json };
 for (const [name, language] of Object.entries(languages)) {
   hljs.registerLanguage(name, language);
 }
@@ -19,9 +19,8 @@ for (const [name, language] of Object.entries(languages)) {
 export default (code, language) => {
   if (language && hljs.getLanguage(language)) {
     try {
-      return hljs.highlight(code, {language});
-    } catch (error) {
-    }
+      return hljs.highlight(code, { language });
+    } catch (error) {}
   }
   return null;
 };

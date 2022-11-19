@@ -1,17 +1,17 @@
 <script>
   import icSun from '../assets/ic_sun.svelte';
   import icMoon from '../assets/ic_moon.svelte';
-  import {onMount} from 'svelte';
+  import { onMount } from 'svelte';
 
   const COLOR_SCHEME_STORE_KEY = 'color-scheme';
   const COLOR_SCHEME_MEDIA_QUERY = '(prefers-color-scheme: dark)';
   const COLOR_SCHEME = {
     DARK: 'dark',
-    LIGHT: 'light',
+    LIGHT: 'light'
   };
   const COLOR_SCHEME_ICON = {
     [COLOR_SCHEME.DARK]: icSun,
-    [COLOR_SCHEME.LIGHT]: icMoon,
+    [COLOR_SCHEME.LIGHT]: icMoon
   };
 
   function applyColorScheme() {
@@ -37,9 +37,7 @@
     e.preventDefault();
 
     //toggle the color scheme
-    colorScheme = colorScheme === COLOR_SCHEME.DARK
-        ? COLOR_SCHEME.LIGHT
-        : COLOR_SCHEME.DARK;
+    colorScheme = colorScheme === COLOR_SCHEME.DARK ? COLOR_SCHEME.LIGHT : COLOR_SCHEME.DARK;
 
     applyColorScheme();
   }
@@ -61,7 +59,7 @@
       }
 
       //listen for color scheme changes to the media query
-      mediaQuery.addEventListener('change', e => {
+      mediaQuery.addEventListener('change', (e) => {
         if (windowColorScheme === colorScheme) {
           colorScheme = e.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
         }
@@ -72,31 +70,31 @@
   });
 </script>
 
-<style>
-    div {
-        display: block;
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        width: 1.75rem;
-        height: 1.75rem;
-        padding: 0.5rem ;
-        line-height: 1.5rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-
-        background-color: var(--bg-block);
-        border-radius: 50%;
-
-        opacity: .5;
-        transition: opacity .2s ease-in-out;
-    }
-
-    div:hover {
-        opacity: 1;
-    }
-</style>
-
 <div on:mousedown={toggleColorScheme}>
-    <svelte:component this={COLOR_SCHEME_ICON[colorScheme]}/>
+  <svelte:component this={COLOR_SCHEME_ICON[colorScheme]} />
 </div>
+
+<style>
+  div {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.5rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    background-color: var(--bg-block);
+    border-radius: 50%;
+
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  div:hover {
+    opacity: 1;
+  }
+</style>

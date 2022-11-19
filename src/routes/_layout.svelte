@@ -8,10 +8,10 @@
 </script>
 
 <header>
-    <LogoButton {segment}/>
-    <ThemeButton/>
+  <LogoButton {segment} />
+  <ThemeButton />
 </header>
 
 <main>
-    <slot></slot>
+  <slot />
 </main>

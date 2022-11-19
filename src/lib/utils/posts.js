@@ -19,20 +19,20 @@ for (let post of all) {
 }
 
 function parsePermalink(path) {
-  const POST_PATH_REGEX = /\/posts\/(.*?)\.md/ig;
+  const POST_PATH_REGEX = /\/posts\/(.*?)\.md/gi;
 
-  path = path.replaceAll('\\', '\/');
+  path = path.replaceAll('\\', '/');
   let permalink = Array.from(path.matchAll(POST_PATH_REGEX))[0][1];
 
   //ignore [{name}] path in permalink (Features for easy file management)
-  permalink = permalink.replaceAll(/\[.*?]\//ig, '');
+  permalink = permalink.replaceAll(/\[.*?]\//gi, '');
 
   return permalink;
 }
 
-function transform({path, html, metadata}) {
-  const CODE_ELEMENT_REGEX = /<pre><code(.*?)>([\w\W]*?)<\/code><\/pre>/igm;
-  const LANGUAGE_REGEX = /.*?language-([^ '"]+)?.*/ig;
+function transform({ path, html, metadata }) {
+  const CODE_ELEMENT_REGEX = /<pre><code(.*?)>([\w\W]*?)<\/code><\/pre>/gim;
+  const LANGUAGE_REGEX = /.*?language-([^ '"]+)?.*/gi;
 
   html = html.replaceAll(CODE_ELEMENT_REGEX, (match, codeProps, code) => {
     // get language info from <code> elements props
@@ -48,9 +48,7 @@ function transform({path, html, metadata}) {
     }
 
     // replace html entities of code before highlighting
-    for (let [key, value] of Object.entries(
-        {'&lt;': '<', '&gt;': '>', '&amp;': '&'},
-    )) {
+    for (let [key, value] of Object.entries({ '&lt;': '<', '&gt;': '>', '&amp;': '&' })) {
       code = code.replaceAll(key, value);
     }
 
@@ -60,10 +58,12 @@ function transform({path, html, metadata}) {
     // replace '<?' with '&lt;?' to prevent it from being interpreted as a comments
     code = code.replaceAll('<?', '&lt;?');
 
-    return '<pre>'
-        + (showLanguage ? `<label>${language}</label>` : '')
-        + `<code class="hljs ${language}">${code}</code>`
-        + '</pre>';
+    return (
+      '<pre>' +
+      (showLanguage ? `<label>${language}</label>` : '') +
+      `<code class="hljs ${language}">${code}</code>` +
+      '</pre>'
+    );
   });
 
   html = html.replaceAll('〈', '<').replaceAll('〉', '>');
@@ -73,7 +73,7 @@ function transform({path, html, metadata}) {
     html,
     permalink: parsePermalink(path),
     date: new Date(metadata.date),
-    formattedDate: dayjs(metadata.date).format('YYYY년 MM월 DD일 HH:mm'),
+    formattedDate: dayjs(metadata.date).format('YYYY년 MM월 DD일 HH:mm')
   };
 }
 
