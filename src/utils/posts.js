@@ -66,6 +66,8 @@ function transform({path, html, metadata}) {
         + '</pre>';
   });
 
+  html = html.replaceAll('〈', '<').replaceAll('〉', '>');
+
   return {
     ...metadata,
     html,
