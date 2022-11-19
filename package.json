@@ -8,7 +8,7 @@
     "build": "sapper build --legacy",
     "export": "sapper export --legacy --entry \"/ /404\"",
     "start": "node __sapper__/build",
-    "validate": "svelte-check --ignore src/node_modules/@sapper"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "compression": "^1.7.1",
@@ -34,6 +34,8 @@
     "@types/node": "^14.11.1",
     "@types/polka": "^0.5.1",
     "dayjs": "^1.11.6",
+    "prettier": "^2.7.1",
+    "prettier-plugin-svelte": "^2.8.1",
     "rollup": "^2.3.4",
     "rollup-plugin-glob": "^1.0.2",
     "rollup-plugin-svelte": "^7.0.0",
