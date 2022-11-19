@@ -71,6 +71,7 @@ blockquote {
 }
 
 :not(pre) > code {
+  display: inline-block;
   padding: 0.3em;
   background: var(--bg-block);
   border-radius: 2px;
@@ -83,7 +84,7 @@ hr {
 }
 
 a {
-  display: block;
+  display: inline-block;
   font-weight: bold;
   color: var(--link-color);
   text-decoration: none;
