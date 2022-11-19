@@ -24,13 +24,7 @@
       localStorage.setItem(COLOR_SCHEME_STORE_KEY, colorScheme);
     }
 
-    if (colorScheme === COLOR_SCHEME.DARK) {
-      document.body.classList.remove(COLOR_SCHEME.LIGHT);
-      document.body.classList.add(COLOR_SCHEME.DARK);
-    } else {
-      document.body.classList.remove(COLOR_SCHEME.DARK);
-      document.body.classList.add(COLOR_SCHEME.LIGHT);
-    }
+    document.body.dataset.theme = colorScheme;
   }
 
   function toggleColorScheme(e) {
