@@ -3,5 +3,8 @@ import { json } from '@sveltejs/kit';
 
 /** @type {import('./$types').RequestHandler} */
 export const GET = async () => {
-  return json(await getPostList());
+  const posts = (await getPostList()).sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  return json(posts);
 };
