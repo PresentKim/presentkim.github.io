@@ -71,7 +71,7 @@ function transform({path, html, metadata}) {
   return {
     ...metadata,
     html,
-    permalink: metadata.permalink ?? parsePermalink(path),
+    permalink: parsePermalink(path),
     date: new Date(metadata.date),
     formattedDate: dayjs(metadata.date).format('YYYY년 MM월 DD일 HH:mm'),
   };
