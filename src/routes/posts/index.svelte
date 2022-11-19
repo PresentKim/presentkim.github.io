@@ -1,6 +1,6 @@
 <script>
-  import { posts } from '../../lib/utils/posts';
-  import PostList from '../../lib/components/PostList.svelte';
+  import { posts } from '$lib/utils/posts';
+  import PostList from '$lib/components/PostList.svelte';
 
   posts.sort((a, b) => b.date - a.date);
 </script>

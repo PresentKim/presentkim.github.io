@@ -1,5 +1,5 @@
 <script>
-  import icLogo from '../assets/ic_logo.svg';
+  import icLogo from '$lib/assets/ic_logo.svg';
 
   export let segment;
 

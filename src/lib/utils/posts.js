@@ -1,7 +1,7 @@
 // noinspection JSFileReferences
-import all from '../../posts/**/**.md';
+import all from '../../../posts/**/**.md';
 import dayjs from 'dayjs';
-import codeHighlight from './code-highlight';
+import codeHighlight from '$lib/utils/code-highlight';
 
 const postMap = new Map();
 const tagMap = new Map();

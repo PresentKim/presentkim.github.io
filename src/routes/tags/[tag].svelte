@@ -1,5 +1,5 @@
 <script context="module">
-  import { findPostsByTag } from '../../lib/utils/posts';
+  import { findPostsByTag } from '$lib/utils/posts';
 
   export function preload(page) {
     const { tag } = page.params;

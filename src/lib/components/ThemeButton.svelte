@@ -1,6 +1,6 @@
 <script>
-  import icSun from '../assets/ic_sun.svelte';
-  import icMoon from '../assets/ic_moon.svelte';
+  import icSun from '$lib/assets/ic_sun.svelte';
+  import icMoon from '$lib/assets/ic_moon.svelte';
   import { onMount } from 'svelte';
 
   const COLOR_SCHEME_STORE_KEY = 'color-scheme';

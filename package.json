@@ -23,6 +23,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "@jackfranklin/rollup-plugin-markdown": "^0.4.0",
+    "@rollup/plugin-alias": "^4.0.2",
     "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",

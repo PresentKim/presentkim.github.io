@@ -10,6 +10,7 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import markdown from '@jackfranklin/rollup-plugin-markdown';
 import glob from 'rollup-plugin-glob';
+import alias from '@rollup/plugin-alias';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -27,6 +28,11 @@ export default {
     plugins: [
       markdown(),
       glob(),
+      alias({
+        entries: [
+          { find: '$lib', replacement: path.resolve(__dirname, 'src/lib') },
+        ]
+      }),
       replace({
         preventAssignment: true,
         values: {
@@ -90,6 +96,11 @@ export default {
     plugins: [
       markdown(),
       glob(),
+      alias({
+        entries: [
+          { find: '$lib', replacement: path.resolve(__dirname, 'src/lib') },
+        ]
+      }),
       replace({
         preventAssignment: true,
         values: {
