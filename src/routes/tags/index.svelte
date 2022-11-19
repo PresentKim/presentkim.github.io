@@ -1,5 +1,5 @@
 <script>
-  import {tags, findPostsByTag} from '../../utils/posts';
+  import {tags, findPostsByTag} from '../../lib/utils/posts';
 </script>
 
 <style>

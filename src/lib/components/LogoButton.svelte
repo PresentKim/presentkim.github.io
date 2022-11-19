@@ -42,6 +42,6 @@
     }
 </style>
 
-<a href="/" class:isHome>
+<a href="/static" class:isHome>
     <img src={icLogo} alt="logo svg" />
 </a>

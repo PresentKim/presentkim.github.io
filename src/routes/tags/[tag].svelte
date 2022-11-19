@@ -1,5 +1,5 @@
 <script context="module">
-  import {findPostsByTag} from '../../utils/posts';
+  import {findPostsByTag} from '../../lib/utils/posts';
 
   export function preload(page) {
     const {tag} = page.params;
@@ -10,7 +10,7 @@
 
 <script>
   // props are provided by preload() function
-  import PostList from '../../components/PostList.svelte';
+  import PostList from '../../lib/components/PostList.svelte';
 
   export let tag, posts;
 

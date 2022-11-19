@@ -1,5 +1,5 @@
 <script context="module">
-  import {findPost} from '../../utils/posts';
+  import {findPost} from '../../lib/utils/posts';
 
   export function preload(page) {
     return {post: findPost(page.params.permalink.join('/'))};
@@ -7,7 +7,7 @@
 </script>
 
 <script>
-  import Tags from '../../components/Tags.svelte';
+  import Tags from '../../lib/components/Tags.svelte';
 
   export let post;
 </script>
