@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
-import { mdsvex } from 'mdsvex';
+import mdsvexConfig from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,9 +12,7 @@ const config = {
       }
     }),
 
-    mdsvex({
-      extensions: ['.md']
-    })
+    mdsvexConfig
   ],
   extensions: ['.svelte', '.md'],
   kit: {
