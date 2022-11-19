@@ -29,9 +29,7 @@ export default {
       markdown(),
       glob(),
       alias({
-        entries: [
-          { find: '$lib', replacement: path.resolve(__dirname, 'src/lib') },
-        ]
+        entries: [{ find: '$lib', replacement: path.resolve(__dirname, 'src/lib') }]
       }),
       replace({
         preventAssignment: true,
@@ -97,9 +95,7 @@ export default {
       markdown(),
       glob(),
       alias({
-        entries: [
-          { find: '$lib', replacement: path.resolve(__dirname, 'src/lib') },
-        ]
+        entries: [{ find: '$lib', replacement: path.resolve(__dirname, 'src/lib') }]
       }),
       replace({
         preventAssignment: true,
