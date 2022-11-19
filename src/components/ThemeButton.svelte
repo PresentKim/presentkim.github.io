@@ -1,6 +1,6 @@
 <script>
-  import Fa from 'svelte-fa';
-  import {faSun, faMoon} from '@fortawesome/free-regular-svg-icons';
+  import icSun from '../assets/ic_sun.svelte';
+  import icMoon from '../assets/ic_moon.svelte';
   import {onMount} from 'svelte';
 
   const COLOR_SCHEME_STORE_KEY = 'color-scheme';
@@ -10,8 +10,8 @@
     LIGHT: 'light',
   };
   const COLOR_SCHEME_ICON = {
-    [COLOR_SCHEME.DARK]: faSun,
-    [COLOR_SCHEME.LIGHT]: faMoon,
+    [COLOR_SCHEME.DARK]: icSun,
+    [COLOR_SCHEME.LIGHT]: icMoon,
   };
 
   function applyColorScheme() {
@@ -78,9 +78,9 @@
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;
-        width: 1.5rem;
-        height: 1.5rem;
-        padding: .5rem .5rem .6rem .5rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0.5rem ;
         line-height: 1.5rem;
         font-size: 1.5rem;
         cursor: pointer;
@@ -98,5 +98,5 @@
 </style>
 
 <div on:mousedown={toggleColorScheme}>
-    <Fa {...$$props} icon={COLOR_SCHEME_ICON[colorScheme]}/>
+    <svelte:component this={COLOR_SCHEME_ICON[colorScheme]}/>
 </div>
