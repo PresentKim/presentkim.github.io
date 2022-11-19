@@ -113,7 +113,7 @@ tags: [algorithm, cpp, codetest]
 3. `정택은 사무실 근처에 있는 편의점을 돌며 얻을 수 있는 최대의 단백질을 확보하려고 한다.`
    - 최대의 단백질을 확보해야 하므로 가장 큰 값을 찾아야 한다.
 
-```C++
+```cpp
 #include <iostream>
 using namespace std;
 
