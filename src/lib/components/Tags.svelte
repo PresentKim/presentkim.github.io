@@ -11,9 +11,8 @@
   {/each}
 </nav>
 
-<style>
-  a,
-  code {
+<style lang="scss">
+  a{
     display: inline-block;
   }
 

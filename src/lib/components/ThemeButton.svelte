@@ -74,7 +74,7 @@
   <svelte:component this={COLOR_SCHEME_ICON[colorScheme]} />
 </div>
 
-<style>
+<style lang="scss">
   div {
     display: block;
     position: absolute;
@@ -92,9 +92,9 @@
 
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out;
-  }
 
-  div:hover {
-    opacity: 1;
+    &:hover {
+      opacity: 1;
+    }
   }
 </style>
