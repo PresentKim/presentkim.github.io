@@ -12,7 +12,7 @@
 </nav>
 
 <style lang="scss">
-  a{
+  a {
     display: inline-block;
   }
 
@@ -20,6 +20,6 @@
     padding: 0.25em 0.5em;
     margin-right: 0.5em;
     margin-bottom: 1em;
-    color: var(--link-color);
+    color: var(--hue2);
   }
 </style>

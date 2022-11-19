@@ -1,5 +1,3 @@
-@import 'variables';
-
 pre[class*='language-'] {
   padding: 0.5rem;
   border-radius: 0.3em;
@@ -7,8 +5,8 @@ pre[class*='language-'] {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--syntax-bg);
-  color: var(--syntax-fg);
+  background-color: var(--bg-codeblock);
+  color: var(--text-color);
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -22,10 +20,8 @@ pre[class*='language-'] {
     display: none;
   }
 
-  &::-moz-selection,
-  *::-moz-selection,
   *::selection {
-    background: var(--syntax-selection-color);
+    background-color: var(--bg-selection);
     color: inherit;
   }
 
@@ -164,7 +160,7 @@ pre[class*='language-'] {
     &.cr:before,
     &.lf:before,
     &.space:before {
-      color: var(--syntax-guide);
+      color: var(--mono3);
     }
   }
 }
@@ -217,25 +213,25 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item {
   > button,
   > a,
   > span {
-    background: var(--syntax-gutter-background-color-selected);
+    background-color: var(--bg-selection);
     color: var(--mono2);
     padding: 0.1em 0.4em;
     border-radius: 0.3em;
     &:hover,
     &:focus {
-      background: var(--syntax-selection-color);
+      background-color: var(--bg-selection);
       color: var(--mono1);
     }
   }
 }
 
 .line-highlight.line-highlight {
-  background: var(--syntax-cursor-line);
+  background-color: var(--bg-line-cursor);
 }
 
 .line-highlight.line-highlight:before,
 .line-highlight.line-highlight[data-end] :after {
-  background: var(--syntax-gutter-background-color-selected);
+  background-color: var(--bg-selection);
   color: var(--mono1);
   padding: 0.1em 0.6em;
   border-radius: 0.3em;
@@ -243,17 +239,17 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item {
 }
 
 pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows > span:hover:before {
-  background-color: var(--syntax-cursor-line);
+  background-color: var(--bg-line-cursor);
 }
 
 .line-numbers.line-numbers .line-numbers-rows,
 .command-line .command-line-prompt {
-  border-right-color: var(--syntax-guide);
+  border-right-color: var(--mono3);
 }
 
 .command-line .command-line-prompt > span:before,
 .line-numbers .line-numbers-rows > span:before {
-  color: var(--syntax-gutter);
+  color: var(--mono4);
 }
 
 .rainbow-braces .token.token.punctuation {
@@ -286,9 +282,7 @@ pre.diff-highlight > code .token.token {
   &.deleted:not(.prefix) {
     background-color: hsla(353, 100%, 66%, 0.15);
 
-    &::-moz-selection,
     &::selection,
-    *::-moz-selection,
     *::selection {
       background-color: hsla(353, 95%, 66%, 0.25);
     }
@@ -297,9 +291,7 @@ pre.diff-highlight > code .token.token {
   &.inserted:not(.prefix) {
     background-color: hsla(137, 100%, 55%, 0.15);
 
-    &::-moz-selection,
     &::selection,
-    *::-moz-selection,
     *::selection {
       background-color: hsla(135, 73%, 55%, 0.25);
     }
