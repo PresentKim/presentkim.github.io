@@ -7,7 +7,7 @@ tags: [test, blog]
 
 # 블로그 테스트용 게시글입니다.
 
-```PHP
+```php
 <?php
 echo "Hello World!";
 ?>
