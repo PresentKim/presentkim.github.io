@@ -1,13 +1,12 @@
 <script>
+  import { page } from '$app/stores';
   import icLogo from '$lib/assets/ic_logo.svg';
 
-  export let segment;
-
   let isHome;
-  $: isHome = segment === undefined;
+  $: isHome = $page.route.id === '/';
 </script>
 
-<a href="/static" class:isHome>
+<a href="/" class:isHome>
   <img src={icLogo} alt="logo svg" />
 </a>
 

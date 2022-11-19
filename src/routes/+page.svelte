@@ -1,11 +1,9 @@
-<script>
-</script>
-
 <svelte:head>
-  <title>PresentKim Blog</title>
-  <meta property="og:title" content="PresentKim Blog" />
-  <meta name="description" content="PresentKim's Blog" />
-  <meta property="og:description" content="PresentKim's Blog" />
+  <title>PresentKim</title>
+  <meta property="og:title" content="PresentKim" />
+
+  <meta name="description" content="PresentKim's webpage" />
+  <meta property="og:description" content="PresentKim's webpage" />
 </svelte:head>
 
 <div class="container">
@@ -13,7 +11,7 @@
   <p>My first paragraph.</p>
 
   <ul>
-    <li><a href="posts">Posts</a></li>
+    <li><a href="posts">Blog</a></li>
   </ul>
 </div>
 

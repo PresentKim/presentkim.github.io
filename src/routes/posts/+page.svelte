@@ -1,0 +1,17 @@
+<script lang="ts">
+  import type { PostData } from '$lib/utils/posts';
+  import PostList from '$lib/components/PostList.svelte';
+
+  export let data;
+  const posts: PostData[] = data.posts;
+</script>
+
+<svelte:head>
+  <title>PresentKim Blog</title>
+  <meta property="og:title" content="PresentKim Blog" />
+
+  <meta name="description" content="PresentKim's Blog" />
+  <meta property="og:description" content="PresentKim's Blog" />
+</svelte:head>
+
+<PostList {posts} />

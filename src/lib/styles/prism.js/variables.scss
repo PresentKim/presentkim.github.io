@@ -1,0 +1,73 @@
+/**
+ * One Light theme for prism.js
+ * Based on Atom's One Light theme: https://github.com/atom/atom/tree/master/packages/one-light-syntax
+ */
+@mixin light {
+  --syntax-fg: hsl(230, 8%, 12%);
+  --syntax-bg: hsl(230, 1%, 98%);
+
+  --mono1: hsl(230, 8%, 24%);
+  --mono2: hsl(230, 6%, 44%);
+  --mono3: hsl(230, 4%, 64%);
+
+  --hue1: hsl(198, 99%, 37%);
+  --hue2: hsl(221, 87%, 60%);
+  --hue3: hsl(301, 63%, 40%);
+  --hue4: hsl(119, 34%, 47%);
+  --hue5: hsl(5, 74%, 59%);
+  --hue5_2: hsl(344, 84%, 43%);
+  --hue6: hsl(35, 99%, 36%);
+
+  --syntax-guide: hsl(230, 1%, 62%);
+  --syntax-gutter: hsla(230, 8%, 24%, 0.2);
+
+  --syntax-selection-color: hsl(230, 1%, 90%);
+  --syntax-gutter-background-color-selected: hsl(230, 1%, 90%);
+  --syntax-cursor-line: hsla(230, 8%, 24%, 0.05);
+}
+
+/**
+ * One Dark theme for prism.js
+ * Based on Atom's One Dark theme: https://github.com/atom/atom/tree/master/packages/one-dark-syntax
+ */
+@mixin dark {
+  --syntax-fg: hsl(220, 14%, 92%);
+  --syntax-bg: hsl(220, 13%, 18%);
+
+  --mono1: hsl(220, 14%, 71%);
+  --mono2: hsl(220, 9%, 55%);
+  --mono3: hsl(220, 10%, 40%);
+
+  --hue1: hsl(187, 47%, 55%);
+  --hue2: hsl(207, 82%, 66%);
+  --hue3: hsl(286, 60%, 67%);
+  --hue4: hsl(95, 38%, 62%);
+  --hue5: hsl(355, 65%, 65%);
+  --hue5_2: hsl(5, 48%, 51%);
+  --hue6: hsl(29, 54%, 61%);
+
+  --syntax-guide: hsla(220, 14%, 71%, 0.15);
+  --syntax-gutter: hsl(220, 14%, 45%);
+
+  --syntax-selection-color: hsl(220, 13%, 28%);
+  --syntax-gutter-background-color-selected: hsl(220, 13%, 26%);
+  --syntax-cursor-line: hsla(220, 100%, 80%, 0.04);
+}
+
+body {
+  @include light;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark;
+  }
+}
+
+body[data-theme='light'] {
+  @include light;
+}
+
+body[data-theme='dark'] {
+  @include dark;
+}

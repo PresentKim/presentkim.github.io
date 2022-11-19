@@ -1,14 +1,11 @@
 <script>
-  import '../global.css';
-
+  import '$lib/styles/index.scss';
   import ThemeButton from '$lib/components/ThemeButton.svelte';
   import LogoButton from '$lib/components/LogoButton.svelte';
-
-  export let segment;
 </script>
 
 <header>
-  <LogoButton {segment} />
+  <LogoButton />
   <ThemeButton />
 </header>
 
