@@ -19,9 +19,9 @@
 
 <svelte:head>
   <title>PresentKim Blog : {tag}</title>
-  <meta og:title="PresentKim Blog Tag: {tag}" />
+  <meta property="og:title" content="PresentKim Blog Tag: {tag}" />
   <meta name="description" content="PresentKim Blog Tag: {tag}" />
-  <meta og:description="PresentKim Blog Tag: {tag}" />
+  <meta property="og:description" content="PresentKim Blog Tag: {tag}" />
 </svelte:head>
 
 <!-- show #tag as title -->
