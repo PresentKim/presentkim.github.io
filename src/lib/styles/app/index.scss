@@ -60,6 +60,22 @@ h3 {
   }
 }
 
+h4 {
+  font-size: 1.25rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+h5 {
+  font-size: 0.85rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+}
+
 pre {
   margin: 1em 0;
 }
