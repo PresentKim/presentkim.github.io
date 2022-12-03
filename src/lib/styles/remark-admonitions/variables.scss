@@ -1,0 +1,28 @@
+/* default for custom types */
+.admonition {
+  --admonition-color: var(--text-color);
+
+  &-info {
+    --admonition-color: var(--hue2);
+  }
+
+  &-help {
+    --admonition-color: var(--hue1);
+  }
+
+  &-warning {
+    --admonition-color: var(--hue6);
+  }
+
+  &-danger {
+    --admonition-color: var(--hue5_2);
+  }
+
+  &-success {
+    --admonition-color: var(--hue4);
+  }
+
+  &-failure {
+    --admonition-color: var(--hue5_2);
+  }
+}

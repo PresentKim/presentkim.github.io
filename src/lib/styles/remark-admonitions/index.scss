@@ -1,0 +1,48 @@
+@import 'variables';
+
+.admonition {
+  margin: 1em 0;
+  padding: 10px;
+
+  background-color: var(--bg-codeblock);
+  border-left: 0.5rem solid var(--admonition-color);
+}
+
+.admonition-heading > h5 {
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  color: var(--admonition-color);
+
+  font-size: 1.25rem;
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+
+  .admonition-icon {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    margin-right: 0.3rem;
+
+    width: 1.75rem;
+    height: 1.75rem;
+    @media (max-width: 768px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    svg {
+      stroke-width: 0.5px;
+
+      stroke: var(--admonition-color);
+      fill: var(--admonition-color);
+
+      overflow: visible;
+    }
+  }
+}
+
+.admonition-content > :last-child {
+  margin-bottom: 0;
+}
