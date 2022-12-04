@@ -34,7 +34,6 @@ export async function handle({ event, resolve }) {
       removeRedundantAttributes: true,
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true,
-      removeEmptyElements: true,
       useShortDoctype: true
     });
     return new Response(body, response);
