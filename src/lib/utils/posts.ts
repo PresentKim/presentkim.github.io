@@ -73,7 +73,7 @@ export const getPost = async (path: string) => {
       metadata: transformMetadata(postFile.metadata, parsePath(key)),
       content: postFile.default.render()
     };
-    rendered.content.html = rendered.content.html.replaceAll('〈', '<').replaceAll('〉', '>');
+    rendered.content.html = rendered.content.html.replaceAll('〈', '&lt;').replaceAll('〉', '&gt;');
 
     return rendered;
   }
