@@ -33,12 +33,8 @@
     }
 
     svg {
-      stroke-width: 0.5px;
-
       stroke: var(--admonition-color);
       fill: var(--admonition-color);
-
-      overflow: visible;
     }
   }
 }
