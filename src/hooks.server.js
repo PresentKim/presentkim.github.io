@@ -6,7 +6,13 @@ export async function handle({ event, resolve }) {
 
     /** Remove 'data-sveltekit-fetched' json data */
     body = body.replace(
-      /<script type="application\/json" data-sveltekit-fetched.*?>.*?<\/script>/,
+      /<script *type="application\/json" *data-sveltekit-fetched.*?>[\s\S]*?<\/script>/igm,
+      ''
+    );
+
+    /** Remove 'data-sveltekit-hydrate' module script */
+    body = body.replace(
+      /<script *type="module" *data-sveltekit-hydrate.*?>[\s\S]*?<\/script>/igm,
       ''
     );
     return new Response(body, response);
