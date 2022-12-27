@@ -26,3 +26,19 @@
     --admonition-color: var(--hue5_2);
   }
 }
+
+div[class*='admonition-boj-'] {
+  .admonition-heading h5{
+    padding-left: 0.1rem;
+    padding-right: 1rem;
+    border-bottom: var(--text-color) 1px solid;
+  }
+
+  .admonition-content :first-child{
+    margin-top: 0;
+
+    &pre{
+      padding: 0;
+    }
+  }
+}

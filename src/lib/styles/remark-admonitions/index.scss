@@ -9,6 +9,7 @@
 }
 
 .admonition-heading > h5 {
+  display: inline-block;
   margin-top: 0;
   margin-bottom: 8px;
 
@@ -48,6 +49,12 @@
   }
 }
 
-.admonition-content > :last-child {
-  margin-bottom: 0;
+.admonition-content{
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  &:empty{
+    height: 2rem;
+  }
 }

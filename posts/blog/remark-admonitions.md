@@ -17,7 +17,7 @@ tags: [blog, mdsvex]
 
 ---
 
-지원하는 블럭은 아래와 같습니다.
+## Default Hint Block
 
 :::info Information
 `info` : 일반 정보나 팁 정보
@@ -41,4 +41,28 @@ tags: [blog, mdsvex]
 
 :::failure Failure :cry:
 `failure` : 실패나 오답 부정적인 내용
+:::
+
+---
+
+## BOJ Hint Block
+
+:::boj-input 예제 입력
+:::
+
+:::boj-output 예제 출력
+
+```text
+Hello World!
+```
+
+:::
+
+:::boj-code PHP
+
+```php
+<?
+echo "Hello World!";
+```
+
 :::
