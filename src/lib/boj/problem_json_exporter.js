@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     output: document.querySelector('#problem_output')?.processHTML(),
     limit: document.querySelector('#problem_limit')?.processHTML(),
     sample: [...document.querySelectorAll('.sampledata')].map((e) => e.innerHTML).chunk(2),
-    tags: document.querySelector('#problem_tags')?.innerText.split('\n').slice(1)
+    tags: document.querySelector('#problem_tags')?.innerText.split('\n').slice(1) ?? []
   };
   const result = JSON.stringify(data);
   console.log(data, result);
@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 Array.prototype.chunk = function (size) {
+  if (this.length === 0) return [];
+
   return this.length > size ? [this.slice(0, size), ...this.chunk(this.slice(size), size)] : [this];
 };
 
