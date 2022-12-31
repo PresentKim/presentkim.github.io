@@ -30,7 +30,7 @@ export const getBojInfoList: () => Promise<Awaited<BojInfoHeader>[]> = () => {
   );
 };
 
-export const getBojInfoById = async (id: string) => {
+export const getBojInfoById = async (id: number) => {
   const problemModule = modules[`/src/lib/boj/${id}.json`];
   return problemModule !== undefined ? (await problemModule()).default : null;
 };

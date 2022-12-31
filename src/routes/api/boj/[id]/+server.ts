@@ -3,5 +3,6 @@ import { json } from '@sveltejs/kit';
 
 /** @type {import('./$types').RequestHandler} */
 export const GET = async ({ params }: LoadArguments) => {
-  return json(await (+params.id ? getBojInfoById(params.id) : getBojInfoList()));
+  const id = +params.id;
+  return json(await (id ? getBojInfoById(id) : getBojInfoList()));
 };
