@@ -1,4 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <rect fill="#00ff00" width="24" height="24"/>
     <path class="outlined" d="M8,6 3,12 8,18M16,6 21,12 16,18"/>
 </svg>
