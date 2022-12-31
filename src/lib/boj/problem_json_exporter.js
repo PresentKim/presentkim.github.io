@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tier: +document.querySelector('.page-header img').src.match(/([0-9]+)\.svg/)[1],
     input: document.querySelector('#problem_input')?.processHTML(),
     output: document.querySelector('#problem_output')?.processHTML(),
+    hint: document.querySelector('#problem_hint')?.processHTML(),
     limit: document.querySelector('#problem_limit')?.processHTML(),
     sample: [...document.querySelectorAll('.sampledata')].map((e) => e.innerHTML).chunk(2),
     tags: document.querySelector('#problem_tags')?.innerText.split('\n').slice(1) ?? []

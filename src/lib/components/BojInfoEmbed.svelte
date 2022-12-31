@@ -6,7 +6,7 @@
 
 {#await infoPromise}
   <p style="color: var(--hue6)">Loading Boj Problem Info...</p>
-{:then { id, title, tier, tags, description, input, output, limit, sample }}
+{:then { id, title, tier, tags, description, input, output, limit, hint, sample }}
   <div id="title">
     <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noreferrer">
       <h1>
@@ -54,6 +54,13 @@
     <div id="limit" class="tab">
       <h3>제한</h3>
       {@html limit}
+    </div>
+  {/if}
+
+  {#if hint}
+    <div id="hint" class="tab">
+      <h3>힌트</h3>
+      {@html hint}
     </div>
   {/if}
 

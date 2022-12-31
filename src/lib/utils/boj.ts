@@ -9,6 +9,7 @@ export declare type BojInfoBody = {
   input: string;
   output: string;
   limit: string;
+  hint: string;
   sample: [string, string][];
 };
 export declare type BojInfo = BojInfoHeader & BojInfoBody;
