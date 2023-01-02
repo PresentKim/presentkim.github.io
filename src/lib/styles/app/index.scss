@@ -113,13 +113,8 @@ header {
 }
 
 main {
-  width: 768px;
+  width: calc(100% - 2rem);
   margin: 1rem auto;
   padding: 1em;
   box-sizing: border-box;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    font-size: 1rem;
-  }
 }

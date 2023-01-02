@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 
 export { default as PostList } from './PostList.svelte';
+export { default as PostCard } from './PostCard.svelte';
 export { default as PostTags } from './PostTags.svelte';
 
 export declare type MarkdownMetadata = {

@@ -1,15 +1,22 @@
-<script>
-  // it takes an array of posts as a prop
-  export let posts;
+<script lang="ts">
+  import type { PostData } from '.';
+  import { PostCard } from '.';
+
+  export let posts: PostData[];
 </script>
 
-<!-- iterate thru each post and output an <article> tag -->
-{#each posts as post}
-  <article>
-    <!-- link to /posts/:permalink page -->
-    <a href={`/blog/${post.permalink}`}>
-      <h2>{post.title}</h2>
-      <p>{post.summary}</p>
-    </a>
-  </article>
-{/each}
+<div>
+  {#each posts as post}
+    <PostCard {post} />
+  {/each}
+</div>
+
+<style lang="scss">
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+</style>
