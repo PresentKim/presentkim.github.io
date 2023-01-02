@@ -2,8 +2,8 @@
   import type { PostData } from '$lib/components/blog';
   import { PostList } from '$lib/components/blog';
 
-  export let data;
-  const posts: PostData[] = data.posts;
+  export let data: { posts: PostData[] } = {};
+  const posts = data.posts;
 </script>
 
 <svelte:head>

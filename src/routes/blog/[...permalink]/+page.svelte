@@ -2,7 +2,7 @@
   import type { PostData, MarkdownResult } from '$lib/components/blog';
   import { PostTags } from '$lib/components/blog';
 
-  export let data: { metadata: PostData; content: MarkdownResult };
+  export let data: { metadata: PostData; content: MarkdownResult } = {};
 
   const { title, summary, formattedDate, tags } = data.metadata;
   const { html, head, css } = data.content;
