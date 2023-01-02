@@ -1,13 +1,9 @@
 <script>
   import '$lib/styles/index.scss';
-  import ThemeButton from '$lib/components/ThemeButton.svelte';
-  import LogoButton from '$lib/components/LogoButton.svelte';
+  import Header from '$lib/components/header/index.svelte';
 </script>
 
-<header>
-  <LogoButton />
-  <ThemeButton />
-</header>
+<Header />
 
 <main>
   <slot />
