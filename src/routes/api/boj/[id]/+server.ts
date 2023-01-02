@@ -1,4 +1,4 @@
-import { getBojInfoList, getBojInfoById } from '$lib/utils/boj';
+import { getBojInfoList, getBojInfoById } from '$lib/components/boj';
 import { json } from '@sveltejs/kit';
 
 /** @type {import('./$types').RequestHandler} */

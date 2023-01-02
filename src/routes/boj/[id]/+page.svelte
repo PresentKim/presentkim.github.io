@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { BojInfo } from '$lib/utils/boj';
-  import BojInfoEmbed from '$lib/components/BojInfoEmbed.svelte';
+  import type { BojInfo } from '$lib/components/boj';
+  import { BojInfoEmbed } from '$lib/components/boj';
 
   export let data: BojInfo;
 </script>

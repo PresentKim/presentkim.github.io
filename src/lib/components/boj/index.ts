@@ -1,3 +1,6 @@
+export { default as BojInfoEmbed } from './BojInfoEmbed.svelte';
+export { default as BojTierIcon } from './BojTierIcon.svelte';
+
 export declare type BojInfoHeader = {
   id: number;
   title: string;

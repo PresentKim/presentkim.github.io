@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let id: number;
-  import { getBojInfoById } from '$lib/utils/boj.js';
+  export let id: number = 0;
+  import { getBojInfoById, BojTierIcon } from './index.js';
   let infoPromise = getBojInfoById(id);
 </script>
 
@@ -10,7 +10,7 @@
   <div id="title">
     <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noreferrer">
       <h1>
-        <img id="tier-icon" alt="tier{tier}" src="https://static.solved.ac/tier_small/{tier}.svg" />
+        <BojTierIcon {tier} class="tier-icon-info"/>
         {id} :: {title}
       </h1>
     </a>
@@ -92,7 +92,7 @@
     margin-top: 0;
   }
 
-  #tier-icon {
+  :global(.tier-icon-info) {
     display: inline-block;
     width: 2.25rem;
     @media (max-width: 768px) {
