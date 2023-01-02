@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { BojInfoHeader } from '$lib/utils/boj';
-  export let data: { infos: BojInfoHeader[] };
-  const infos: BojInfoHeader[] = data.infos;
+  import type { BojProblemMetadata } from '$lib/utils/boj';
+  export let data: { infos: BojProblemMetadata[] };
+  const infos: BojProblemMetadata[] = data.infos;
 </script>
 
 <svelte:head>

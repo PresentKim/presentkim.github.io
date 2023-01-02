@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PostData } from '.';
+  import type { PostMetadata } from '.';
   import { PostCard } from '.';
 
-  export let posts: PostData[];
+  export let posts: PostMetadata[];
 </script>
 
 <div>

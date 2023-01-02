@@ -1,10 +1,11 @@
-export declare type BojInfoHeader = {
+export declare type BojProblemMetadata = {
   id: number;
   title: string;
   tier: number;
   tags: string[];
 };
-export declare type BojInfoBody = {
+
+export declare type BojProblemDocument = {
   description: string;
   input: string;
   output: string;
@@ -12,15 +13,18 @@ export declare type BojInfoBody = {
   hint: string;
   sample: [string, string][];
 };
-export declare type BojInfo = BojInfoHeader & BojInfoBody;
 
-type BojInfoModule = () => Promise<{ default: BojInfo }>;
-const modules = import.meta.glob('/src/lib/boj/*.json') as Record<string, BojInfoModule>;
+export declare type BojProblemData = BojProblemMetadata & BojProblemDocument;
 
-export const getBojInfoList: () => Promise<Awaited<BojInfoHeader>[]> = () => {
+const modules = import.meta.glob('/src/lib/boj/*.json') as Record<
+  string,
+  () => Promise<{ default: BojProblemData }>
+>;
+
+export const getBojInfoList: () => Promise<Awaited<BojProblemMetadata>[]> = () => {
   return Promise.all(
     Object.values(modules).map(async (resolver) => {
-      const info = (await resolver()).default;
+      const { default: info } = await resolver();
       return {
         id: info.id,
         title: info.title,
@@ -32,6 +36,9 @@ export const getBojInfoList: () => Promise<Awaited<BojInfoHeader>[]> = () => {
 };
 
 export const getBojInfoById = async (id: number) => {
-  const problemModule = modules[`/src/lib/boj/${id}.json`];
-  return problemModule !== undefined ? (await problemModule()).default : null;
+  const module = modules[`/src/lib/boj/${id}.json`];
+  if (module === undefined) return null;
+
+  const { default: info } = await module();
+  return info;
 };

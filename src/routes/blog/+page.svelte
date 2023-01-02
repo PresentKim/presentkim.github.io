@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PostData } from '$lib/components/blog';
+  import type { PostMetadata } from '$lib/components/blog';
   import { PostList } from '$lib/components/blog';
 
-  export let data: { posts: PostData[] } = {};
+  export let data: { posts: PostMetadata[] } = {};
   const posts = data.posts;
 </script>
 

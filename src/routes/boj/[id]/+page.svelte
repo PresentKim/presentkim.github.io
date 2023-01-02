@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { BojInfo } from '$lib/utils/boj';
+  import type { BojProblemData } from '$lib/utils/boj';
 
-  export let data: BojInfo;
+  export let data: BojProblemData;
   const { id, title, tier, tags, description, input, output, limit, hint, sample } = data;
 </script>
 

@@ -4,40 +4,38 @@ export { default as PostList } from './PostList.svelte';
 export { default as PostCard } from './PostCard.svelte';
 export { default as PostTags } from './PostTags.svelte';
 
-export declare type MarkdownMetadata = {
+export declare type MdMetadata = {
   title: string;
   summary: string;
   date: string;
   tags: string[];
 };
 
-export declare type MarkdownResult = {
+export declare type MdRenderResult = {
   html: string;
   head: string;
   css: { code: string; map: string | null };
 };
 
-export declare type MarkdownModule = {
-  metadata: MarkdownMetadata;
-  default: { render: () => MarkdownResult };
-};
-
-export declare type PostMetadata = MarkdownMetadata & {
+export declare type PostMetadata = MdMetadata & {
   formattedDate: string;
-};
-
-export declare type PostData = PostMetadata & {
   permalink: string;
 };
 
-function parsePath(path: string): string {
-  path = path.replaceAll('\\', '/');
+export declare type PostData = {
+  metadata: PostMetadata;
+  content: MdRenderResult;
+};
 
-  const POST_PATH_REGEX = /\/posts\/(.*?)\.md/gi;
-  return Array.from(path.matchAll(POST_PATH_REGEX))[0][1];
-}
+const modules = import.meta.glob('/posts/**/*.md') as Record<
+  string,
+  () => Promise<{
+    metadata: MdMetadata;
+    default: { render: () => MdRenderResult };
+  }>
+>;
 
-export const transformMetadata = (metadata: MarkdownMetadata, permalink: string): PostData => {
+const transformMetadata = (metadata: MdMetadata, permalink: string): PostMetadata => {
   return {
     ...metadata,
     formattedDate: dayjs(metadata.date).format('YYYY년 MM월 DD일 HH:mm'),
@@ -45,36 +43,33 @@ export const transformMetadata = (metadata: MarkdownMetadata, permalink: string)
   };
 };
 
-const postModules = import.meta.glob('/posts/**/*.md') as Record<
-  string,
-  () => Promise<MarkdownModule>
->;
+const transformRenderResult = (renderResult: MdRenderResult): MdRenderResult => {
+  return {
+    ...renderResult,
+    html: renderResult.html.replaceAll('〈', '&lt;').replaceAll('〉', '&gt;')
+  };
+};
 
-export const getPostList: () => Promise<Awaited<PostData>[]> = () => {
+export const getPostList: () => Promise<Awaited<PostMetadata>[]> = () => {
   return Promise.all(
-    Object.entries(postModules).map(async ([path, resolver]) => {
+    Object.entries(modules).map(async ([path, resolver]) => {
       const { metadata } = await resolver();
-      return transformMetadata(metadata, parsePath(path));
+      const permalink = path.match(/[\\\/]posts[\\\/](.*?)\.md/i)?.[1] ?? '';
+
+      return transformMetadata(metadata, permalink);
     })
   );
 };
 
-export declare type PostRender = {
-  metadata: PostData;
-  content: MarkdownResult;
-};
+export const getPost = async (permalink: string) => {
+  const module = modules[`/posts/${permalink}.md`];
+  if (module === undefined) return null;
 
-export const getPost = async (path: string) => {
-  const key = `/posts/${path}.md`;
-  if (postModules[key]) {
-    const postFile = await postModules[key]();
-    const rendered: PostRender = {
-      metadata: transformMetadata(postFile.metadata, parsePath(key)),
-      content: postFile.default.render()
-    };
-    rendered.content.html = rendered.content.html.replaceAll('〈', '&lt;').replaceAll('〉', '&gt;');
+  const { metadata, default: renderer } = await module();
+  const postData: PostData = {
+    metadata: transformMetadata(metadata, permalink),
+    content: transformRenderResult(renderer.render())
+  };
 
-    return rendered;
-  }
-  return null;
+  return postData;
 };

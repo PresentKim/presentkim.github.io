@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PostData } from '.';
+  import type { PostMetadata } from '.';
   import { PostTags } from '.';
 
-  export let post: PostData;
+  export let post: PostMetadata;
   const { title, summary, tags, formattedDate, permalink } = post;
 </script>
 

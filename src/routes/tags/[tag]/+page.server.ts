@@ -1,4 +1,4 @@
-import type { PostData } from '$lib/components/blog';
+import type { PostMetadata } from '$lib/components/blog';
 
 export async function load({ url, fetch, params }: LoadArguments) {
   const { tag } = params;
@@ -7,6 +7,6 @@ export async function load({ url, fetch, params }: LoadArguments) {
 
   return {
     tag,
-    posts: allPosts.filter((post: PostData) => post.tags.includes(tag))
+    posts: allPosts.filter((post: PostMetadata) => post.tags.includes(tag))
   };
 }
