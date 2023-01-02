@@ -1,7 +1,5 @@
 <script lang="ts">
-  import type { BojInfoHeader } from '$lib/components/boj';
-  import { BojTierIcon } from '$lib/components/boj';
-
+  import type { BojInfoHeader } from '$lib/utils/boj';
   export let data: { infos: BojInfoHeader[] };
   const infos: BojInfoHeader[] = data.infos;
 </script>
@@ -17,7 +15,11 @@
 <div>
   {#each infos as { id, title, tier, tags }}
     <a class="problem-link problem-tier-class{0 | ((tier + 4) / 5)}" href={`/boj/${id}`}>
-      <BojTierIcon {tier} class="tier-icon-list" />
+      <img
+        class="tier-icon-list"
+        alt="BOJ tier-{tier}"
+        src="https://static.solved.ac/tier_small/{tier}.svg"
+      />
       {id}
       {title}
     </a>
