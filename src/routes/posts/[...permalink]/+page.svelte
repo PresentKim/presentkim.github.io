@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PostData, MarkdownResult } from '$lib/utils/posts';
-  import Tags from '$lib/components/Tags.svelte';
+  import { PostTags } from '$lib/components/blog';
 
   export let data: { metadata: PostData; content: MarkdownResult };
 
@@ -21,7 +21,7 @@
 
 <h1>{title}</h1>
 <p>{formattedDate}</p>
-<Tags {tags} />
+<PostTags {tags} />
 
 {#if html}
   {@html html}

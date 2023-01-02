@@ -1,5 +1,7 @@
-import type { ComponentType } from 'svelte';
 import dayjs from 'dayjs';
+
+export { default as PostList } from './PostList.svelte';
+export { default as PostTags } from './PostTags.svelte';
 
 export declare type MarkdownMetadata = {
   title: string;
@@ -25,10 +27,6 @@ export declare type PostMetadata = MarkdownMetadata & {
 
 export declare type PostData = PostMetadata & {
   permalink: string;
-};
-
-export declare type PostContentData = PostData & {
-  content: ComponentType;
 };
 
 function parsePath(path: string): string {

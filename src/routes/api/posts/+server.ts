@@ -1,4 +1,4 @@
-import { getPostList } from '$lib/utils/posts';
+import { getPostList } from '$lib/components/blog';
 import { json } from '@sveltejs/kit';
 
 /** @type {import('./$types').RequestHandler} */
