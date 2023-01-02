@@ -1,4 +1,4 @@
-import type { BojInfo } from '$lib/utils/boj';
+import type { BojInfo } from '$lib/components/boj';
 import { error } from '@sveltejs/kit';
 
 export async function load({ fetch, params }: LoadArguments) {

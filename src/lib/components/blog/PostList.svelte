@@ -7,7 +7,7 @@
 {#each posts as post}
   <article>
     <!-- link to /posts/:permalink page -->
-    <a href={`/posts/${post.permalink}`}>
+    <a href={`/blog/${post.permalink}`}>
       <h2>{post.title}</h2>
       <p>{post.summary}</p>
     </a>

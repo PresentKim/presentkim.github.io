@@ -11,7 +11,7 @@
   <p>My first paragraph.</p>
 
   <ul>
-    <li><a href="posts">Blog</a></li>
+    <li><a href="blog">Blog</a></li>
   </ul>
 </div>
 

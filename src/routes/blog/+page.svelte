@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PostData } from '$lib/utils/posts';
+  import type { PostData } from '$lib/components/blog';
   import { PostList } from '$lib/components/blog';
 
   export let data;

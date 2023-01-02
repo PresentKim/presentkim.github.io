@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PostData, MarkdownResult } from '$lib/utils/posts';
+  import type { PostData, MarkdownResult } from '$lib/components/blog';
   import { PostTags } from '$lib/components/blog';
 
   export let data: { metadata: PostData; content: MarkdownResult };
