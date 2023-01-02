@@ -1,1 +1,1 @@
-{"id":5337,"title":"웰컴","description":"<p>\n\tWelcome을 예제 출력처럼 출력하는 프로그램을 작성하시오.</p>","tier":1,"input":"","output":"<p>\n\tWelcome을 아래 예제 출력처럼 출력한다.</p>","hint":"","limit":"","sample":[["",".  .   .\n|  | _ | _. _ ._ _  _\n|/\\|(/.|(_.(_)[ | )(/.\n"]],"tags":["구현"]}
+{"id":5337,"title":"웰컴","description":"<p>\n\tWelcome을 예제 출력처럼 출력하는 프로그램을 작성하시오.</p>","tier":1,"output":"<p>\n\tWelcome을 아래 예제 출력처럼 출력한다.</p>","sample":[["",".  .   .\n|  | _ | _. _ ._ _  _\n|/\\|(/.|(_.(_)[ | )(/.\n"]],"tags":["구현"]}

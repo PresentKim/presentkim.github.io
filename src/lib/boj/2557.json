@@ -1,1 +1,1 @@
-{"id":2557,"title":"Hello World","description":"<p>\n\tHello World!를 출력하시오.</p>","tier":1,"input":"<p>\n\t없음</p>","output":"<p>\n\tHello World!를 출력하시오.</p>","hint":"","limit":"","sample":[["","Hello World!"]],"tags":["구현"]}
+{"id":2557,"title":"Hello World","description":"<p>\n\tHello World!를 출력하시오.</p>","tier":1,"input":"<p>\n\t없음</p>","output":"<p>\n\tHello World!를 출력하시오.</p>","sample":[["","Hello World!"]],"tags":["구현"]}

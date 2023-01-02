@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     sample: [...document.querySelectorAll('.sampledata')].map((e) => e.innerHTML).chunk(2),
     tags: document.querySelector('#problem_tags')?.innerText.split('\n').slice(1) ?? []
   };
+
+  for (const [key, value] of Object.entries(data)) {
+    if (!value || !value.length) {
+      delete data[key];
+    }
+  }
+
   const result = JSON.stringify(data);
   console.log(data, result);
 
