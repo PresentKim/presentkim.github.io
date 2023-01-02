@@ -1,15 +1,10 @@
 <script>
-  // take in tags as a prop
-  export let tags;
+  export let tags = [];
 </script>
 
-<nav>
-  <!-- iterate through each tag -->
-  {#each tags as tag}
-    <!-- link each tag to /tags/:tag page -->
-    <a href="/tags/{tag}"><code>#{tag}</code></a>
-  {/each}
-</nav>
+{#each tags as tag}
+  <a href="/tags/{tag}"><code>#{tag}</code></a>
+{/each}
 
 <style lang="scss">
   a {

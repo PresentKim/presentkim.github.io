@@ -1,12 +1,7 @@
-import type { PostData, MarkdownResult } from '$lib/components/blog';
-import { error } from '@sveltejs/kit';
+import type { MarkdownResult, PostData } from '$lib/components/blog';
 
 export async function load({ fetch, params }: LoadArguments) {
   const { permalink } = params;
   const response = await fetch(`/api/blog/${permalink}`);
-  const post = (await response.json()) as { metadata: PostData; content: MarkdownResult };
-  if (!post) {
-    throw error(404, 'Not found');
-  }
-  return post;
+  return (await response.json()) as { metadata: PostData; content: MarkdownResult };
 }

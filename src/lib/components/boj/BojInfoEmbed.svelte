@@ -1,6 +1,8 @@
 <script lang="ts">
+  import { getBojInfoById, BojTierIcon } from '.';
+
   export let id: number = 0;
-  import { getBojInfoById, BojTierIcon } from './index.js';
+
   let infoPromise = getBojInfoById(id);
 </script>
 
@@ -10,7 +12,7 @@
   <div id="title">
     <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noreferrer">
       <h1>
-        <BojTierIcon {tier} class="tier-icon-info"/>
+        <BojTierIcon {tier} class="tier-icon-info" />
         {id} :: {title}
       </h1>
     </a>

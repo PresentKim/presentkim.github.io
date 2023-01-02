@@ -3,9 +3,7 @@
   import { onMount } from 'svelte';
 
   let path = $page.url.pathname;
-  onMount(() => {
-    path = window.location.pathname;
-  });
+  onMount(() => (path = window.location.pathname));
 </script>
 
 <h1>Error: 404</h1>
