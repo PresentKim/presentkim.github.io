@@ -9,7 +9,7 @@
   <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noreferrer">
     <h1>
       <img
-        class="tier-icon-info"
+        class="boj-tier-icon"
         alt="BOJ tier-{tier}"
         src="https://static.solved.ac/tier_small/{tier}.svg"
       />
@@ -91,7 +91,7 @@
     margin-top: 0;
   }
 
-  :global(.tier-icon-info) {
+  .boj-tier-icon {
     display: inline-block;
     width: 2.25rem;
     @media (max-width: 768px) {
