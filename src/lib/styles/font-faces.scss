@@ -5,7 +5,7 @@
 @supports (font-variation-settings: 'wght' 1) {
   @font-face {
     font-family: 'SourceCodeProVariable';
-    font-display: swap;
+    font-display: fallback;
     font-style: normal;
     font-weight: 1 900;
     src: url('/font/SourceCodePro/VariableFont.woff2') format('woff2');
@@ -13,7 +13,7 @@
 
   @font-face {
     font-family: 'SourceCodeProVariable';
-    font-display: swap;
+    font-display: fallback;
     font-style: italic;
     font-weight: 1 900;
     src: url('/font/SourceCodePro/VariableFont-Italic.woff2') format('woff2');
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'SourceCodePro';
-  font-display: swap;
+  font-display: fallback;
   font-style: normal;
   font-weight: 500;
   src: url('/font/SourceCodePro/SemiBold-Subset.eot');
@@ -37,7 +37,7 @@
 
 @font-face {
   font-family: 'SourceCodePro';
-  font-display: swap;
+  font-display: fallback;
   font-style: normal;
   font-weight: 700;
   src: url('/font/SourceCodePro/Bold-Subset.eot');
@@ -52,7 +52,7 @@
 
 @font-face {
   font-family: 'SourceCodePro';
-  font-display: swap;
+  font-display: fallback;
   font-style: italic;
   font-weight: 500;
   src: url('/font/SourceCodePro/SemiBoldItalic-Subset.eot');
@@ -67,7 +67,7 @@
 
 @font-face {
   font-family: 'SourceCodePro';
-  font-display: swap;
+  font-display: fallback;
   font-style: italic;
   font-weight: 700;
   src: url('/font/SourceCodePro/BoldItalic-Subset.eot');
@@ -86,7 +86,7 @@
 
 @font-face {
   font-family: 'D2Coding';
-  font-display: swap;
+  font-display: fallback;
   font-style: normal;
   font-weight: 500;
   src: url('/font/D2Coding/Regular-Subset.eot');
@@ -100,7 +100,7 @@
 
 @font-face {
   font-family: 'D2Coding';
-  font-display: swap;
+  font-display: fallback;
   font-style: normal;
   font-weight: 700;
   src: url('/font/D2Coding/Bold-Subset.eot');
