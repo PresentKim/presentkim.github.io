@@ -12,9 +12,15 @@
         ? 'dark'
         : 'light';
     var storedColorScheme = localStorage.getItem('color-scheme');
+    var colorScheme = storedColorScheme === null ? deviceColorScheme : storedColorScheme;
 
-    document.body.dataset.theme =
-      storedColorScheme === null ? deviceColorScheme : storedColorScheme;
+    if (colorScheme === 'dark') {
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+    }
   </script>
   <slot />
 </main>

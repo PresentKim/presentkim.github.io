@@ -21,8 +21,8 @@
   ];
 
   function applyColorScheme() {
-    const stored = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
-    if (stored && colorScheme === windowColorScheme) {
+    const storedColorScheme = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
+    if (storedColorScheme && colorScheme === deviceColorScheme) {
       //remove the stored color scheme if it matches the current window color scheme
       localStorage.removeItem(COLOR_SCHEME_STORE_KEY);
     } else {
@@ -30,7 +30,14 @@
       localStorage.setItem(COLOR_SCHEME_STORE_KEY, colorScheme);
     }
 
-    document.body.dataset.theme = colorScheme;
+    const bodyClassList = document.body.classList;
+    if (colorScheme === COLOR_SCHEME.DARK) {
+      bodyClassList.remove('light');
+      bodyClassList.add('dark');
+    } else {
+      bodyClassList.remove('dark');
+      bodyClassList.add('light');
+    }
   }
 
   function toggleColorScheme(e) {
@@ -42,7 +49,7 @@
     applyColorScheme();
   }
 
-  let windowColorScheme = null;
+  let deviceColorScheme = null;
   let colorScheme = null;
   const dr = spring(0.0, {
     stiffness: 0.03,
@@ -55,7 +62,7 @@
       const mediaQuery = window.matchMedia(COLOR_SCHEME_MEDIA_QUERY);
 
       //get the color scheme from window media query
-      colorScheme = windowColorScheme = mediaQuery.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
+      colorScheme = deviceColorScheme = mediaQuery.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
 
       const storedColorScheme = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
       if (storedColorScheme) {
@@ -65,10 +72,10 @@
 
       //listen for color scheme changes to the media query
       mediaQuery.addEventListener('change', (e) => {
-        if (windowColorScheme === colorScheme) {
+        if (deviceColorScheme === colorScheme) {
           colorScheme = e.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
         }
-        windowColorScheme = e.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
+        deviceColorScheme = e.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
         applyColorScheme();
       });
     }

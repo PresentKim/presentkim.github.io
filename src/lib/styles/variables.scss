@@ -56,10 +56,10 @@ body {
   }
 }
 
-body[data-theme='light'] {
+body.light {
   @include light;
 }
 
-body[data-theme='dark'] {
+body.dark {
   @include dark;
 }
