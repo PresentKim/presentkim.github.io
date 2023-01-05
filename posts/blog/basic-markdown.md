@@ -194,10 +194,10 @@ Image source can be either a location from the local machine or any valid image 
 ### Resize images/Gifs
 
 ```
-<img src="https://avatars.githubusercontent.com/u/13284800?v=4" width="385px" align="center">
+<img src="https://avatars.githubusercontent.com/u/13284800?v=4" alt="Profile" width="385px" align="center">
 ```
 
-<img src="https://avatars.githubusercontent.com/u/13284800?v=4" width="42px" align="center">
+<img src="https://avatars.githubusercontent.com/u/13284800?v=4" alt="Profile" width="42px" align="center">
 
 You can use HTML tags like width="42px", hight="100px", align="center", etc depending what you need. In this case this gif was once uploaded to the repository and the link was taken from there.
 
