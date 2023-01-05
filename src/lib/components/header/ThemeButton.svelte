@@ -43,7 +43,7 @@
   }
 
   let windowColorScheme = null;
-  let colorScheme = COLOR_SCHEME.LIGHT;
+  let colorScheme = null;
   const dr = spring(0.0, {
     stiffness: 0.03,
     damping: 0.08
@@ -72,23 +72,27 @@
         applyColorScheme();
       });
     }
+
+    dr.set(colorScheme === COLOR_SCHEME.DARK ? 1.0 : 0.0, { hard: true });
     applyColorScheme();
   });
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" on:mousedown={toggleColorScheme}>
-  <mask id="mask">
-    <rect x="0" y="0" width="50" height="50" fill="white" />
-    <circle cx={34 + 20 * $dr} cy={16 - 16 * $dr} r={Math.max(0, 16 - 16 * $dr)} fill="black" />
-  </mask>
-  <g mask="url(#mask)">
-    <circle fill="currentColor" cx="25" cy="25" r={Math.max(0, 20 - 12 * $dr)} />
-    <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
-      {#each SUN_LAYS as [x1, y1, x2, y2]}
-        <line x1={25 + x1 * $dr} y1={25 + y1 * $dr} x2={25 + x2 * $dr} y2={25 + y2 * $dr} />
-      {/each}
+  {#if colorScheme}
+    <mask id="mask">
+      <rect x="0" y="0" width="50" height="50" fill="white" />
+      <circle cx={34 + 20 * $dr} cy={16 - 16 * $dr} r={Math.max(0, 16 - 16 * $dr)} fill="black" />
+    </mask>
+    <g mask="url(#mask)">
+      <circle fill="currentColor" cx="25" cy="25" r={Math.max(0, 20 - 12 * $dr)} />
+      <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+        {#each SUN_LAYS as [x1, y1, x2, y2]}
+          <line x1={25 + x1 * $dr} y1={25 + y1 * $dr} x2={25 + x2 * $dr} y2={25 + y2 * $dr} />
+        {/each}
+      </g>
     </g>
-  </g>
+  {/if}
 </svg>
 
 <style lang="scss">
