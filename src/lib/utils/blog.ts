@@ -1,15 +1,13 @@
 import dayjs from 'dayjs';
 
-export { default as PostList } from './PostList.svelte';
-
-export declare type MdMetadata = {
+declare type MdMetadata = {
   title: string;
   summary: string;
   date: string;
   tags: string[];
 };
 
-export declare type MdRenderResult = {
+declare type MdRenderResult = {
   html: string;
   head: string;
   css: { code: string; map: string | null };

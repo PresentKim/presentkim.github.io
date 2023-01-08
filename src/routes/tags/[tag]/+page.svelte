@@ -1,5 +1,5 @@
 <script>
-  import { PostList } from '$lib/components/blog';
+  import PostList from '$lib/components/PostList.svelte';
 
   export let data;
 </script>

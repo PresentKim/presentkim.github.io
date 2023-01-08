@@ -1,6 +1,6 @@
 <script>
   import '$lib/styles/index.scss';
-  import Header from '$lib/components/header/index.svelte';
+  import Header from '$lib/components/Header.svelte';
 </script>
 
 <div>
