@@ -6,24 +6,16 @@
   <meta property="og:description" content="PresentKim's webpage" />
 </svelte:head>
 
-<div class="container">
-  <h1>PresentKim</h1>
-  <p>My first paragraph.</p>
+<div class="flex flex-col items-center justify-center justify-items-center font-sans">
+  <h1 class="text-6xl font-bold mb-10">PresentKim</h1>
+  <p class="text-2xl italic">PHP & Javascript Developer</p>
 
-  <ul>
-    <li><a href="blog">Blog</a></li>
+  <ul class="mt-5 items-center text-center justify-center justify-items-center">
+    <li class="px-3 w-fit border-b-emerald-500 border-b-2 text-emerald-500 font-bold text-2xl">
+      <a href="blog">블로그</a>
+    </li>
+    <li class="px-3 mx-auto w-fit border-b-emerald-500 border-b-2 text-emerald-500 font-bold text-2xl">
+      <a href="boj">BOJ 풀이</a>
+    </li>
   </ul>
 </div>
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  p {
-    font-size: 1em;
-  }
-</style>

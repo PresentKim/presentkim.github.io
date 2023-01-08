@@ -12,92 +12,54 @@
   <meta property="og:description" content="PresentKim's Blog" />
 </svelte:head>
 
-<div>
+<h1 class="text-center font-bold my-10">해결한 BOJ 문제 목록</h1>
+<div class="container mx-auto font-bold text-xl">
   {#each infos as { id, title, tier, tags }}
-    <a class="boj-anchor boj-tier-{0 | ((tier + 4) / 5)}" href={`/boj/${id}`}>
+    <a
+      data-tier={Math.floor((tier + 4) / 5)}
+      class="inline-flex w-full md:w-fit rounded mx-1 my-2 border-variable border-2"
+      href={`/boj/${id}`}
+    >
       <img
-        class="boj-tier-icon"
+        class="inline-block h-7 pl-1"
         alt="BOJ tier-{tier}"
         src="https://static.solved.ac/tier_small/{tier}.svg"
       />
-      {id}
-      {title}
+      <p class="px-2 py-0.5">{id} {title}</p>
     </a>
   {/each}
 </div>
 
 <style lang="scss">
-  .boj-anchor {
-    display: inline-block;
-
-    border-radius: 5px;
-    background-color: var(--border-color);
-
-    padding: 0.2rem 0.5rem;
-    margin: 0.2rem 0.5rem;
+  [data-tier='0'] {
+    --variable-color: #2d2d2d;
   }
 
-  a {
-    --tier-color: #2a2a2a;
-
-    color: var(--text-color);
-    border: var(--tier-color) 2px solid;
+  [data-tier='1'] {
+    --variable-color: #c26910;
   }
 
-  .boj-tier-icon {
-    display: inline-block;
-    width: 12px;
+  [data-tier='2'] {
+    --variable-color: #54728d;
   }
 
-  .boj-tier {
-    &-0 {
-      --tier-color: #efefef !important;
-    }
+  [data-tier='3'] {
+    --variable-color: #f1a311;
+  }
 
-    &-1 {
-      --tier-color: #c26910 !important;
-    }
+  [data-tier='4'] {
+    --variable-color: #48eab4;
+  }
 
-    &-2 {
-      --tier-color: #54728d !important;
-    }
+  [data-tier='5'] {
+    --variable-color: #2bb7ef;
+  }
 
-    &-3 {
-      --tier-color: #f1a311 !important;
-    }
+  [data-tier='6'] {
+    --variable-color: #f6307c;
+  }
 
-    &-4 {
-      --tier-color: #48eab4 !important;
-    }
-
-    &-5 {
-      --tier-color: #2bb7ef !important;
-    }
-
-    &-6 {
-      --tier-color: #f6307c !important;
-    }
-
-    &-7 {
-      --tier-color: rgb(224, 128, 160) !important;
-      --tier-color: -moz-linear-gradient(
-        0deg,
-        rgba(255, 124, 168, 1) 0%,
-        rgba(180, 145, 255, 1) 50%,
-        rgba(124, 249, 255, 1) 100%
-      ) !important;
-      --tier-color: -webkit-linear-gradient(
-        0deg,
-        rgba(255, 124, 168, 1) 0%,
-        rgba(180, 145, 255, 1) 50%,
-        rgba(124, 249, 255, 1) 100%
-      ) !important;
-      --tier-color: linear-gradient(
-        0deg,
-        rgba(255, 124, 168, 1) 0%,
-        rgba(180, 145, 255, 1) 50%,
-        rgba(124, 249, 255, 1) 100%
-      ) !important;
-    }
+  [data-tier='7'] {
+    --variable-color: #e080a0;
   }
 </style>

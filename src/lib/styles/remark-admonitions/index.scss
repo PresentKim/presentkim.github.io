@@ -1,60 +1,53 @@
-@import 'variables';
-
 .admonition {
-  margin: 1em 0;
-  padding: 10px;
+  @apply my-4 p-2 rounded-sm border-l-4 border-variable bg-nestable-neutral;
 
-  background-color: var(--bg-codeblock);
-  border-left: 0.5rem solid var(--admonition-color);
-}
-
-.admonition-heading > h5 {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 8px;
-
-  color: var(--admonition-color);
-
-  font-size: 1.25rem;
-  @media (max-width: 768px) {
-    font-size: 1.125rem;
+  h5 {
+    @apply inline-block mb-2 font-bold text-xl text-variable;
   }
 
-  .admonition-icon {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0;
-    margin-right: 0.3rem;
-
-    width: 1.75rem;
-    height: 1.75rem;
-    @media (max-width: 768px) {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+  &-icon {
+    @apply inline-block align-middle mr-1 w-6 md:w-7;
 
     svg {
-      stroke: var(--admonition-color);
-      fill: var(--admonition-color);
+      @apply fill-variable stroke-none;
 
       .outlined {
-        fill: none;
-        stroke: var(--admonition-color);
-        stroke-width: 2;
-
-        stroke-linecap: round;
-        stroke-linejoin: round;
+        @apply fill-none stroke-variable stroke-[2px] stroke-round;
       }
     }
   }
+
+  &-content {
+    @apply min-h-[2rem];
+
+    > :last-child {
+      @apply mb-0;
+    }
+  }
 }
 
-.admonition-content{
-  > :last-child {
-    margin-bottom: 0;
+/* Color variable for each admonition types */
+.admonition {
+  @apply variable-current;
+
+  &-info {
+    @apply variable-blue-500 dark:variable-blue-400;
   }
 
-  &:empty{
-    height: 2rem;
+  &-help {
+    @apply variable-cyan-500;
+  }
+
+  &-warning {
+    @apply variable-amber-600 dark:variable-amber-500;
+  }
+
+  &-danger,
+  &-failure {
+    @apply variable-red-600 dark:variable-red-500;
+  }
+
+  &-success {
+    @apply variable-green-600 dark:variable-green-500;
   }
 }

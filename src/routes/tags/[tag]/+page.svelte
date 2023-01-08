@@ -2,9 +2,7 @@
   import { PostList } from '$lib/components/blog';
 
   export let data;
-
-  const { tag, posts } = data;
 </script>
 
-<h1># {tag}</h1>
-<PostList {posts} />
+<h1 class="text-4xl md:text-6xl font-bold mx-5 mb-3"># {data.tag}</h1>
+<PostList posts={data.posts} />

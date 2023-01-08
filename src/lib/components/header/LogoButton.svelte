@@ -1,45 +1,23 @@
 <script>
   import { page } from '$app/stores';
-  import icLogo from '$lib/assets/ic_logo.svg';
 
   let isHome;
   $: isHome = $page.route.id === '/';
 </script>
 
-<a href="/" class:isHome>
-  <img src={icLogo} alt="logo svg" />
+<a
+  class="inline-flex justify-center m-3 transition-logo duration-1000 {isHome ? 'w-11/12' : 'w-11'}"
+  href="/"
+>
+  <svg
+    class="rounded-full transition-size duration-1000
+     {isHome ? 'w-80 lg:w-96 bg-neutral-200 dark:bg-neutral-800' : 'w-9 lg:w-12'}"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 50"
+  >
+    <g class="fill-none stroke-round stroke-[6px]">
+      <path class="stroke-emerald-900" d="M18,42 18,14 32,10 32,22 18,26 M29,24 33,41" />
+      <path class="stroke-emerald-500" d="M17,41 17,13 31,09 31,21 17,25" />
+    </g>
+  </svg>
 </a>
-
-<style lang="scss">
-  a {
-    display: inline-flex;
-    justify-content: center;
-    padding: 0.5rem;
-    width: 36px;
-    transition: width 1s ease-in-out;
-
-    img {
-      transition: all 1s ease-in-out;
-      border-radius: 50%;
-
-      width: 36px;
-      height: 36px;
-    }
-
-    &.isHome {
-      transition: all 1s ease-in-out;
-      width: calc(100% - 1rem);
-
-      img {
-        width: 292px;
-        height: 292px;
-        background-color: var(--border-color);
-
-        @media (max-width: 600px) {
-          width: 228px;
-          height: 228px;
-        }
-      }
-    }
-  }
-</style>

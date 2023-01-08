@@ -1,0 +1,42 @@
+@layer base {
+  .light {
+    --mono1: hsl(230, 8%, 24%);
+    --mono2: hsl(230, 6%, 44%);
+    --mono3: hsl(230, 4%, 64%);
+    --mono4: hsl(210, 1%, 85%);
+
+    --hue1: hsl(198, 99%, 37%);
+    --hue2: hsl(221, 87%, 60%);
+    --hue3: hsl(301, 63%, 40%);
+    --hue4: hsl(119, 34%, 47%);
+    --hue5: hsl(5, 74%, 59%);
+    --hue5_2: hsl(344, 84%, 43%);
+    --hue6: hsl(35, 99%, 36%);
+
+    --bg-base: hsl(0, 0%, 100%);
+    --bg-block: hsl(210, 25%, 97%);
+    --bg-codeblock: hsl(230, 1%, 98%);
+    --bg-line-cursor: hsla(230, 8%, 24%, 0.05);
+  }
+
+  .dark {
+    --mono1: hsl(220, 14%, 71%);
+    --mono2: hsl(220, 9%, 55%);
+    --mono3: hsl(220, 10%, 40%);
+    --mono4: hsl(220, 13%, 45%);
+
+    --hue1: hsl(187, 47%, 55%);
+    --hue2: hsl(207, 82%, 66%);
+    --hue3: hsl(286, 60%, 67%);
+    --hue4: hsl(95, 38%, 62%);
+    --hue5: hsl(355, 65%, 65%);
+    --hue5_2: hsl(5, 48%, 51%);
+    --hue6: hsl(29, 54%, 61%);
+
+    --bg-base: #191c1f;
+    --bg-block: #212427;
+    --bg-codeblock: hsl(220, 13%, 18%);
+    --bg-selection: hsl(220, 13%, 28%);
+    --bg-line-cursor: hsla(220, 100%, 80%, 0.04);
+  }
+}

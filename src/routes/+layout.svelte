@@ -3,9 +3,7 @@
   import Header from '$lib/components/header/index.svelte';
 </script>
 
-<Header />
-
-<main>
+<div>
   <script>
     var deviceColorScheme =
       window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -15,12 +13,16 @@
     var colorScheme = storedColorScheme === null ? deviceColorScheme : storedColorScheme;
 
     if (colorScheme === 'dark') {
-      document.body.classList.remove('light');
-      document.body.classList.add('dark');
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
     } else {
-      document.body.classList.remove('dark');
-      document.body.classList.add('light');
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
   </script>
-  <slot />
-</main>
+  <Header />
+
+  <main class="m-2">
+    <slot />
+  </main>
+</div>

@@ -1,0 +1,13 @@
+.prose {
+  :where(code):not(:where([class~='not-prose'] *)) {
+    @apply after:content-none before:content-none;
+  }
+
+  :where(a):not(:where([class~='not-prose'] *)) {
+    @apply font-bold text-green-500 dark:text-green-400 no-underline hover:underline;
+  }
+
+  &-neutral :where(pre):not(:where([class~='not-prose'] *)) {
+    @apply bg-nestable-neutral text-neutral-900 dark:text-neutral-100;
+  }
+}

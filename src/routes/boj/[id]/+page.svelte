@@ -2,131 +2,67 @@
   import type { BojProblemData } from '$lib/utils/boj';
 
   export let data: BojProblemData;
-  const { id, title, tier, tags, description, input, output, limit, hint, sample } = data;
 </script>
 
-<div id="title">
-  <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noreferrer">
-    <h1>
-      <img
-        class="boj-tier-icon"
-        alt="BOJ tier-{tier}"
-        src="https://static.solved.ac/tier_small/{tier}.svg"
-      />
-      {id} :: {title}
-    </h1>
-  </a>
-</div>
-
-<div id="description" class="tab">
-  <h3>문제</h3>
-  {@html description}
-</div>
-
-{#if input}
-  <div id="input" class="tab">
-    <h3>입력</h3>
-    {@html input}
+<div class="container mx-auto px-5">
+  <div class="mb-8 text-2xl md:text-5xl font-bold">
+    <a href={`https://www.acmicpc.net/problem/${data.id}`} target="_blank" rel="noreferrer">
+      <h1>
+        <img
+          class="inline-flex w-9 md:w-11"
+          alt="BOJ tier-{data.tier}"
+          src="https://static.solved.ac/tier_small/{data.tier}.svg"
+        />
+        {data.id} :: {data.title}
+      </h1>
+    </a>
   </div>
-{/if}
 
-{#if output}
-  <div id="output" class="tab">
-    <h3>출력</h3>
-    {@html output}
-  </div>
-{/if}
-
-{#if sample}
-  {#each sample as [input, output], i}
-    <div class="sample-io tab">
-      <div>
-        <h3>예제 입력 {i + 1}</h3>
-        <pre><code>{input}</code></pre>
+  {#each [['description', '문제'], ['input', '입력'], ['output', '출력'], ['limit', '제한'], ['hint', '힌트']] as [key, name]}
+    {#if data[key]}
+      <div class="mb-8" id={key}>
+        <h3 class="mb-4 pb-1 border-b-2 border-b-neutral-500">{name}</h3>
+        <div class="prose lg:prose-xl prose-neutral dark:prose-invert max-w-full">
+          {@html data[key]}
+        </div>
       </div>
-      <div>
-        <h3>예제 출력 {i + 1}</h3>
-        <pre><code>{output}</code></pre>
-      </div>
-    </div>
+    {/if}
   {/each}
-{/if}
 
-{#if limit}
-  <div id="limit" class="tab">
-    <h3>제한</h3>
-    {@html limit}
-  </div>
-{/if}
+  {#if data.sample}
+    {#each data.sample as io_puts, i}
+      <div id="sample-{i}" class="flex flex-wrap flex-row items-start justify-between mb-8">
+        {#each io_puts as put, j}
+          <div id="sample-{i}-{j}" class="flex-1 basis-full md:basis-1/3 md:first:mr-8">
+            <h3 class="mb-4 pb-1 border-b-2 border-b-neutral-500">
+              {`예제 ${['입력', '출력'][j]} ${i + 1}`}
+            </h3>
+            <pre class="p-2 min-h-[2rem] bg-nestable-neutral"><code class="overflow-scroll"
+                >{put}</code
+              ></pre>
+          </div>
+        {/each}
+      </div>
+    {/each}
+  {/if}
 
-{#if hint}
-  <div id="hint" class="tab">
-    <h3>힌트</h3>
-    {@html hint}
-  </div>
-{/if}
-
-{#if tags}
-  <div id="tags" class="tab">
-    <h3>알고리즘 분류</h3>
-    <ul>
-      {#each tags as tag}
-        <li>{tag}</li>
-      {/each}
-    </ul>
-  </div>
-{/if}
+  {#if data.tags}
+    <div class="mb-8" id="tags">
+      <h3 class="mb-4 pb-1 border-b-2">알고리즘 분류</h3>
+      <ul class="mx-3 list-disc list-inside">
+        {#each data.tags as tag}
+          <li class="font-bold">{tag}</li>
+        {/each}
+      </ul>
+    </div>
+  {/if}
+</div>
 
 <style lang="scss">
-  .tab {
-    margin: 3rem 0;
-  }
-
-  h3 {
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--text-color);
-  }
-
-  #description {
-    margin-top: 0;
-  }
-
-  .boj-tier-icon {
-    display: inline-block;
-    width: 2.25rem;
-    @media (max-width: 768px) {
-      width: 1.75rem;
-    }
-  }
-
   .sample-io {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    margin-top: 0;
-    margin-bottom: 0;
-
     div {
-      flex: 1;
-      flex-basis: 40%;
-      &:nth-child(1) {
-        margin-right: 2rem;
-      }
-
       pre {
         background: var(--bg-block);
-        padding: 0.5rem;
-        code {
-          overflow: scroll;
-        }
-      }
-
-      @media (max-width: 768px) {
-        margin-right: 0 !important;
-        flex-basis: 100%;
       }
     }
   }

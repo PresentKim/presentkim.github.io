@@ -30,13 +30,13 @@
       localStorage.setItem(COLOR_SCHEME_STORE_KEY, colorScheme);
     }
 
-    const bodyClassList = document.body.classList;
+    const classList = document.documentElement.classList;
     if (colorScheme === COLOR_SCHEME.DARK) {
-      bodyClassList.remove('light');
-      bodyClassList.add('dark');
+      classList.remove('light');
+      classList.add('dark');
     } else {
-      bodyClassList.remove('dark');
-      bodyClassList.add('light');
+      classList.remove('dark');
+      classList.add('light');
     }
   }
 
@@ -85,7 +85,12 @@
   });
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" on:mousedown={toggleColorScheme}>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 50 50"
+  class="p-0 m-0 w-7 absolute top-3 right-3 opacity-50 hover:opacity-100 transition-opacity"
+  on:mousedown={toggleColorScheme}
+>
   {#if colorScheme}
     <mask id="mask">
       <rect x="0" y="0" width="50" height="50" fill="white" />
@@ -93,7 +98,7 @@
     </mask>
     <g mask="url(#mask)">
       <circle fill="currentColor" cx="25" cy="25" r={Math.max(0, 20 - 12 * $dr)} />
-      <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+      <g class="fill-none stroke-current stroke-round stroke-[5px]">
         {#each SUN_LAYS as [x1, y1, x2, y2]}
           <line x1={25 + x1 * $dr} y1={25 + y1 * $dr} x2={25 + x2 * $dr} y2={25 + y2 * $dr} />
         {/each}
@@ -101,27 +106,3 @@
     </g>
   {/if}
 </svg>
-
-<style lang="scss">
-  svg {
-    display: block;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 1.75rem;
-    height: 1.75rem;
-    padding: 0.5rem;
-    line-height: 1.5rem;
-    cursor: pointer;
-
-    background-color: var(--bg-block);
-    border-radius: 50%;
-
-    opacity: 0.5;
-    transition: opacity 0.2s ease-in-out;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-</style>

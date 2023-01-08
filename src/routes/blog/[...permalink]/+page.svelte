@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PostData } from '$lib/components/blog';
-  import { PostTags } from '$lib/components/blog';
 
   export let data: PostData;
 
@@ -19,37 +18,28 @@
   <meta property="og:description" content={summary} />
 </svelte:head>
 
-<div>
-  <h1>{title}</h1>
-  <p>{formattedDate}</p>
-  <PostTags {tags} />
+<div class="container mx-auto px-5">
+  <h1 class="text-2xl md:text-5xl font-bold">{title}</h1>
+  <div class="flex flex-wrap flex-row my-3 text-sm text-center">
+    <p class="px-2 py-1 text-neutral-500 dark:text-neutral-600">
+      {formattedDate}
+    </p>
+    <div class="flex flex-wrap font-bold text-green-500 dark:text-green-400">
+      {#each tags as tag}
+        <a class="m-1 px-2 py-1 rounded-sm bg-nestable-neutral" href="/tags/{tag}">
+          <code>#{tag}</code>
+        </a>
+      {/each}
+    </div>
+  </div>
 
   {#if html}
-    {@html html}
+    <div class="prose lg:prose-xl prose-neutral dark:prose-invert max-w-full ">
+      {@html html}
+    </div>
   {/if}
 </div>
 
 {#if style}
   {@html style}
 {/if}
-
-<style lang="scss">
-  h1 {
-    margin-bottom: 0;
-  }
-
-  p {
-    margin-top: 0;
-    color: var(--mono3);
-  }
-
-  div {
-    width: 768px;
-    margin: 1rem auto;
-
-    @media (max-width: 768px) {
-      width: 100%;
-      font-size: 1rem;
-    }
-  }
-</style>

@@ -1,7 +1,26 @@
-@import 'variables';
-@import 'font-faces';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'app';
+@layer base {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
+  .stroke-round {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .bg-nestable-neutral {
+    @apply bg-neutral-500 bg-opacity-5;
+  }
+}
+
+@import 'tailwind-prose';
 @import 'prism.js';
 @import 'remark-admonitions';

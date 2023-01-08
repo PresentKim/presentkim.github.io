@@ -1,39 +1,15 @@
-pre[class*='language-'] {
-  padding: 0.5rem;
-  border-radius: 0.3em;
-}
+@import "variables";
 
-code[class*='language-'],
 pre[class*='language-'] {
-  background-color: var(--bg-codeblock);
-  color: var(--text-color);
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  line-height: 1.5;
-  tab-size: 2;
-  hyphens: none;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @apply my-4 p-2 min-h-[2rem] rounded-md text-neutral-900 dark:text-neutral-100 bg-nestable-neutral text-left overflow-auto whitespace-pre;
 
   *::selection {
-    background-color: var(--bg-selection);
-    color: inherit;
-  }
-
-  &:empty {
-    margin: 1px;
+    @apply bg-neutral-500 bg-opacity-30;
   }
 }
 
 :not(pre) > code[class*='language-'] {
-  padding: 0.2em 0.3em;
-  border-radius: 0.3em;
-  white-space: normal;
+  @apply px-0.5 py-1.5 rounded-sm whitespace-normal;
 }
 
 .token {
@@ -213,33 +189,27 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item {
   > button,
   > a,
   > span {
-    background-color: var(--bg-selection);
+    @apply bg-neutral-500 bg-opacity-30;
     color: var(--mono2);
     padding: 0.1em 0.4em;
     border-radius: 0.3em;
     &:hover,
     &:focus {
-      background-color: var(--bg-selection);
+      @apply bg-neutral-500 bg-opacity-30;
       color: var(--mono1);
     }
   }
 }
 
-.line-highlight.line-highlight {
-  background-color: var(--bg-line-cursor);
-}
-
 .line-highlight.line-highlight:before,
 .line-highlight.line-highlight[data-end] :after {
-  background-color: var(--bg-selection);
+  @apply px-3 py-1.5 rounded-sm bg-neutral-500 bg-opacity-30 shadow-sm;
   color: var(--mono1);
-  padding: 0.1em 0.6em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
 }
 
+.line-highlight.line-highlight,
 pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows > span:hover:before {
-  background-color: var(--bg-line-cursor);
+  @apply bg-neutral-500 bg-opacity-80;
 }
 
 .line-numbers.line-numbers .line-numbers-rows,
