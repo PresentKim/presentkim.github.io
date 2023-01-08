@@ -12,7 +12,7 @@
   <meta property="og:description" content="PresentKim's Blog" />
 </svelte:head>
 
-<h1 class="text-center font-bold my-10">해결한 BOJ 문제 목록</h1>
+<h1 class="text-center text-4xl md:text-6xl font-bold my-10">해결한 BOJ 문제 목록</h1>
 <div class="container mx-auto font-bold text-xl">
   {#each infos as { id, title, tier, tags }}
     <a
