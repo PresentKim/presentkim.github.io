@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   for (const [key, value] of Object.entries(data)) {
-    if (!value || !value.length) {
+    if (value === '' || (Array.isArray(value) && value.length === 0)) {
       delete data[key];
     }
   }
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'href',
       `data:application/json;charset=utf-8,${encodeURIComponent(result)}`
     );
+    console.log(`${data.id}.json`);
     linkElement.setAttribute('download', `${data.id}.json`);
     linkElement.click();
   };
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 Array.prototype.chunk = function (size) {
   if (this.length === 0) return [];
 
-  return this.length > size ? [this.slice(0, size), ...this.chunk(this.slice(size), size)] : [this];
+  return this.length > size ? [this.slice(0, size), ...this.slice(size).chunk(size)] : [this];
 };
 
 HTMLElement.prototype.processHTML = function () {
