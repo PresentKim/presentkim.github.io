@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { BojProblemMetadata } from '$lib/utils/boj';
   export let data: { infos: BojProblemMetadata[] };
-  const infos: BojProblemMetadata[] = data.infos;
 </script>
 
 <svelte:head>
@@ -14,7 +13,7 @@
 
 <h1 class="text-center text-4xl md:text-6xl font-bold my-10">해결한 BOJ 문제 목록</h1>
 <div class="container mx-auto font-bold text-xl">
-  {#each infos as { id, title, tier, tags }}
+  {#each data.infos as { id, title, tier, tags }}
     <a
       data-tier={Math.floor((tier + 4) / 5)}
       class="inline-flex w-full md:w-fit rounded mx-1 my-2 border-variable border-2"

@@ -3,7 +3,6 @@
   import PostList from '$lib/components/PostList.svelte';
 
   export let data: { posts: PostMetadata[] } = {};
-  const posts = data.posts;
 </script>
 
 <svelte:head>
@@ -14,4 +13,4 @@
   <meta property="og:description" content="PresentKim's Blog" />
 </svelte:head>
 
-<PostList {posts} />
+<PostList posts={data.posts} />

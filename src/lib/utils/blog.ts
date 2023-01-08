@@ -7,7 +7,7 @@ declare type MdMetadata = {
   tags: string[];
 };
 
-declare type MdRenderResult = {
+export declare type MdRenderResult = {
   html: string;
   head: string;
   css: { code: string; map: string | null };
