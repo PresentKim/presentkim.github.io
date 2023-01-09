@@ -6,7 +6,7 @@
   <meta property="og:description" content="PresentKim's webpage" />
 </svelte:head>
 
-<div class="flex flex-col items-center justify-center justify-items-center font-sans">
+<div class="flex flex-col items-center justify-center justify-items-center">
   <h1 class="text-6xl font-bold mb-10">PresentKim</h1>
   <p class="text-2xl italic">PHP & Javascript Developer</p>
 

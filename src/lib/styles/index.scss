@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-family: SourceCodeProVariable, SourceCodePro, D2Coding, arial, sans-serif, system-ui;
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -24,3 +28,4 @@
 @import 'tailwind-prose';
 @import 'prism.js';
 @import 'remark-admonitions';
+@import 'fontfaces';

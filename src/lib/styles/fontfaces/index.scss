@@ -1,0 +1,112 @@
+/////////////////////////////
+// SourceCodePro font-face //
+/////////////////////////////
+
+@supports (font-variation-settings: 'wght' 1) {
+  @font-face {
+    font-family: 'SourceCodeProVariable';
+    font-display: fallback;
+    font-style: normal;
+    font-weight: 1 900;
+    src: url('/font/SourceCodePro/VariableFont.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'SourceCodeProVariable';
+    font-display: fallback;
+    font-style: italic;
+    font-weight: 1 900;
+    src: url('/font/SourceCodePro/VariableFont-Italic.woff2') format('woff2');
+  }
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/font/SourceCodePro/SemiBold-Subset.eot');
+  src: local('SourceCodePro'),
+    url('/font/SourceCodePro/SemiBold-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/SemiBold-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/SemiBold-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/SemiBold-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/SemiBold-Subset.svg') format('svg');
+  unicode-range: U+20-7E;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/font/SourceCodePro/Bold-Subset.eot');
+  src: local('SourceCodePro'),
+    url('/font/SourceCodePro/Bold-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/Bold-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/Bold-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/Bold-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/Bold-Subset.svg') format('svg');
+  unicode-range: U+20-7E;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 500;
+  src: url('/font/SourceCodePro/SemiBoldItalic-Subset.eot');
+  src: local('SourceCodePro'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/SemiBoldItalic-Subset.svg') format('svg');
+  unicode-range: U+20-7E;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 700;
+  src: url('/font/SourceCodePro/BoldItalic-Subset.eot');
+  src: local('SourceCodePro'),
+    url('/font/SourceCodePro/BoldItalic-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/SourceCodePro/BoldItalic-Subset.woff2') format('woff2'),
+    url('/font/SourceCodePro/BoldItalic-Subset.woff') format('woff'),
+    url('/font/SourceCodePro/BoldItalic-Subset.ttf') format('truetype'),
+    url('/font/SourceCodePro/BoldItalic-Subset.svg') format('svg');
+  unicode-range: U+20-7E;
+}
+
+/////////////////////////////
+// D2Coding font-face //
+/////////////////////////////
+
+@font-face {
+  font-family: 'D2Coding';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/font/D2Coding/Regular-Subset.eot');
+  src: local('D2Coding'),
+    url('/font/D2Coding/Regular-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/D2Coding/Regular-Subset.woff2') format('woff2'),
+    url('/font/D2Coding/Regular-Subset.woff') format('woff'),
+    url('/font/D2Coding/Regular-Subset.ttf') format('truetype'),
+    url('/font/D2Coding/Regular-Subset.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'D2Coding';
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/font/D2Coding/Bold-Subset.eot');
+  src: local('D2Coding'), url('/font/D2Coding/Bold-Subset.eot?#iefix') format('embedded-opentype'),
+    url('/font/D2Coding/Bold-Subset.woff2') format('woff2'),
+    url('/font/D2Coding/Bold-Subset.woff') format('woff'),
+    url('/font/D2Coding/Bold-Subset.ttf') format('truetype'),
+    url('/font/D2Coding/Bold-Subset.svg') format('svg');
+}
