@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: SourceCodeProVariable, SourceCodePro, D2Coding, arial, sans-serif, system-ui;
+  * {
+    font-family: SourceCodeProVariable, SourceCodePro, D2Coding, arial, sans-serif, system-ui !important;
+    font-weight: 500;
   }
 
   .scrollbar-hide {
