@@ -34,7 +34,7 @@ const modules = import.meta.glob('/posts/**/*.md') as Record<
 const transformMetadata = (metadata: MdMetadata, permalink: string): PostMetadata => {
   return {
     ...metadata,
-    formattedDate: dayjs(metadata.date).format('YYYY년 MM월 DD일 HH:mm'),
+    formattedDate: dayjs(metadata.date).format('YYYY-MM-DD'),
     permalink
   };
 };
