@@ -16,7 +16,7 @@ export declare type BojProblemDocument = {
 
 export declare type BojProblemData = BojProblemMetadata & BojProblemDocument;
 
-const modules = import.meta.glob('/src/lib/boj/*.json') as Record<
+const modules = import.meta.glob('/src/lib/assets/boj/*.json') as Record<
   string,
   () => Promise<{ default: BojProblemData }>
 >;
@@ -36,7 +36,7 @@ export const getBojInfoList: () => Promise<Awaited<BojProblemMetadata>[]> = () =
 };
 
 export const getBojInfoById = async (id: number) => {
-  const module = modules[`/src/lib/boj/${id}.json`];
+  const module = modules[`/src/lib/assets/boj/${id}.json`];
   if (module === undefined) return null;
 
   const { default: info } = await module();

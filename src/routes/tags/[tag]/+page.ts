@@ -1,4 +1,4 @@
-import type { PostMetadata } from '../../../lib/utils/blog';
+import type { PostMetadata } from '$lib/utils/blog';
 
 export async function load({ url, fetch, params }: LoadArguments) {
   const { tag } = params;

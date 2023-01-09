@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PostMetadata } from '../../lib/utils/blog';
+  import type { PostMetadata } from '$lib/utils/blog';
   import PostList from '$lib/components/PostList.svelte';
 
   export let data: { posts: PostMetadata[] } = {};
