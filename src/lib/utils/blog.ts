@@ -5,6 +5,7 @@ declare type MdMetadata = {
   summary: string;
   date: string;
   tags: string[];
+  draft?: boolean;
 };
 
 export declare type MdRenderResult = {
@@ -56,7 +57,9 @@ export async function getBlogPosts() {
         return transformMetadata(metadata, permalink);
       })
     )
-  ).sort((a, b) => b.date.localeCompare(a.date));
+  )
+    .filter((post) => !post.draft)
+    .sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export async function getBlogPostByPermalink(permalink: string) {
@@ -69,5 +72,5 @@ export async function getBlogPostByPermalink(permalink: string) {
     content: transformRenderResult(renderer.render())
   };
 
-  return postData;
+  return postData.metadata.draft ? null : postData;
 }
