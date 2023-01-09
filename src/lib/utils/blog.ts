@@ -46,18 +46,20 @@ const transformRenderResult = (renderResult: MdRenderResult): MdRenderResult => 
   };
 };
 
-export const getPostList: () => Promise<Awaited<PostMetadata>[]> = () => {
-  return Promise.all(
-    Object.entries(modules).map(async ([path, resolver]) => {
-      const { metadata } = await resolver();
-      const permalink = path.match(/[\\\/]posts[\\\/](.*?)\.md/i)?.[1] ?? '';
+export async function getBlogPosts() {
+  return (
+    await Promise.all(
+      Object.entries(modules).map(async ([path, resolver]) => {
+        const { metadata } = await resolver();
+        const permalink = path.match(/[\\\/]posts[\\\/](.*?)\.md/i)?.[1] ?? '';
 
-      return transformMetadata(metadata, permalink);
-    })
-  );
-};
+        return transformMetadata(metadata, permalink);
+      })
+    )
+  ).sort((a, b) => b.date.localeCompare(a.date));
+}
 
-export const getPost = async (permalink: string) => {
+export async function getBlogPostByPermalink(permalink: string) {
   const module = modules[`/posts/${permalink}.md`];
   if (module === undefined) return null;
 
@@ -68,4 +70,4 @@ export const getPost = async (permalink: string) => {
   };
 
   return postData;
-};
+}

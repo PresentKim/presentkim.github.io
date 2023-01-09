@@ -21,24 +21,26 @@ const modules = import.meta.glob('/src/lib/assets/boj/*.json') as Record<
   () => Promise<{ default: BojProblemData }>
 >;
 
-export const getBojInfoList: () => Promise<Awaited<BojProblemMetadata>[]> = () => {
-  return Promise.all(
-    Object.values(modules).map(async (resolver) => {
-      const { default: info } = await resolver();
-      return {
-        id: info.id,
-        title: info.title,
-        tier: info.tier,
-        tags: info.tags
-      };
-    })
-  );
-};
+export async function getBojInfos() {
+  return (
+    await Promise.all(
+      Object.values(modules).map(async (resolver) => {
+        const { default: info } = await resolver();
+        return {
+          id: info.id,
+          title: info.title,
+          tier: info.tier,
+          tags: info.tags
+        };
+      })
+    )
+  ).sort((a, b) => a.id - b.id);
+}
 
-export const getBojInfoById = async (id: number) => {
+export async function getBojInfoById(id: string) {
   const module = modules[`/src/lib/assets/boj/${id}.json`];
   if (module === undefined) return null;
 
   const { default: info } = await module();
   return info;
-};
+}
