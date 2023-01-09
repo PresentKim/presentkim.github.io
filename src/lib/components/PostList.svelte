@@ -22,19 +22,12 @@
           <p class="h-16 pt-2 text-sm overflow-hidden text-ellipsis ">{post.summary}</p>
         </div>
 
-        <p class="text-xs text-neutral-400 dark:text-neutral-500">
-          {post.formattedDate}
-        </p>
         <div
-          class="flex text-sm font-bold text-green-500 dark:text-green-500
+          class="flex text-sm text-right font-bold text-neutral-400 dark:text-neutral-500
                  overflow-x-scroll overflow-y-hidden scrollbar-hide
                  border-t-2 border-t-neutral-200 dark:border-t-neutral-700"
         >
-          {#each post.tags as tag}
-            <a class="mx-0 my-1" href="/tags/{tag}">
-              <code class="p-1.5">#{tag}</code>
-            </a>
-          {/each}
+          {post.formattedDate}
         </div>
       </a>
     </div>
