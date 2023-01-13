@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
   <mask id="moonMask">
     <rect class="fill-white" width="50" height="50" />
-    <circle class="fill-black origin-top-right scale-100 dark:scale-0" cx="34" cy="14" r="16" />
+    <circle class="fill-black origin-top-right scale-0 dark:scale-100" cx="34" cy="14" r="16" />
   </mask>
 
   <g mask="url(#moonMask)">
-    <circle class="fill-current scale-125 dark:scale-50" cx="25" cy="25" r="16" />
+    <circle class="fill-current scale-50 dark:scale-125" cx="25" cy="25" r="16" />
 
-    <g class="fill-none stroke-current stroke-round stroke-[5px] scale-0 dark:scale-100">
+    <g class="fill-none stroke-current stroke-round stroke-[5px] scale-100 dark:scale-0">
       <line x1="4" y1="25" x2="12" y2="25" />
       <line x1="46" y1="25" x2="38" y2="25" />
       <line x1="25" y1="4" x2="25" y2="12" />
