@@ -23,6 +23,9 @@ module.exports = {
       transitionProperty: {
         size: 'width, height',
         logo: 'width, height, background'
+      },
+      transitionTimingFunction: {
+        spring: 'cubic-bezier(1, -0.4, 0, 1.4)'
       }
     }
   },

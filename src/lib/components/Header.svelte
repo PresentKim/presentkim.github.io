@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
-  import { spring } from 'svelte/motion';
+  import ThemeButton from '$lib/components/header/ThemeButton.svelte';
 
   let isHome;
   $: isHome = $page.route.id === '/';
@@ -12,17 +12,6 @@
     DARK: 'dark',
     LIGHT: 'light'
   };
-
-  const SUN_LAYS = [
-    [-21, 0, -13, 0],
-    [+21, 0, +13, 0],
-    [0, -21, 0, -13],
-    [0, +21, 0, +13],
-    [-15, -15, -10, -10],
-    [+15, +15, +10, +10],
-    [-15, +15, -10, +10],
-    [+15, -15, +10, -10]
-  ];
 
   function applyColorScheme() {
     const storedColorScheme = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
@@ -55,11 +44,6 @@
 
   let deviceColorScheme = null;
   let colorScheme = null;
-  const dr = spring(0.0, {
-    stiffness: 0.03,
-    damping: 0.08
-  });
-  $: dr.set(colorScheme === COLOR_SCHEME.DARK ? 1.0 : 0.0);
 
   onMount(() => {
     if (window && window.matchMedia) {
@@ -84,7 +68,6 @@
       });
     }
 
-    dr.set(colorScheme === COLOR_SCHEME.DARK ? 1.0 : 0.0, { hard: true });
     applyColorScheme();
   });
 </script>
@@ -109,26 +92,10 @@
     </svg>
   </a>
 
-  <svg
-    id="theme-toggle-btn"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 50 50"
+  <div
     class="p-0 m-0 w-7 absolute top-3 right-3 opacity-50 hover:opacity-100 transition-opacity"
     on:mousedown={toggleColorScheme}
   >
-    {#if colorScheme}
-      <mask id="mask">
-        <rect x="0" y="0" width="50" height="50" fill="white" />
-        <circle cx={34 + 20 * $dr} cy={16 - 16 * $dr} r={Math.max(0, 16 - 16 * $dr)} fill="black" />
-      </mask>
-      <g mask="url(#mask)">
-        <circle fill="currentColor" cx="25" cy="25" r={Math.max(0, 20 - 12 * $dr)} />
-        <g class="fill-none stroke-current stroke-round stroke-[5px]">
-          {#each SUN_LAYS as [x1, y1, x2, y2]}
-            <line x1={25 + x1 * $dr} y1={25 + y1 * $dr} x2={25 + x2 * $dr} y2={25 + y2 * $dr} />
-          {/each}
-        </g>
-      </g>
-    {/if}
-  </svg>
+    <ThemeButton />
+  </div>
 </header>
