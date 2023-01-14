@@ -1,6 +1,6 @@
 <script>
   import '$lib/assets/styles/index.scss';
-  import Header from '$lib/components/Header.svelte';
+  import Nav from '$lib/components/Nav.svelte';
 </script>
 
 <div>
@@ -20,7 +20,7 @@
       document.documentElement.classList.add('light');
     }
   </script>
-  <Header />
+  <Nav />
 
   <main class="m-2">
     <slot />

@@ -9,4 +9,7 @@
       <path class="stroke-emerald-500" d="M17,41 17,13 31,09 31,21 17,25" />
     </g>
   </svg>
+  <p class="text-4xl">
+    현재는 개발중
+  </p>
 </a>
