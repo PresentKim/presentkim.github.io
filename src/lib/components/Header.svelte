@@ -1,75 +1,9 @@
 <script>
   import { page } from '$app/stores';
-  import { onMount } from 'svelte';
   import ThemeButton from '$lib/components/header/ThemeButton.svelte';
 
   let isHome;
   $: isHome = $page.route.id === '/';
-
-  const COLOR_SCHEME_STORE_KEY = 'color-scheme';
-  const COLOR_SCHEME_MEDIA_QUERY = '(prefers-color-scheme: dark)';
-  const COLOR_SCHEME = {
-    DARK: 'dark',
-    LIGHT: 'light'
-  };
-
-  function applyColorScheme() {
-    const storedColorScheme = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
-    if (storedColorScheme && colorScheme === deviceColorScheme) {
-      //remove the stored color scheme if it matches the current window color scheme
-      localStorage.removeItem(COLOR_SCHEME_STORE_KEY);
-    } else {
-      //store the color scheme if it doesn't match the current window color scheme
-      localStorage.setItem(COLOR_SCHEME_STORE_KEY, colorScheme);
-    }
-
-    const classList = document.documentElement.classList;
-    if (colorScheme === COLOR_SCHEME.DARK) {
-      classList.remove('light');
-      classList.add('dark');
-    } else {
-      classList.remove('dark');
-      classList.add('light');
-    }
-  }
-
-  function toggleColorScheme(e) {
-    e.preventDefault();
-
-    //toggle the color scheme
-    colorScheme = colorScheme === COLOR_SCHEME.DARK ? COLOR_SCHEME.LIGHT : COLOR_SCHEME.DARK;
-
-    applyColorScheme();
-  }
-
-  let deviceColorScheme = null;
-  let colorScheme = null;
-
-  onMount(() => {
-    if (window && window.matchMedia) {
-      const mediaQuery = window.matchMedia(COLOR_SCHEME_MEDIA_QUERY);
-
-      //get the color scheme from window media query
-      colorScheme = deviceColorScheme = mediaQuery.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
-
-      const storedColorScheme = localStorage.getItem(COLOR_SCHEME_STORE_KEY);
-      if (storedColorScheme) {
-        //get the color scheme from local storage
-        colorScheme = storedColorScheme;
-      }
-
-      //listen for color scheme changes to the media query
-      mediaQuery.addEventListener('change', (e) => {
-        if (deviceColorScheme === colorScheme) {
-          colorScheme = e.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
-        }
-        deviceColorScheme = e.matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
-        applyColorScheme();
-      });
-    }
-
-    applyColorScheme();
-  });
 </script>
 
 <header>
@@ -92,10 +26,5 @@
     </svg>
   </a>
 
-  <div
-    class="p-0 m-0 w-7 absolute top-3 right-3 opacity-50 hover:opacity-100 transition-opacity"
-    on:mousedown={toggleColorScheme}
-  >
-    <ThemeButton />
-  </div>
+  <ThemeButton />
 </header>

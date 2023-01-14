@@ -1,4 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+<script>
+  import { onMount } from 'svelte';
+
+  const LOCAL_STORAGE_KEY = 'color-scheme';
+
+  function applyColorScheme() {
+    const storedColorScheme = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (storedColorScheme && colorScheme === deviceColorScheme) {
+      //remove the stored color scheme if it matches the current window color scheme
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
+    } else {
+      //store the color scheme if it doesn't match the current window color scheme
+      localStorage.setItem(LOCAL_STORAGE_KEY, colorScheme);
+    }
+
+    const classList = document.documentElement.classList;
+    if (colorScheme === 'dark') {
+      classList.remove('light');
+      classList.add('dark');
+    } else {
+      classList.remove('dark');
+      classList.add('light');
+    }
+  }
+
+  function toggleColorScheme(e) {
+    //toggle the color scheme
+    colorScheme = colorScheme === 'dark' ? 'light' : 'dark';
+
+    applyColorScheme();
+  }
+
+  let deviceColorScheme = null;
+  let colorScheme = null;
+
+  onMount(() => {
+    if (window && window.matchMedia) {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      //get the color scheme from window media query
+      colorScheme = deviceColorScheme = mediaQuery.matches ? 'dark' : 'light';
+
+      const storedColorScheme = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (storedColorScheme) {
+        //get the color scheme from local storage
+        colorScheme = storedColorScheme;
+      }
+
+      //listen for color scheme changes to the media query
+      mediaQuery.addEventListener('change', (e) => {
+        const newColorScheme = e.matches ? 'dark' : 'light';
+        if (deviceColorScheme === colorScheme) {
+          colorScheme = newColorScheme;
+        }
+        deviceColorScheme = newColorScheme;
+        applyColorScheme();
+      });
+    }
+
+    applyColorScheme();
+  });
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 50 50"
+  class="p-0 m-0 w-7 absolute top-3 right-3 opacity-50 hover:opacity-100 transition-opacity select-none"
+  on:mousedown={toggleColorScheme}
+>
   <mask id="moonMask">
     <rect class="fill-white" width="50" height="50" />
     <circle class="fill-black origin-top-right scale-0 dark:scale-100" cx="34" cy="14" r="16" />
