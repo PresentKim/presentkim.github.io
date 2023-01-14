@@ -19,7 +19,7 @@
           >
             {post.title}
           </h4>
-          <p class="h-16 pt-2 text-sm overflow-hidden text-ellipsis ">{post.summary}</p>
+          <p class="h-16 pt-2 text-sm overflow-hidden text-ellipsis line-clamp-3">{post.summary}</p>
         </div>
 
         <div
