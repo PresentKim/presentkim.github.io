@@ -2,32 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    font-family: 'Pretendard Variable', Pretendard, Tossface, -apple-system, BlinkMacSystemFont,
-      system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
-      'Malgun Gothic', sans-serif !important;
-    font-weight: 400;
-  }
-
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .stroke-round {
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .bg-nestable-neutral {
-    @apply bg-neutral-500 bg-opacity-5;
-  }
-}
-
+@import 'base-theme';
 @import 'tailwind-prose';
 @import 'prism.js';
 @import 'remark-admonitions';

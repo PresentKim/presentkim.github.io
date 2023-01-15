@@ -1,0 +1,18 @@
+@layer base {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .stroke-round {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .bg-nestable-neutral {
+    @apply bg-neutral-500 bg-opacity-5;
+  }
+}
