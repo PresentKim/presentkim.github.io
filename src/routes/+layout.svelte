@@ -5,20 +5,12 @@
 
 <div>
   <script>
-    var deviceColorScheme =
-      window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-    var storedColorScheme = localStorage.getItem('color-scheme');
-    var colorScheme = storedColorScheme === null ? deviceColorScheme : storedColorScheme;
-
-    if (colorScheme === 'dark') {
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-    }
+    document.documentElement.classList.add(
+      localStorage.getItem('color-scheme') ||
+        (window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light')
+    );
   </script>
   <Nav />
 
