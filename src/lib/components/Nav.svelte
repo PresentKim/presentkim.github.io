@@ -3,8 +3,13 @@
   import ThemeButton from '$lib/components/nav/ThemeButton.svelte';
 </script>
 
-<header>
-  <LogoButton />
+<div id="top" class="h-0 mb-20" />
+<nav
+  class="w-full h-16 fixed top-0 backdrop-blur-sm bg-white dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 border-b border-neutral-200 dark:border-neutral-800"
+>
+  <div class="flex justify-between mx-auto px-4 py-3 w-full lg:w-[764px]">
+    <LogoButton />
 
-  <ThemeButton />
-</header>
+    <ThemeButton />
+  </div>
+</nav>

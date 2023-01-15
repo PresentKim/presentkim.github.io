@@ -64,7 +64,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 50 50"
-  class="p-0 m-0 w-7 absolute top-3 right-3 opacity-50 hover:opacity-100 transition-opacity select-none"
+  class="w-7 lg:w-9 opacity-80 select-none align-top"
   on:mousedown={toggleColorScheme}
 >
   <mask id="moonMask">
