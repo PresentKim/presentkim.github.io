@@ -1,9 +1,11 @@
 <svelte:head>
-  <title>PresentKim</title>
-  <meta property="og:title" content="PresentKim" />
+  <title>현재는 개발중</title>
+  <meta property="og:title" content="현재는 개발중" />
 
-  <meta name="description" content="PresentKim's webpage" />
-  <meta property="og:description" content="PresentKim's webpage" />
+  <meta name="description" content="프로그래밍을 좋아하는 김현재의 개발 블로그입니다" />
+  <meta property="og:description" content="프로그래밍을 좋아하는 김현재의 개발 블로그입니다" />
+
+  <meta property="og:type" content="website" data-rh="true">
 </svelte:head>
 
 <div class="flex flex-col items-center justify-center justify-items-center">

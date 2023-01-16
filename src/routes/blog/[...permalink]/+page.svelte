@@ -18,10 +18,14 @@
   {#if content.head}
     {@html content.head}
   {/if}
-  <title>{meta.title}</title>
+
+  <title>{meta.title} - 현재는 개발중</title>
+  <meta property="og:title" content="{meta.title} - 현재는 개발중" />
+
   <meta name="description" content={meta.summary} />
-  <meta property="og:title" content={meta.title} />
   <meta property="og:description" content={meta.summary} />
+
+  <meta property="og:type" content="article" data-rh="true">
 </svelte:head>
 
 <div class="container mx-auto px-5">

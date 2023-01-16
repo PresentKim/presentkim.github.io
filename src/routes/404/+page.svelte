@@ -5,6 +5,14 @@
   onMount(() => (path = window.location.pathname));
 </script>
 
+<svelte:head>
+  <title>페이지를 찾을 수 없습니다 - 현재는 개발중</title>
+  <meta property="og:title" content="페이지를 찾을 수 없습니다 - 현재는 개발중" />
+
+  <meta name="description" content="페이지를 찾을 수 없습니다" />
+  <meta property="og:description" content="페이지를 찾을 수 없습니다" />
+</svelte:head>
+
 <div class="container mx-auto text-center">
   <svg
     xmlns="http://www.w3.org/2000/svg"

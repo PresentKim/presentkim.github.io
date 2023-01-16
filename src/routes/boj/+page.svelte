@@ -4,8 +4,8 @@
 </script>
 
 <svelte:head>
-  <title>PresentKim Blog</title>
-  <meta property="og:title" content="PresentKim Blog" />
+  <title>현재는 개발중</title>
+  <meta property="og:title" content="현재는 개발중" />
 
   <meta name="description" content="PresentKim's Blog" />
   <meta property="og:description" content="PresentKim's Blog" />
