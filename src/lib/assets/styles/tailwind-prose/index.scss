@@ -4,7 +4,8 @@
   }
 
   :where(a):not(:where([class~='not-prose'] *)) {
-    @apply font-bold text-green-500 dark:text-green-400 no-underline hover:underline;
+    @apply font-bold hover:text-emerald-500 hover:dark:text-emerald-400;
+    @apply underline underline-offset-4 decoration-dashed;
   }
 
   &-neutral :where(pre):not(:where([class~='not-prose'] *)) {

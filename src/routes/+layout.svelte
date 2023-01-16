@@ -34,7 +34,7 @@
   </script>
   <Nav />
 
-  <main class="m-2">
+  <main class="w-full lg:w-[764px] mx-auto p-2">
     <slot />
   </main>
 

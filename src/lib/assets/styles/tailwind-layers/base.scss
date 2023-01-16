@@ -5,4 +5,21 @@
       'Malgun Gothic', sans-serif !important;
     @apply m-0 p-0 w-full h-full text-neutral-900 dark:text-neutral-100 font-normal bg-white dark:bg-zinc-800;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  code,
+  kbd,
+  samp,
+  pre {
+    @apply font-bold;
+  }
+
+  p a {
+    @apply underline underline-offset-4 decoration-dashed;
+  }
 }

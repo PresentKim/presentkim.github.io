@@ -34,7 +34,7 @@
     <p class="px-2 py-1 text-neutral-500 dark:text-neutral-600">
       {meta.formattedDate}
     </p>
-    <div class="flex flex-wrap font-bold text-green-500 dark:text-green-400">
+    <div class="flex flex-wrap font-bold text-emerald-500 dark:text-emerald-400">
       {#each meta.tags as tag}
         <a class="m-1 px-2 py-1 rounded-sm bg-nestable-neutral" href="/tags/{tag}">
           <code>#{tag}</code>
