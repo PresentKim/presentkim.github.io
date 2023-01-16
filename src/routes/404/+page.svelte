@@ -2,7 +2,16 @@
   import { onMount } from 'svelte';
 
   let path = ' ';
-  onMount(() => (path = window.location.pathname));
+  let countDown = 5;
+  onMount(() => {
+    path = window.location.pathname;
+
+    setInterval(() => {
+      if (!--countDown) {
+        location.replace('/');
+      }
+    }, 1000);
+  });
 </script>
 
 <svelte:head>
@@ -32,11 +41,16 @@
     <use href="#paper-file" x="25" y="9" />
   </svg>
   <div class="justify-center text-4xl">
-    Page [<strong class="underline decoration-red-600">{path.substring(1)}</strong>] does not exist.
+    [<span class="underline underline-offset-4 decoration-dashed decoration-red-600"
+      >{path.substring(1)}</span
+    >] 페이지를 찾을 수 없습니다.
     <br /><br />
-    Going to
-    <a class="font-bold underline decoration-green-500 dark:decoration-green-400" href="/">
-      Main page!
-    </a>
+    {countDown}초 후
+    <a
+      class="font-bold underline underline-offset-4 decoration-dashed decoration-emerald-500 dark:decoration-emerald-400"
+      href="/"
+    >
+      메인 페이지</a
+    >로 이동합니다
   </div>
 </div>
