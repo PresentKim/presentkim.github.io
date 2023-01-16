@@ -1,6 +1,7 @@
 <script>
   import '$lib/assets/styles/index.scss';
   import Nav from '$lib/components/Nav.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 
   import { onMount } from 'svelte';
 
@@ -36,4 +37,6 @@
   <main class="m-2">
     <slot />
   </main>
+
+  <Footer />
 </div>
