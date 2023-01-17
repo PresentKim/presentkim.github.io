@@ -1,4 +1,4 @@
-<footer class="text-neutral-500 bg-neutral-200 dark:bg-neutral-900 mx-auto mt-3 py-3">
+<footer class="text-neutral-550 dark:text-neutral-350 bg-neutral-200 dark:bg-neutral-900 mx-auto mt-3 py-3">
   <nav class="flex flex-row justify-center text-center gap-4 my-4">
     <a
       href="https://github.com/PresentKim"
