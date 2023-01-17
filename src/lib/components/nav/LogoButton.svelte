@@ -23,7 +23,6 @@
       </g>
     </svg>
   </a>
-  <p class="font-extrabold scale-y-150">&lt현재는 개발중/&gt</p>
 </div>
 
 <style lang="scss">
