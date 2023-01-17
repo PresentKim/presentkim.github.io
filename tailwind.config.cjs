@@ -20,7 +20,11 @@ module.exports = {
         xs: '342px'
       },
       colors: {
-        variable: 'var(--variable-color)'
+        variable: 'var(--variable-color)',
+        neutral: {
+          350: '#bababa',
+          550: '#636363'
+        }
       },
       spacing: {},
       transitionProperty: {
