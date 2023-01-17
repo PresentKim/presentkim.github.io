@@ -16,13 +16,15 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      screens: {
+        xs: '342px'
+      },
       colors: {
         variable: 'var(--variable-color)'
       },
       spacing: {},
       transitionProperty: {
-        size: 'width, height',
-        logo: 'width, height, background'
+        shape: 'width, height, margin, padding, transform'
       },
       transitionTimingFunction: {
         spring: 'cubic-bezier(1, -0.4, 0, 1.4)'

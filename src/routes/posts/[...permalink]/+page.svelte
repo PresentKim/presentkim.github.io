@@ -25,11 +25,11 @@
   <meta name="description" content={meta.summary} />
   <meta property="og:description" content={meta.summary} />
 
-  <meta property="og:type" content="article" data-rh="true">
+  <meta property="og:type" content="article"  />
 </svelte:head>
 
 <div class="container mx-auto px-5">
-  <h1 class="text-2xl md:text-5xl font-bold">{meta.title}</h1>
+  <h1 class="text-2xl font-bold">{meta.title}</h1>
   <div class="flex flex-wrap flex-row my-3 text-sm text-center">
     <p class="px-2 py-1 text-neutral-500 dark:text-neutral-600">
       {meta.formattedDate}
@@ -44,7 +44,7 @@
   </div>
 
   {#if content.html}
-    <div class="prose lg:prose-xl prose-neutral dark:prose-invert max-w-full ">
+    <div class="prose prose-neutral dark:prose-invert max-w-full">
       {@html content.html}
     </div>
   {/if}

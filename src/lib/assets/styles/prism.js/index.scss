@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 pre[class*='language-'] {
   @apply my-4 p-2 min-h-[2rem] rounded-md text-neutral-900 dark:text-neutral-100 bg-nestable-neutral text-left overflow-auto whitespace-pre;

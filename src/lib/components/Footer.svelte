@@ -9,14 +9,17 @@
     </a>
   </nav>
   <div class="flex flex-col justify-center text-center gap-5">
-    <p>© 2023 PresentKim. All Rights Reserved.</p>
+    <div class="flex flex-wrap justify-center gap-x-2">
+      <p>© 2023 PresentKim.</p>
+      <p>All Rights Reserved.</p>
+    </div>
 
-    <p>
-      Powered by
-      <a href="https://pages.github.com/" target="_blank" rel="noreferrer">github pages</a> +
-      <a href="https://kit.svelte.dev/" target="_blank" rel="noreferrer">sveltekit</a> +
+    <div class="flex flex-wrap justify-center gap-x-2">
+      <p>Powered by</p>
+      <p><a href="https://pages.github.com/" target="_blank" rel="noreferrer">github pages</a></p>
+      <p><a href="https://kit.svelte.dev/" target="_blank" rel="noreferrer">sveltekit</a></p>
 
-      <a href="https:/tailwindcss.com" target="_blank" rel="noreferrer">tailwindcss</a>
-    </p>
+      <p><a href="https:/tailwindcss.com" target="_blank" rel="noreferrer">tailwindcss</a></p>
+    </div>
   </div>
 </footer>

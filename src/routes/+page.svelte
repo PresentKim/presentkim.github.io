@@ -1,3 +1,10 @@
+<script lang="ts">
+  import type { PostMetadata } from '$lib/utils/blog';
+  import PostList from '$lib/components/PostList.svelte';
+
+  export let data: { posts: PostMetadata[] } = {};
+</script>
+
 <svelte:head>
   <title>현재는 개발중</title>
   <meta property="og:title" content="현재는 개발중" />
@@ -5,19 +12,16 @@
   <meta name="description" content="프로그래밍을 좋아하는 김현재의 개발 블로그입니다" />
   <meta property="og:description" content="프로그래밍을 좋아하는 김현재의 개발 블로그입니다" />
 
-  <meta property="og:type" content="website" data-rh="true">
+  <meta property="og:type" content="website" />
 </svelte:head>
 
-<div class="flex flex-col items-center justify-center justify-items-center">
-  <h1 class="text-6xl font-bold mb-10">PresentKim</h1>
-  <p class="text-2xl italic">PHP & Javascript Developer</p>
-
-  <ul class="mt-5 items-center text-center justify-center justify-items-center">
-    <li class="px-3 w-fit border-b-emerald-500 border-b-2 text-emerald-500 font-bold text-2xl">
-      <a href="blog">블로그</a>
-    </li>
-    <li class="px-3 mx-auto w-fit border-b-emerald-500 border-b-2 text-emerald-500 font-bold text-2xl">
-      <a href="boj">BOJ 풀이</a>
-    </li>
-  </ul>
-</div>
+<hr class="my-4" />
+<h2 class="text-xl font-bold mb-3 ">블로그의 최신 포스트</h2>
+<PostList posts={data.posts.slice(0, 5)} />
+<a href="/posts/" class="p-0">
+  <p
+    class="w-4/6 mx-auto my-3 p-2 text-center text-base font-bold rounded-xl ring-2 bg-emerald-400 dark:bg-emerald-500"
+  >
+    🔽 모든 포스트 살펴보기
+  </p></a
+>

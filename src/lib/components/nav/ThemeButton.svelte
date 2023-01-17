@@ -23,7 +23,7 @@
     }
   }
 
-  function toggleColorScheme(e) {
+  function toggleColorScheme() {
     //toggle the color scheme
     colorScheme = colorScheme === 'dark' ? 'light' : 'dark';
 
@@ -64,7 +64,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 50 50"
-  class="w-7 lg:w-9 opacity-80 select-none my-auto"
+  class="w-8 max-xs:w-6 my-auto select-none my-auto"
   on:mousedown={toggleColorScheme}
 >
   <mask id="moonMask">

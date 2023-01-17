@@ -1,8 +1,10 @@
 @layer base {
-  body {
+  * {
     font-family: 'Pretendard Variable', Pretendard, Tossface, -apple-system, BlinkMacSystemFont,
       system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
       'Malgun Gothic', sans-serif !important;
+  }
+  body {
     @apply m-0 p-0 w-full h-full text-neutral-900 dark:text-neutral-100 font-normal bg-white dark:bg-zinc-800;
   }
 

@@ -156,10 +156,10 @@ e.g. put on bottom:
 ### Links to the URLs in a repository
 
 ```markdown
-[Example document](/blog/blog/basic-markdown)
+[Example document](/posts/blog/basic-markdown)
 ```
 
-[Example document](/blog/blog/basic-markdown)
+[Example document](/posts/blog/basic-markdown)
 
 ```markdown
 [example](./basic-markdown)

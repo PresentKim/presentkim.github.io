@@ -25,7 +25,7 @@
 <div class="container mx-auto text-center">
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="mx-auto px-20 w-full md:w-4/6 xl:w-1/2 animate-pulse"
+    class="mx-auto px-20 w-full animate-pulse"
     viewBox="0 0 64 58"
   >
     <defs>

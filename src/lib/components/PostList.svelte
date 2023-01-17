@@ -4,32 +4,21 @@
   export let posts: PostMetadata[];
 </script>
 
-<div class="md:mx-3 flex mx-auto flex-row flex-wrap justify-left">
+<section class="flex mx-auto flex-col gap-y-3 justify-left">
   {#each posts as post}
-    <div
-      class="flex flex-col m-2 p-3 overflow-hidden rounded
-             w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33%-1rem)] xl:w-[calc(25%-1rem)]
-             bg-white dark:bg-neutral-800 shadow"
+    <article
+      class="flex flex-col w-full p-3 border-b border-b-neutral-500 dark:border-b-neutral-700"
     >
-      <a href={`/blog/${post.permalink}`}>
-        <div class="post-card-title">
-          <h4
-            class="text-xl font-bold overflow-hidden text-ellipsis whitespace-nowrap
-                   border-b-2 border-b-neutral-500 dark:border-b-neutral-400"
-          >
-            {post.title}
-          </h4>
-          <p class="h-16 pt-2 text-sm overflow-hidden text-ellipsis line-clamp-3">{post.summary}</p>
-        </div>
+      <a href={`/posts/${post.permalink}`}>
+        <h4 class="text-xl font-bold">
+          {post.title}
+        </h4>
+        <p class="my-3 text-sm overflow-hidden text-ellipsis line-clamp-3">{post.summary}</p>
 
-        <div
-          class="flex text-sm text-right font-bold text-neutral-400 dark:text-neutral-500
-                 overflow-x-scroll overflow-y-hidden scrollbar-hide
-                 border-t-2 border-t-neutral-200 dark:border-t-neutral-700"
-        >
+        <p class="flex text-sm text-right font-bold text-neutral-400 dark:text-neutral-500">
           {post.formattedDate}
-        </div>
+        </p>
       </a>
-    </div>
+    </article>
   {/each}
-</div>
+</section>

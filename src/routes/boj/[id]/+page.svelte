@@ -5,11 +5,11 @@
 </script>
 
 <div class="container mx-auto px-5">
-  <div class="mb-8 text-2xl md:text-5xl font-bold">
+  <div class="mb-8 text-2xl font-bold">
     <a href={`https://www.acmicpc.net/problem/${data.id}`} target="_blank" rel="noreferrer">
       <h1>
         <img
-          class="inline-flex w-9 md:w-11"
+          class="inline-flex w-9"
           alt="BOJ tier-{data.tier}"
           src="https://static.solved.ac/tier_small/{data.tier}.svg"
         />
@@ -22,7 +22,7 @@
     {#if data[key]}
       <div class="mb-8" id={key}>
         <h3 class="mb-4 pb-1 border-b-2 border-b-neutral-500">{name}</h3>
-        <div class="prose lg:prose-xl prose-neutral dark:prose-invert max-w-full">
+        <div class="prose prose-neutral dark:prose-invert max-w-full">
           {@html data[key]}
         </div>
       </div>
@@ -33,7 +33,7 @@
     {#each data.sample as io_puts, i}
       <div id="sample-{i}" class="flex flex-wrap flex-row items-start justify-between mb-8">
         {#each io_puts as put, j}
-          <div id="sample-{i}-{j}" class="flex-1 basis-full md:basis-1/3 md:first:mr-8">
+          <div id="sample-{i}-{j}" class="flex-1 basis-full">
             <h3 class="mb-4 pb-1 border-b-2 border-b-neutral-500">
               {`예제 ${['입력', '출력'][j]} ${i + 1}`}
             </h3>
