@@ -3,7 +3,7 @@
 </script>
 
 <div class="select-none overflow-hidden w-44 max-xs:w-32 {shorten ? 'shorten w-8 max-xs:w-6' : ''}">
-  <a href="/" data-sveltekit-preload-data="hover">
+  <a href="/" data-sveltekit-preload-data="hover" aria-label="메인페이지로 이동">
     <svg class="h-8 max-xs:h-6 my-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 42">
       <g class="fill-none stroke-round stroke-[6px]">
         <g id="code-wrap" class="stroke-emerald-500">
@@ -23,6 +23,7 @@
       </g>
     </svg>
   </a>
+  <p class="font-extrabold scale-y-150">&lt현재는 개발중/&gt</p>
 </div>
 
 <style lang="scss">
