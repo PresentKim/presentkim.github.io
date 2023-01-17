@@ -34,7 +34,7 @@
   </script>
   <Nav />
 
-  <main class="container p-2">
+  <main class="blog-container p-2">
     <slot />
   </main>
 

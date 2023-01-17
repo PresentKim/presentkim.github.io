@@ -12,22 +12,20 @@
 </svelte:head>
 
 <h1 class="text-center text-4xl font-bold my-10">해결한 BOJ 문제 목록</h1>
-<div class="container mx-auto font-bold text-xl">
-  {#each data.infos as { id, title, tier, tags }}
-    <a
-      data-tier={Math.floor((tier + 4) / 5)}
-      class="inline-flex w-full rounded mx-1 my-2 border-variable border-2"
-      href={`/boj/${id}`}
-    >
-      <img
-        class="inline-block h-7 pl-1"
-        alt="BOJ tier-{tier}"
-        src="https://static.solved.ac/tier_small/{tier}.svg"
-      />
-      <p class="px-2 py-0.5">{id} {title}</p>
-    </a>
-  {/each}
-</div>
+{#each data.infos as { id, title, tier, tags }}
+  <a
+    data-tier={Math.floor((tier + 4) / 5)}
+    class="inline-flex w-full rounded mx-1 my-2 border-variable border-2 font-bold text-xl"
+    href={`/boj/${id}`}
+  >
+    <img
+      class="inline-block h-7 pl-1"
+      alt="BOJ tier-{tier}"
+      src="https://static.solved.ac/tier_small/{tier}.svg"
+    />
+    <p class="px-2 py-0.5">{id} {title}</p>
+  </a>
+{/each}
 
 <style lang="scss">
   [data-tier='0'] {

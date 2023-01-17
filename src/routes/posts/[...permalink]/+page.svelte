@@ -25,30 +25,28 @@
   <meta name="description" content={meta.summary} />
   <meta property="og:description" content={meta.summary} />
 
-  <meta property="og:type" content="article"  />
+  <meta property="og:type" content="article" />
 </svelte:head>
 
-<div class="container mx-auto px-5">
-  <h1 class="text-2xl font-bold">{meta.title}</h1>
-  <div class="flex flex-wrap flex-row my-3 text-sm text-center">
-    <p class="px-2 py-1 text-neutral-500 dark:text-neutral-600">
-      {meta.formattedDate}
-    </p>
-    <div class="flex flex-wrap font-bold text-emerald-500 dark:text-emerald-400">
-      {#each meta.tags as tag}
-        <a class="m-1 px-2 py-1 rounded-sm bg-nestable-neutral" href="/tags/{tag}">
-          <code>#{tag}</code>
-        </a>
-      {/each}
-    </div>
+<h1 class="text-2xl font-bold">{meta.title}</h1>
+<div class="flex flex-wrap flex-row my-3 text-sm text-center">
+  <p class="px-2 py-1 text-neutral-500 dark:text-neutral-600">
+    {meta.formattedDate}
+  </p>
+  <div class="flex flex-wrap font-bold text-emerald-500 dark:text-emerald-400">
+    {#each meta.tags as tag}
+      <a class="m-1 px-2 py-1 rounded-sm bg-nestable-neutral" href="/tags/{tag}">
+        <code>#{tag}</code>
+      </a>
+    {/each}
   </div>
-
-  {#if content.html}
-    <div class="prose prose-neutral dark:prose-invert max-w-full">
-      {@html content.html}
-    </div>
-  {/if}
 </div>
+
+{#if content.html}
+  <div class="prose prose-neutral dark:prose-invert max-w-full">
+    {@html content.html}
+  </div>
+{/if}
 
 {#if style}
   {@html style}

@@ -25,7 +25,7 @@
          border-b border-neutral-200 dark:border-neutral-800"
 >
   <div
-    class="container flex justify-between px-3 py-3
+    class="blog-container flex justify-between px-2 py-3
            [&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring"
   >
     <LogoButton shorten={menuOpened && !enoughWidth} />

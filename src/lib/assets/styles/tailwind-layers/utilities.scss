@@ -12,8 +12,8 @@
     stroke-linejoin: round;
   }
 
-  .container {
-    @apply mx-auto w-full md:w-[640px] lg:w-[768px] xl:w-[1024px] 2xl:w-[1536px];
+  .blog-container {
+    @apply mx-auto w-full md:w-[548px] xl:w-[768px]
   }
 
   .bg-nestable-neutral {
