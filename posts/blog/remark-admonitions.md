@@ -1,8 +1,8 @@
 ---
-title: '블로그 :: 정보 블럭 기능 추가'
-summary: 'remark-admonitions 테스트 포스트'
+title: '📝 mdsvex에 정보 블럭을 추가했어요'
+summary: '블로그에 remark-admonitions를 추가했습니다. 이제 블로그 포스트에서 아래와 같은 문법으로 정보 블럭을 사용할 수 있습니다.'
 date: 2022-12-02 17:47:00
-tags: [blog, mdsvex]
+tags: [블로그]
 ---
 
 블로그에 [remark-admonitions](https://www.npmjs.com/package/remark-admonitions)를 추가했습니다.

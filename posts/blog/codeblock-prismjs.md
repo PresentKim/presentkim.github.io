@@ -1,8 +1,8 @@
 ---
-title: '블로그 :: 코드 블럭 하이라이팅'
-summary: 'prism.js 테스트 포스트'
+title: '📝 블로그에 코드 블럭 하이라이팅을 추가했어요'
+summary: 'mdsvex는 기본적으로 prism.js를 통해 코드 블럭의 하이라이팅을 지원합니다. 아래 내용은 코드 블럭 하이라이팅을 테스트하기 위해 일부 작성되었습니다.'
 date: 2022-10-28 12:00:00
-tags: [blog, mdsvex]
+tags: [블로그]
 ---
 
 [mdsvex](https://mdsvex.com)는 기본적으로 [prism.js](https://prismjs.com)를 통해 코드 블럭의 하이라이팅을 지원합니다.  
