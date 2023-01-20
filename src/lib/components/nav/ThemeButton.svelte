@@ -1,8 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
-  import { toggleTheme, themeMount } from '$lib/utils/theme.ts';
-
-  onMount(themeMount);
+  import { toggleTheme } from '$lib/utils/theme.ts';
 </script>
 
 <svg

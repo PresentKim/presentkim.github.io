@@ -68,7 +68,8 @@ export const toggleTheme = () =>
   userTheme.update(() => (_user_theme === 'dark' ? 'light' : 'dark'));
 
 export const themeMount = () => {
-  if (browser && window && window.matchMedia) {
+  if (browser && !initialized && window && window.matchMedia) {
+    console.log('Init theme!!!');
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     //get the color scheme from window media query

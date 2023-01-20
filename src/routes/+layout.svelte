@@ -4,9 +4,13 @@
   import Footer from '$lib/components/Footer.svelte';
 
   import { onMount } from 'svelte';
+  import { themeMount } from '$lib/utils/theme.ts';
 
   let path = '';
-  onMount(() => (path = window.location.pathname));
+  onMount(() => {
+    themeMount();
+    path = window.location.pathname;
+  });
 </script>
 
 <svelte:head>
