@@ -1,71 +1,15 @@
 <script>
   import { onMount } from 'svelte';
+  import { toggleTheme, themeMount } from '$lib/utils/theme.ts';
 
-  const LOCAL_STORAGE_KEY = 'color-scheme';
-
-  function applyColorScheme() {
-    const storedColorScheme = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (storedColorScheme && colorScheme === deviceColorScheme) {
-      //remove the stored color scheme if it matches the current window color scheme
-      localStorage.removeItem(LOCAL_STORAGE_KEY);
-    } else {
-      //store the color scheme if it doesn't match the current window color scheme
-      localStorage.setItem(LOCAL_STORAGE_KEY, colorScheme);
-    }
-
-    const classList = document.documentElement.classList;
-    if (colorScheme === 'dark') {
-      classList.remove('light');
-      classList.add('dark');
-    } else {
-      classList.remove('dark');
-      classList.add('light');
-    }
-  }
-
-  function toggleColorScheme() {
-    //toggle the color scheme
-    colorScheme = colorScheme === 'dark' ? 'light' : 'dark';
-
-    applyColorScheme();
-  }
-
-  let deviceColorScheme = null;
-  let colorScheme = null;
-
-  onMount(() => {
-    if (window && window.matchMedia) {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-      //get the color scheme from window media query
-      colorScheme = deviceColorScheme = mediaQuery.matches ? 'dark' : 'light';
-
-      const storedColorScheme = localStorage.getItem(LOCAL_STORAGE_KEY);
-      if (storedColorScheme) {
-        //get the color scheme from local storage
-        colorScheme = storedColorScheme;
-      }
-
-      //listen for color scheme changes to the media query
-      mediaQuery.addEventListener('change', (e) => {
-        const newColorScheme = e.matches ? 'dark' : 'light';
-        if (deviceColorScheme === colorScheme) {
-          colorScheme = newColorScheme;
-        }
-        deviceColorScheme = newColorScheme;
-        applyColorScheme();
-      });
-    }
-
-    applyColorScheme();
-  });
+  onMount(themeMount);
 </script>
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 50 50"
   class="w-8 max-xs:w-6 my-auto select-none my-auto"
-  on:mousedown={toggleColorScheme}
+  on:mousedown={toggleTheme}
 >
   <mask id="moonMask">
     <rect class="fill-white" width="50" height="50" />
