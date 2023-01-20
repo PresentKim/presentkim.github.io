@@ -3,6 +3,8 @@
 /build/
 /.svelte-kit/
 
+/src/lib/assets/boj/
+
 .DS_Store
 yarn-error.log
 yarn.lock

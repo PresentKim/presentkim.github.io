@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PostData, PostMetadata, MdRenderResult } from '$lib/utils/blog';
-  import Giscus from '@giscus/svelte';
-  import { page } from '$app/stores';
+  import type { MdRenderResult, PostData, PostMetadata } from '$lib/utils/blog';
   import { theme } from '$lib/utils/theme';
+  import { page } from '$app/stores';
+  import Giscus from '@giscus/svelte';
 
   export let data: PostData;
 

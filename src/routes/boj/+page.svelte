@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { BojProblemMetadata } from '$lib/utils/boj';
+
   export let data: { infos: BojProblemMetadata[] };
 </script>
 
