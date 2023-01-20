@@ -1,5 +1,8 @@
 <script lang="ts">
   import type { PostData, PostMetadata, MdRenderResult } from '$lib/utils/blog';
+  import Giscus from '@giscus/svelte';
+  import { page } from '$app/stores';
+  import { theme } from '$lib/utils/theme';
 
   export let data: PostData;
 
@@ -10,13 +13,17 @@
     meta = data.metadata;
     content = data.content;
 
-    style = content.css.code ? '<' + `style>${content.css.code}</style>` : '';
+    style = content?.css.code ? '<' + `style>${content.css.code}</style>` : '';
   }
 </script>
 
 <svelte:head>
   {#if content.head}
     {@html content.head}
+  {/if}
+
+  {#if style}
+    {@html style}
   {/if}
 
   <title>{meta.title} - 현재는 개발중</title>
@@ -26,6 +33,8 @@
   <meta property="og:description" content={meta.summary} />
 
   <meta property="og:type" content="article" />
+
+  <meta name="giscus:backlink" content="https://present.kim{$page.url.pathname}" />
 </svelte:head>
 
 <h1 class="text-2xl font-bold">{meta.title}</h1>
@@ -42,12 +51,23 @@
   </div>
 </div>
 
-{#if content.html}
-  <div class="prose prose-neutral dark:prose-invert max-w-full">
-    {@html content.html}
-  </div>
-{/if}
+<div class="prose prose-neutral dark:prose-invert max-w-full">
+  {@html content.html}
+</div>
 
-{#if style}
-  {@html style}
-{/if}
+<Giscus
+  id="comments"
+  repo="PresentKim/presentkim.github.io"
+  repoId="R_kgDOIUl1bg"
+  category="Announcements"
+  categoryId="DIC_kwDOIUl1bs4CTsqQ"
+  mapping="specific"
+  term="📝Comments of [{$page.params.permalink}]"
+  strict="1"
+  reactionsEnabled="1"
+  emitMetadata="0"
+  inputPosition="top"
+  theme={$theme}
+  lang="ko"
+  loading="lazy"
+/>
