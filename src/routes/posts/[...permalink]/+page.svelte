@@ -38,20 +38,26 @@
 </svelte:head>
 
 <h1 class="text-2xl font-bold">{meta.title}</h1>
-<div class="flex flex-wrap flex-row my-3 text-sm text-center">
-  <p class="px-2 py-1 text-neutral-500 dark:text-neutral-600">
+<div
+  class="flex flex-row mb-6 text-sm text-center
+         border-b border-b-neutral-500 dark:border-b-neutral-700"
+>
+  <p class="py-6 my-auto text-neutral-550 dark:text-neutral-350">
     {meta.formattedDate}
   </p>
   <div class="flex flex-wrap font-bold text-emerald-500 dark:text-emerald-400">
     {#each meta.tags as tag}
-      <a class="m-1 px-2 py-1 rounded-sm bg-nestable-neutral" href="/tags/{tag}">
+      <a class="mx-1 my-auto px-2 py-1 rounded-sm bg-nestable-neutral" href="/tags/{tag}">
         <code>#{tag}</code>
       </a>
     {/each}
   </div>
 </div>
 
-<div class="prose prose-neutral dark:prose-invert max-w-full">
+<div
+  class="prose prose-neutral dark:prose-invert max-w-full py-6 mb-6
+         border-b border-b-neutral-500 dark:border-b-neutral-700"
+>
   {@html content.html}
 </div>
 
