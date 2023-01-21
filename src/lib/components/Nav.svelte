@@ -20,7 +20,7 @@
 <div id="top" class="h-0 mb-20" />
 <nav
   class="fixed top-0 z-50 w-full backdrop-blur-sm
-         text-neutral-600 dark:text-neutral-300
+         text-neutral-700 dark:text-neutral-200
          bg-white dark:bg-neutral-900 !bg-opacity-90
          border-b border-neutral-200 dark:border-neutral-800"
 >
