@@ -2,7 +2,7 @@
   export let open: boolean = false;
 </script>
 
-<label class="block select-none w-8 max-xs:w-6 md:w-0 my-auto">
+<label class="block select-none w-8 max-xs:w-6 sm:w-0 my-auto">
   <input type="checkbox" class="hidden" bind:checked={open} />
   <svg
     class="fill-none stroke-round stroke-[6px] stroke-current"

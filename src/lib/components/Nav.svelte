@@ -5,11 +5,11 @@
   import { page } from '$app/stores';
 
   let menuOpened;
-  let enoughWidth;
+  let widthEnough;
   let screenWidth = 0;
 
-  // for makes logo to long when (screen width > md(768px))
-  $: enoughWidth = screenWidth > 768;
+  //For makes logo to long when (screen width > sm(640px))
+  $: widthEnough = screenWidth > 640;
 
   //Close hamburger menu when page redirected
   page.subscribe(() => (menuOpened = false));
@@ -28,11 +28,11 @@
     class="blog-container flex justify-between px-2 py-3
            [&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring"
   >
-    <LogoButton shorten={menuOpened && !enoughWidth} />
+    <LogoButton shorten={menuOpened && !widthEnough} />
     <div class="flex gap-2 my-auto">
       <div
         class="flex justify-end mr-2 gap-x-2
-               {menuOpened || enoughWidth ? 'w-36' : 'w-0'}
+               {menuOpened || widthEnough ? 'w-36' : 'w-0'}
                md:w-36 overflow-hidden my-auto"
       >
         <a href="/portfolio" class="h-fit">
