@@ -69,7 +69,6 @@ export const toggleTheme = () =>
 
 export const themeMount = () => {
   if (browser && !initialized && window && window.matchMedia) {
-    console.log('Init theme!!!');
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     //get the color scheme from window media query
