@@ -4,6 +4,7 @@
       Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
       sans-serif !important;
   }
+
   body {
     @apply m-0 p-0 w-full h-full text-neutral-900 dark:text-neutral-100 font-normal bg-white dark:bg-zinc-800;
   }
@@ -11,17 +12,27 @@
   h1,
   h2,
   h3,
-  h4,
-  h5,
-  h6,
-  code,
-  kbd,
-  samp,
-  pre {
+  h4 {
     @apply font-bold;
   }
 
-  p a {
-    @apply underline underline-offset-4 decoration-dashed;
+  h1 {
+    @apply text-4xl md:text-6xl xl:text-7xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl xl:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

@@ -1,0 +1,67 @@
+.article {
+  @apply w-full text-neutral-700 dark:text-white break-all;
+
+  p {
+    @apply my-6;
+  }
+
+  & > p {
+    @apply indent-4;
+  }
+
+  hr {
+    @apply my-8;
+  }
+
+  img {
+    @apply mx-auto w-full rounded shadow;
+    + em {
+      @apply block mx-auto text-center text-sm p-3;
+    }
+  }
+
+  //Tricks to prevent excessive magnification of images with small aspect ratios
+  strong img {
+    @apply w-1/2;
+    + em {
+      @apply font-normal;
+    }
+  }
+
+  a {
+    @apply underline underline-offset-4 decoration-dashed;
+  }
+
+  :not(pre) > code {
+    @apply mx-1 px-1 py-0.5 rounded text-[calc(100%-0.125rem)] font-normal bg-emerald-50 text-emerald-500 shadow dark:bg-neutral-700 dark:text-emerald-400;
+  }
+
+  ul,
+  ol {
+    @apply pl-3 ml-4 list-outside;
+
+    li {
+      @apply my-2;
+    }
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  blockquote {
+    @apply rounded m-2 px-2 py-1 border-l-8 border-neutral-400 dark:border-neutral-700 shadow;
+  }
+
+  blockquote + blockquote {
+    @apply mt-6;
+  }
+
+  summary > *{
+    @apply inline-block;
+  }
+}

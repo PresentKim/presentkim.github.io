@@ -21,7 +21,7 @@
   {#if data[key]}
     <div class="mb-8" id={key}>
       <h3 class="mb-4 pb-1 border-b-2 border-b-neutral-500">{name}</h3>
-      <div class="prose prose-neutral dark:prose-invert max-w-full">
+      <div class="article max-w-full">
         {@html data[key]}
       </div>
     </div>

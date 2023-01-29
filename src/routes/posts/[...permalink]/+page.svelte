@@ -37,7 +37,7 @@
   <meta name="giscus:backlink" content="https://present.kim{$page.url.pathname}" />
 </svelte:head>
 
-<h1 class="text-2xl font-bold">{meta.title}</h1>
+<h1>{meta.title}</h1>
 <div
   class="flex flex-row mb-6 text-sm text-center
          border-b border-b-neutral-500 dark:border-b-neutral-700"
@@ -54,12 +54,9 @@
   </div>
 </div>
 
-<div
-  class="prose prose-neutral dark:prose-invert max-w-full py-6 mb-6
-         border-b border-b-neutral-500 dark:border-b-neutral-700"
->
+<section id="post" class="article">
   {@html content.html}
-</div>
+</section>
 
 <Giscus
   id="comments"
