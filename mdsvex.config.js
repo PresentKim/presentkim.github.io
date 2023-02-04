@@ -3,6 +3,8 @@ import { mdsvex } from 'mdsvex';
 import fs from 'fs';
 import remarkEmoji from 'remark-emoji';
 import remarkAdmonitions from 'remark-admonitions';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex-svelte';
 
 const ADMONITION_ICON_PATH = './src/lib/assets/admonitions-icon/';
 const customTypes = Object.fromEntries(
@@ -19,5 +21,6 @@ const customTypes = Object.fromEntries(
 
 export default mdsvex({
   extensions: ['.md'],
-  remarkPlugins: [remarkEmoji, [remarkAdmonitions, { customTypes }]]
+  remarkPlugins: [remarkEmoji, remarkMath, [remarkAdmonitions, { customTypes }]],
+  rehypePlugins: [rehypeKatex]
 });

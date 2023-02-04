@@ -35,4 +35,15 @@
   img {
     max-width: 100%;
   }
+
+  [aria-hidden='true'] {
+    display: none;
+  }
+
+  mrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: fit-content;
+  }
 }
