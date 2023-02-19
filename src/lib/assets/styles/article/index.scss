@@ -40,6 +40,7 @@
   ol {
     @apply pl-3 ml-4 list-outside;
 
+    p,
     li {
       @apply my-2;
     }
@@ -53,6 +54,19 @@
     @apply list-decimal;
   }
 
+  table {
+    @apply my-3 p-4 w-full;
+
+    th,
+    td {
+      @apply px-1 py-0.5 border-2  border-neutral-350 dark:border-neutral-550;
+    }
+
+    + p {
+      @apply block mx-auto text-center text-sm m-0 p-0;
+    }
+  }
+
   blockquote {
     @apply rounded m-2 px-2 py-1 border-l-8 border-neutral-400 dark:border-neutral-700 shadow;
   }
@@ -61,7 +75,7 @@
     @apply mt-6;
   }
 
-  summary > *{
+  summary > * {
     @apply inline-block;
   }
 }
