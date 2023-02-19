@@ -3,6 +3,7 @@ title: '🧮 알고리즘 : 누적합 (Prefix sum)'
 summary: '배열이 주어졌을 때 특정 구간의 합을 반복해서 구해야하는 경우에 사용할 수 있는 알고리즘'
 date: 2023-02-04 01:40:00
 tags: [알고리즘, 알고리즘 이론]
+draft: true
 ---
 
 **![time-limit-exceeded.png](/img/algorithm/time-limit-exceeded.png) _! TIME LIMIT EXCEEDED !_**

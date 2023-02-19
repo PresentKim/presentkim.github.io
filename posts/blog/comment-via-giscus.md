@@ -3,6 +3,7 @@ title: '📝 Giscus로 댓글 시스템을 추가해보자!'
 summary: 'SvelteKit으로 제작된 블로그에 Gisus를 이용해 댓글 시스템을 추가하는 과정에 대해 설명합니다.'
 date: 2023-01-20 17:41:00
 tags: [블로그]
+draft: true
 ---
 
 ![I NEED TO TALK TO YOU ABOUT THIS POST](/img/blog/i-need-talk-to-you-about-this-post.gif)
