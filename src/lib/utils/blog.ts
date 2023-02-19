@@ -72,5 +72,5 @@ export async function getBlogPostByPermalink(permalink: string) {
     content: transformRenderResult(renderer.render())
   };
 
-  return postData.metadata.draft ? null : postData;
+  return postData;
 }
