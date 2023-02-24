@@ -23,7 +23,9 @@
 
     <div class="flex flex-wrap justify-center gap-x-2">
       <p>Powered by</p>
-      <p><a href="https://pages.github.com/" target="_blank" rel="noreferrer">github pages</a></p>
+      <p>
+        <a href="https://pages.github.com/" target="_blank" rel="noreferrer">github pages</a>
+      </p>
       <p><a href="https://kit.svelte.dev/" target="_blank" rel="noreferrer">sveltekit</a></p>
 
       <p><a href="https:/tailwindcss.com" target="_blank" rel="noreferrer">tailwindcss</a></p>

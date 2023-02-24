@@ -37,7 +37,7 @@ export async function getBojInfos() {
   ).sort((a, b) => a.id - b.id);
 }
 
-export async function getBojInfoById(id: string) : Promise<BojProblemData> {
+export async function getBojInfoById(id: string): Promise<BojProblemData> {
   const module = modules[`/src/lib/assets/boj/${id}.json`];
   if (module === undefined) throw Error(`Post not found : ${id}`);
 
