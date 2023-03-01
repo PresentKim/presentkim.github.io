@@ -56,6 +56,8 @@
 
 <section id="post" class="article">
   {@html content.html}
+
+  <hr />
 </section>
 
 <Giscus
