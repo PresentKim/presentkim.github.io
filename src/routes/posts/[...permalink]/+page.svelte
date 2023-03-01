@@ -72,5 +72,4 @@
   inputPosition="top"
   theme={$theme}
   lang="ko"
-  loading="lazy"
 />
