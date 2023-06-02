@@ -1,4 +1,5 @@
-import { getBlogPosts, domain } from '$lib/utils/blog';
+import { getBlogPosts } from '$lib/utils/blog';
+import { domain } from '$lib/assets/site-info.json';
 
 export const prerender = true;
 
