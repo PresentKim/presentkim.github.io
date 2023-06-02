@@ -2,6 +2,7 @@
   import '$lib/assets/styles/index.scss';
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import { title, domain } from '$lib/assets/site-info.json';
 
   import { onMount } from 'svelte';
   import { themeMount } from '$lib/utils/theme.ts';
@@ -16,9 +17,9 @@
 <svelte:head>
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
-  <meta property="og:site_name" content="현재는 개발중" />
+  <meta property="og:site_name" content={title} />
   {#if path}
-    <meta property="og:url" content="https://present.kim{path}" />
+    <meta property="og:url" content="{domain}{path}" />
   {/if}
 
   <!-- TODO

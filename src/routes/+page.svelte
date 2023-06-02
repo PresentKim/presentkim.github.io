@@ -2,21 +2,22 @@
   import type { PostMetadata } from '$lib/utils/blog';
   import PostList from '$lib/components/PostList.svelte';
 
+  import { title, description } from '$lib/assets/site-info.json';
   export let data: { posts: PostMetadata[] } = {};
 </script>
 
 <svelte:head>
-  <title>현재는 개발중</title>
-  <meta property="og:title" content="현재는 개발중" />
+  <title>{title}</title>
+  <meta property="og:title" content={title} />
 
-  <meta name="description" content="프로그래밍을 좋아하는 김현재의 개발 블로그입니다" />
-  <meta property="og:description" content="프로그래밍을 좋아하는 김현재의 개발 블로그입니다" />
+  <meta name="description" content={description} />
+  <meta property="og:description" content={description} />
 
   <meta property="og:type" content="website" />
 </svelte:head>
 
 <hr class="my-4" />
-<h1 class="text-3xl mb-5">블로그의 최신 포스트</h1>
+<h1 class="text-3xl mb-5">{title} 블로그의 최신 포스트</h1>
 <PostList posts={data.posts.slice(0, 5)} />
 <a href="/posts/" class="p-0">
   <p

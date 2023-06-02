@@ -1,6 +1,10 @@
+<script>
+  import { title } from '$lib/assets/site-info.json';
+</script>
+
 <svelte:head>
-  <title>Portfolio - 현재는 개발중</title>
-  <meta property="og:title" content="Portfolio - 현재는 개발중" />
+  <title>Portfolio - {title}</title>
+  <meta property="og:title" content={title} />
 
   <meta name="description" content="개발자 김현재의 포트폴리오" />
   <meta property="og:description" content="개발자 김현재의 포트폴리오" />

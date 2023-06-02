@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { title } from '$lib/assets/site-info.json';
 
   let path = ' ';
   let countDown = 5;
@@ -15,8 +16,8 @@
 </script>
 
 <svelte:head>
-  <title>페이지를 찾을 수 없습니다 - 현재는 개발중</title>
-  <meta property="og:title" content="페이지를 찾을 수 없습니다 - 현재는 개발중" />
+  <title>페이지를 찾을 수 없습니다 - {title}</title>
+  <meta property="og:title" content="페이지를 찾을 수 없습니다 - {title}" />
 
   <meta name="description" content="페이지를 찾을 수 없습니다" />
   <meta property="og:description" content="페이지를 찾을 수 없습니다" />
