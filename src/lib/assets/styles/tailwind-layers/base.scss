@@ -6,7 +6,7 @@
   }
 
   body {
-    @apply m-0 p-0 w-full h-full text-neutral-900 dark:text-neutral-100 font-normal bg-white dark:bg-zinc-800;
+    @apply m-0 p-0 text-lg  w-full h-full text-neutral-900 dark:text-neutral-100 font-normal bg-white dark:bg-zinc-800;
   }
 
   h1,
@@ -17,19 +17,15 @@
   }
 
   h1 {
-    @apply text-4xl md:text-6xl xl:text-7xl;
-  }
-
-  h2 {
     @apply text-3xl md:text-4xl xl:text-5xl;
   }
 
-  h3 {
-    @apply text-2xl;
+  h2 {
+    @apply text-2xl md:text-3xl xl:text-4xl;
   }
 
-  h4 {
-    @apply text-xl;
+  h3 {
+    @apply text-xl md:text-2xl xl:text-3xl;
   }
 
   img {

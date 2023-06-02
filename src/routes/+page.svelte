@@ -16,7 +16,7 @@
 </svelte:head>
 
 <hr class="my-4" />
-<h2 class="text-xl font-bold mb-3 ">블로그의 최신 포스트</h2>
+<h1 class="text-3xl mb-5">블로그의 최신 포스트</h1>
 <PostList posts={data.posts.slice(0, 5)} />
 <a href="/posts/" class="p-0">
   <p
