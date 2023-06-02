@@ -1,8 +1,8 @@
 {
   "background_color": "#ffffff",
   "theme_color": "#2b313a",
-  "name": "presentkim.github.io",
-  "short_name": "presentkim.github.io",
+  "name": "현재는 개발중",
+  "short_name": "현재는 개발중",
   "display": "standalone",
   "start_url": "/",
   "icons": [
