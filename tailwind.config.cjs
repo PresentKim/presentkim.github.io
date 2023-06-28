@@ -32,7 +32,6 @@ module.exports = {
     }
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
