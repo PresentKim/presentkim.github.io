@@ -26,6 +26,7 @@
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
+    "rehype-external-links": "^2.1.0",
     "rehype-katex-svelte": "^1.2.0",
     "remark-admonitions": "^1.2.1",
     "remark-directive": "^2.0.1",
