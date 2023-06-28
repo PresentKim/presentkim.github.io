@@ -23,5 +23,8 @@ const customTypes = Object.fromEntries(
 export default mdsvex({
   extensions: ['.md'],
   remarkPlugins: [remarkEmoji, remarkMath, [remarkAdmonitions, { customTypes }]],
-  rehypePlugins: [rehypeKatex, [rehypeExternalLinks, { rel: ['nofollow'], target: '_blank' }]]
+  rehypePlugins: [
+    rehypeKatex,
+    [rehypeExternalLinks, { rel: ['noopener noreferrer'], target: '_blank' }]
+  ]
 });

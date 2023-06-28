@@ -16,7 +16,7 @@
 <details open={tier !== 0}>
   <summary>
     <div class="mb-8 text-2xl font-bold">
-      <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noreferrer">
+      <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noopener noreferrer">
         <h1>
           <img
             class="inline-flex w-9"
