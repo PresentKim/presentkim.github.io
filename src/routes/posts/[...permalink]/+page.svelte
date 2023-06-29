@@ -10,6 +10,10 @@
   let post: PostMetadata;
   let content: MdRenderResult;
   let style: string;
+  let giscusTheme = 'noborder_light';
+  theme.subscribe(
+    (theme) => (giscusTheme = theme === 'dark' ? 'transparent_dark' : 'noborder_light')
+  );
   $: {
     post = data.metadata;
     content = data.content;
@@ -73,6 +77,6 @@
   reactionsEnabled="1"
   emitMetadata="0"
   inputPosition="top"
-  theme={$theme}
+  theme={giscusTheme}
   lang="ko"
 />
