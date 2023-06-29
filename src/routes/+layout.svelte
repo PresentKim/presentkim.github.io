@@ -29,6 +29,17 @@
 </svelte:head>
 
 <div>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NNGC41131C');
+  </script>
+
   <script>
     document.documentElement.classList.add(
       localStorage.getItem('color-scheme') ||
