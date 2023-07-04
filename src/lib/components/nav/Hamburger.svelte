@@ -5,9 +5,11 @@
 <label class="block select-none w-8 max-xs:w-6 sm:w-0 my-auto">
   <input type="checkbox" class="hidden" bind:checked={open} />
   <svg
-    class="fill-none stroke-round stroke-[6px] stroke-current"
     xmlns="http://www.w3.org/2000/svg"
+    role="button"
+    tabindex="0"
     viewBox="0 0 50 50"
+    class="fill-none stroke-round stroke-[6px] stroke-current"
   >
     <path class="-translate-y-3" d="M04,25 46,25" />
     <path d="M04,25 46,25" />

@@ -4,8 +4,10 @@
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  role="button"
+  tabindex="0"
   viewBox="0 0 50 50"
-  class="w-8 max-xs:w-6 my-auto select-none my-auto"
+  class="w-8 max-xs:w-6 my-auto select-none"
   on:mousedown={toggleTheme}
 >
   <mask id="moonMask">

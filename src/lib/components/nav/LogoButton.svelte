@@ -8,7 +8,12 @@
          {shorten ? 'shorten w-8 max-xs:w-6' : ''}"
 >
   <a href="/" data-sveltekit-preload-data="hover" aria-label="메인페이지로 이동">
-    <svg class="h-8 max-xs:h-6 my-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 42">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      role="link"
+      viewBox="0 0 340 42"
+      class="h-8 max-xs:h-6 my-auto"
+    >
       <g class="fill-none stroke-round stroke-[6px]">
         <g id="pr">
           <path class="stroke-emerald-900" d="M04,37 V9 l14,-4 v12 l-14,4 m11,-2 4,17" />
