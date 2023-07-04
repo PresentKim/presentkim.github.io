@@ -22,13 +22,6 @@
     <meta property="og:url" content="{domain}{path}" />
   {/if}
 
-  <!-- TODO
-  <meta property="og:image" content="https://example.com/image.jpg">
-  <meta property="og:image:alt" content="A description of what is in the image (not a caption)">
-  -->
-</svelte:head>
-
-<div>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -40,6 +33,13 @@
     gtag('config', 'G-NNGC41131C');
   </script>
 
+  <!-- TODO
+  <meta property="og:image" content="https://example.com/image.jpg">
+  <meta property="og:image:alt" content="A description of what is in the image (not a caption)">
+  -->
+</svelte:head>
+
+<div>
   <script>
     document.documentElement.classList.add(
       localStorage.getItem('color-scheme') ||
