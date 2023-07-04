@@ -6,7 +6,7 @@ tags: [php]
 draft: true
 ---
 
-## **![PHP Logo](/img/php/php-logo.png)**
+## **![PHP Logo](php-history_title.png)**
 
 `PHP`는 1994년부터 꾸준히 개발되어 현재까지도 업데이트 되고 있는 프로그래밍 언어입니다.
 긴 역사를 가지고 있고, 2023년인 아직까지도 웹서버 언어 점유율 70% 이상을 유지하고 있는 PHP에 대해 자세이 알아보기 위해!

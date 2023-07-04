@@ -3,10 +3,10 @@ title: '🧮 알고리즘 : 누적합 (Prefix sum)'
 summary: '배열이 주어졌을 때 특정 구간의 합을 반복해서 구해야하는 경우에 사용할 수 있는 알고리즘'
 date: 2023-02-04 01:40:00
 tags: [알고리즘, 알고리즘 이론]
-draft: true
+draft: false
 ---
 
-**![time-limit-exceeded.png](/img/algorithm/time-limit-exceeded.png) _! TIME LIMIT EXCEEDED !_**
+**![time-limit-exceeded.png](prefix-sum_time-limit-exceeded.png) _! TIME LIMIT EXCEEDED !_**
 
 알고리즘 문제를 풀다보면 단순히 반복 수행하면 시간 초과에 걸리게 되는 유형의 문제가 많이 나타납니다.
 요구하는 결과를 찾는 로직을 열심히 구현한 뒤에 _"오 드디어 구해진다!"_ 하고 제출했는데, **`시간 초과`**라고 뜨면 굉장히 머리가 아파지죠.

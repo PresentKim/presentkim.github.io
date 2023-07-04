@@ -9,29 +9,29 @@ tags: [알고리즘]
 
 자신의 몸이 허약하다고 생각한 정택은 강해지기위해 운동을 하기 시작했다. 알고리즘 피트니스 센터의 센터장인 종민의 조언에 따라 “먹는 것 까지 운동이다.” 라는 철칙을 잘 따르고 있다. 전날 무리하게 운동한 여파로 늦잠을 자게되어, 오늘 먹을 단백질 도시락을 챙길 여유가 없었다. 어제 무리하게 운동한 것이 아까운 정택은 사무실 근처에 있는 편의점을 돌며 얻을 수 있는 최대의 단백질을 확보하려고 한다. 같은 단백질 함양을 가진 제품은 동일한 제품이고, 같은 도시락을 여러 번 먹으면 질리기때문에 서로 다른 제품을 통해 단백질을 섭취하고자 한다. 힘이 상승하고자하는 정택은 편의점을 ‘+’ 모양으로 순회하려고 한다.
 
-![protein1.png](/img/samsung-codetest/protein/01.jpg)  
-![protein2.png](/img/samsung-codetest/protein/02.jpg)
+![protein1.png](protein_01.jpg)  
+![protein2.png](protein_02.jpg)
 
 위와 같이 편의점 정보가 존재한다고 했을 때, 각 칸에 해당하는 숫자는 해당 편의점에서 얻을 수 있는 단백질의 g 수 이다. 첫 번째 그림에서 얻을 수 있는 서로 다른 종류의 단백질 도시락 개수는 4개이며, 얻을 수 있는 단백질 g 수는 7+2+10+9 로 28 이다. 두 번째 그림에서 얻을 수 있는 서로 다른 종류의 단백질 도시락 개수는 5개이며, 얻을 수 있는 단백질 g 수는 1+3+4+9+10 로 27 이다.
 
 순회 경로의 경우 만약 중앙을 기점으로 봤을 때, 상하좌우 경로의 길이를 서로 달리할 수 있다. 이때 경로의 길이 최솟값은 상하좌우 각각 모두 1로 고정한다. 즉, 하나의 편의점만 들를 수 없고, 직선 형태, 'ㄱ', 'ㄴ' 등의 모양으로 순회를 할 수 없다는 것이다. 예를 들면, 다음과 같이 다양하게 존재할 수 있다.
 
-![protein3.png](/img/samsung-codetest/protein/03.jpg)  
-![protein4.png](/img/samsung-codetest/protein/04.jpg)  
-![protein5.png](/img/samsung-codetest/protein/05.jpg)  
-![protein6.png](/img/samsung-codetest/protein/06.jpg)  
-![protein7.png](/img/samsung-codetest/protein/07.jpg)
+![protein3.png](protein_03.jpg)  
+![protein4.png](protein_04.jpg)  
+![protein5.png](protein_05.jpg)  
+![protein6.png](protein_06.jpg)  
+![protein7.png](protein_07.jpg)
 
 시작 지점에서 출발하여 다시 시작 지점으로 돌아온다고 했을 때, N \* N 의 편의점 단백질 도시락 정보에서 가장 많이 얻을 수 있는 단백질 함량의 합을 구해보자.
 
 편의점 정보가 주어졌을 때, 답을 구하는 과정은 다음과 같다. (총 6가지가 존재하는 것은 아니며, 몇 가지 경우는 생략되었다.)
 
-![protein8.png](/img/samsung-codetest/protein/08.jpg)  
-![protein9.png](/img/samsung-codetest/protein/09.jpg)  
-![protein10.png](/img/samsung-codetest/protein/10.jpg)  
-![protein11.png](/img/samsung-codetest/protein/11.jpg)  
-![protein12.png](/img/samsung-codetest/protein/12.jpg)  
-![protein13.png](/img/samsung-codetest/protein/13.jpg)
+![protein8.png](protein_08.jpg)  
+![protein9.png](protein_09.jpg)  
+![protein10.png](protein_10.jpg)  
+![protein11.png](protein_11.jpg)  
+![protein12.png](protein_12.jpg)  
+![protein13.png](protein_13.jpg)
 
 마지막 그림에서 얻어지는 숫자의 합 1+2+3+5+6+7+8 인 32 가 정답이다.
 

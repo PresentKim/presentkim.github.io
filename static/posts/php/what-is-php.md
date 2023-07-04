@@ -6,7 +6,7 @@ tags: [php]
 draft: true
 ---
 
-## ![js-java-php.jpg](/img/php/js-java-php.jpg)_🎨 핍박받는 PHP 밈_
+## ![js-java-php.jpg](what-is-php_title.jpg)_🎨 핍박받는 PHP 밈_
 
 개발 도중 필요한 정보를 위해서 레딧과 같은 개발 커뮤니티를 돌아다니다 보면 개발자를 위한 여러 밈(meme)을 곳곳에서 마주치게 됩니다.
 _"HTML은 프로그래밍 언어입니다", "버그 하나 고치기 == 많은 버그 만들기"_ 등등 이런 밈들은 개발에 손 좀 대봤다면 공감하며 웃음이 나올 수밖에 없죠.
@@ -28,20 +28,20 @@ _"HTML은 프로그래밍 언어입니다", "버그 하나 고치기 == 많은 �
 PHP는 현재 `The PHP Group`에서 개발 및 관리를 맡고 있고, [php.net](http://www.php.net)에서 문서를 제공하고 있습니다.
 (이곳에서는 3.0 버전부터 관리하기 때문에 1.0과 2.0의 소스가 필요하다면 [PHP 박물관](https://museum.php.net)으로 이동하시면 됩니다.)
 
-**![The elePHPant](/img/php/mascot.png) _The elePHPant_**
+**![The elePHPant](what-is-php_mascot.png) _The elePHPant_**
 PHP의 마스코트는 위에 있는 `elePHPant`라는 이름의 파란 코끼리입니다.
 Vincent Pontier에 의해 디자인된 이 마스코트는 문득 `PHP`를 옆에서 보면 코끼리처럼 보인다는 생각에 만들어졌습니다.
 저처럼 _"엥 이게 무슨 말이야?"_ 라고 생각하신 분이 있다면, 저도 디자이너의 머리속은 상상이 안가기 때문에 이해를 돕는 아래 사진을 보시기 바랍니다.
 
-![How to design elePHPant](/img/php/mascot_from_php.png) _"The (PHP) letters were forming the shape of an elephant if viewed in a sideways angle."_
+![How to design elePHPant](what-is-php_mascot_from_php.png) _"The (PHP) letters were forming the shape of an elephant if viewed in a sideways angle."_
 
 ---
 
 ### 📊 PHP 관련 통계
 
-[![W3Techs : 2022.01 ~ 2023.01 서버 사이드 언어 점유율](/img/php/w3techs-server-side.png) _📊W3Techs : 2022.01 ~ 2023.01 서버 사이드 언어 점유율_](https://w3techs.com/technologies/history_overview/programming_language)
+[![W3Techs : 2022.01 ~ 2023.01 서버 사이드 언어 점유율](what-is-php_w3techs-server-side.png) _📊W3Techs : 2022.01 ~ 2023.01 서버 사이드 언어 점유율_](https://w3techs.com/technologies/history_overview/programming_language)
 
-![stackoverflow : 2022 스크립트·마크업 언어 선호도·기피도](/img/php/stackoverflow-loved-dreaded-survey.png) _📊stackoverflow : 2022 스크립트·마크업 언어 선호도·기피도_
+![stackoverflow : 2022 스크립트·마크업 언어 선호도·기피도](what-is-php_stackoverflow-loved-dreaded-survey.png) _📊stackoverflow : 2022 스크립트·마크업 언어 선호도·기피도_
 
 [W3Techs](https://w3techs.com/technologies/details/pl-php)의 통계에 따르면 2023년에도 PHP는 77.8%의 높은 점유율로 1위를 꾸준히 유지하고 있고, 수많은 메이저 사이트에서도 사용되고 있습니다.
 하지만 [Stackoverflow](https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages)의 설문조사 결과를 보면 높은 기피도(dreaded)로 무려 하위 9위에 랭크했습니다.
@@ -96,7 +96,7 @@ Vincent Pontier에 의해 디자인된 이 마스코트는 문득 `PHP`를 옆�
 
 ## ❓ PHP가 욕을 먹는 이유
 
-**![js-java-php.jpg](/img/php/php_vs_light_theme.jpg)**
+**![js-java-php.jpg](what-is-php_php_vs_light_theme.jpg)**
 
 이제 본격적으로 PHP가 욕을 먹는 이유에 대해 알아봅시다. 먼저 PHP가 받는 비판의 첫번째는 언어 자체가 일관성이 부족하다는 것입니다.
 

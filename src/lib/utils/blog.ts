@@ -24,13 +24,17 @@ export declare type PostData = {
   content: MdRenderResult;
 };
 
-const modules = import.meta.glob('/posts/**/*.md') as Record<
-  string,
-  () => Promise<{
-    metadata: MdMetadata;
-    default: { render: () => MdRenderResult };
-  }>
->;
+const modules = Object.fromEntries(
+  Object.entries(
+    import.meta.glob('/static/posts/**/*.md') as Record<
+      string,
+      () => Promise<{
+        metadata: MdMetadata;
+        default: { render: () => MdRenderResult };
+      }>
+    >
+  ).map(([path, b]) => [(/\/posts\/(.+?)\.md/i.exec(path) || [])[1], b])
+);
 
 const transformMetadata = (metadata: MdMetadata, permalink: string): PostMetadata => {
   return {
@@ -50,9 +54,8 @@ const transformRenderResult = (renderResult: MdRenderResult): MdRenderResult => 
 export async function getBlogPosts() {
   return (
     await Promise.all(
-      Object.entries(modules).map(async ([path, resolver]) => {
+      Object.entries(modules).map(async ([permalink, resolver]) => {
         const { metadata } = await resolver();
-        const permalink = path.match(/[\\\/]posts[\\\/](.*?)\.md/i)?.[1] ?? '';
 
         return transformMetadata(metadata, permalink);
       })
@@ -65,9 +68,8 @@ export async function getBlogPosts() {
 export async function getDraftPosts() {
   return (
     await Promise.all(
-      Object.entries(modules).map(async ([path, resolver]) => {
+      Object.entries(modules).map(async ([permalink, resolver]) => {
         const { metadata } = await resolver();
-        const permalink = path.match(/[\\\/]posts[\\\/](.*?)\.md/i)?.[1] ?? '';
 
         return transformMetadata(metadata, permalink);
       })
@@ -78,7 +80,7 @@ export async function getDraftPosts() {
 }
 
 export async function getBlogPostByPermalink(permalink: string) {
-  const module = modules[`/posts/${permalink}.md`];
+  const module = modules[permalink];
   if (module === undefined) return null;
 
   const { metadata, default: renderer } = await module();

@@ -6,7 +6,7 @@ tags: [블로그]
 draft: true
 ---
 
-![I NEED TO TALK TO YOU ABOUT THIS POST](/img/blog/i-need-talk-to-you-about-this-post.gif)
+![I NEED TO TALK TO YOU ABOUT THIS POST](comment-via-giscus_title.gif)
 _I NEED TO TALK TO YOU ABOUT THIS POST_
 
 ## ❕ 블로그에 댓글 시스템이 없다구요?
