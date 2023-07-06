@@ -25,7 +25,7 @@ function url(permalink: string): string;
 function url(url: { permalink: string; date: string } | string): string {
   return `
     <url>
-        <loc>${domain}/${typeof url === 'object' ? url.permalink : url}</loc>
+        <loc>${domain}/${typeof url === 'object' ? `posts/${url.permalink}` : url}</loc>
         <changefreq>daily</changefreq>
         ${typeof url === 'object' ? `<lastmod>${url.date}</lastmod>` : ''}
         <priority>0.7</priority>

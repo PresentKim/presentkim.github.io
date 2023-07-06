@@ -31,8 +31,8 @@ function item({ title, permalink, summary, date }: PostMetadata) {
   return `
     <item>
         <title>${title}</title>
-        <link>${domain}/${permalink}</link>
-        <guid isPermaLink="false">${domain}/${permalink}</guid>
+        <link>${domain}/posts/${permalink}</link>
+        <guid isPermaLink="false">${domain}/posts/${permalink}</guid>
         <description>${summary}</description>
         <pubDate>${date}</pubDate>
         <!--TODO: include <content:encoded> tag-->
