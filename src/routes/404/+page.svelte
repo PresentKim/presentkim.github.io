@@ -14,7 +14,7 @@
   xmlns="http://www.w3.org/2000/svg"
   role="img"
   viewBox="0 0 64 58"
-  class="m-auto p-20 w-full animate-pulse"
+  class="mb-10 lg:w-3/4 animate-pulse"
 >
   <defs>
     <g id="paper-file">
@@ -46,6 +46,4 @@
   <use href="#paper-file" class="-rotate-12" x="-2" y="6" />
   <use href="#paper-file" x="25" y="9" />
 </svg>
-<div class="justify-center text-center text-4xl">
-  페이지를 찾을 수 없습니다.
-</div>
+<div class="text-4xl">페이지를 찾을 수 없습니다</div>

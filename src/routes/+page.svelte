@@ -16,13 +16,16 @@
   <meta property="og:type" content="website" />
 </svelte:head>
 
-<hr class="my-4" />
-<h1 class="text-3xl mb-5">{title} 블로그의 최신 포스트</h1>
-<PostList posts={data.posts.slice(0, 5)} />
-<a href="/posts/" class="p-0">
+<h1 class="block text-3xl mb-5">
+  전체 포스트
+  <p class="text-sm inline">({data.posts.length})</p>
+</h1>
+
+<PostList posts={data.posts.slice(0, 20)} />
+<a href="/posts/" class="p-0 w-full">
   <p
-    class="w-4/6 mx-auto my-3 p-2 text-center text-base font-bold rounded-xl ring-2 bg-emerald-400 dark:bg-emerald-500"
+    class="w-4/6 mx-auto my-3 p-2 text-center text-base font-bold rounded-xl ring-2"
   >
     🔽 모든 포스트 살펴보기
-  </p></a
->
+  </p>
+</a>

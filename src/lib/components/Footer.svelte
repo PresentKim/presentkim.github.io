@@ -1,5 +1,5 @@
 <footer
-  class="text-neutral-550 dark:text-neutral-350 bg-neutral-200 dark:bg-neutral-900 mx-auto mt-3 py-3"
+  class="text-neutral-550 dark:text-neutral-350 bg-neutral-200 dark:bg-neutral-900 w-full mt-3 py-3 min-h-14"
 >
   <nav class="flex flex-row justify-center text-center gap-5 mb-2">
     <a

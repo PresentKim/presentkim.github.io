@@ -45,7 +45,7 @@
 
 <h1>{post.title}</h1>
 <div
-  class="flex flex-row mb-6 text-sm text-center
+  class="flex flex-row mb-6 w-full text-sm text-center
          border-b border-b-neutral-500 dark:border-b-neutral-700"
 >
   <p class="py-6 my-auto text-neutral-550 dark:text-neutral-350">

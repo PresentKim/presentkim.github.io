@@ -1,6 +1,6 @@
 <script>
   import '$lib/assets/styles/index.scss';
-  import Nav from '$lib/components/Nav.svelte';
+  import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import { title, domain } from '$lib/assets/site-info.json';
 
@@ -22,7 +22,12 @@
     <meta property="og:url" content="{domain}{path}" />
   {/if}
 
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"
+  ></script>
   <script>
+    /** Load color scheme from device setting */
     document.documentElement.classList.add(
       localStorage.getItem('color-scheme') ||
         (window &&
@@ -31,13 +36,7 @@
           ? 'dark'
           : 'light')
     );
-  </script>
 
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"
-  ></script>
-  <script>
     /** Calculate real view port and register css variable */
     function debounce(func, timeout) {
       // noinspection ES6ConvertVarToLetConst
@@ -77,12 +76,10 @@
   -->
 </svelte:head>
 
-<div>
-  <Nav />
+<Header />
 
-  <main class="blog-container p-2">
-    <slot />
-  </main>
+<main class="blog-container flex-1 flex flex-col items-center justify-center">
+  <slot />
+</main>
 
-  <Footer />
-</div>
+<Footer />
