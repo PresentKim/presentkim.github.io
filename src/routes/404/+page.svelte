@@ -14,7 +14,7 @@
   xmlns="http://www.w3.org/2000/svg"
   role="img"
   viewBox="0 0 64 58"
-  class="mx-auto px-20 w-full animate-pulse"
+  class="m-auto p-20 w-full animate-pulse"
 >
   <defs>
     <g id="paper-file">
