@@ -38,6 +38,30 @@
     src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"
   ></script>
   <script>
+    /** Calculate real view port and register css variable */
+    function debounce(func, timeout) {
+      // noinspection ES6ConvertVarToLetConst
+      var id, args;
+      return function () {
+        args = arguments;
+        clearTimeout(id);
+        id = setTimeout(function () {
+          func.apply(this, args);
+        }, timeout);
+      };
+    }
+
+    var updateVh = debounce(function () {
+      document.documentElement.style.setProperty(
+        '--vh',
+        window.innerHeight * 0.01 + 'px'
+      );
+    }, 100);
+    updateVh();
+    window.addEventListener('resize', updateVh);
+    window.addEventListener('touchend', updateVh);
+
+    /** Register GoogleTagManager */
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);

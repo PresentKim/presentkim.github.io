@@ -16,6 +16,9 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      minHeight: {
+        fit: 'calc(var(--vh, 1vh) * 100)'
+      },
       colors: {
         variable: 'var(--variable-color)',
         neutral: {
