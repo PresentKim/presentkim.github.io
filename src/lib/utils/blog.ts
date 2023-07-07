@@ -36,7 +36,10 @@ const modules = Object.fromEntries(
   ).map(([path, b]) => [(/\/posts\/(.+?)\.md/i.exec(path) || [])[1], b])
 );
 
-const transformMetadata = (metadata: MdMetadata, permalink: string): PostMetadata => {
+const transformMetadata = (
+  metadata: MdMetadata,
+  permalink: string
+): PostMetadata => {
   return {
     ...metadata,
     formattedDate: dayjs(metadata.date).format('YYYY-MM-DD'),
@@ -44,7 +47,9 @@ const transformMetadata = (metadata: MdMetadata, permalink: string): PostMetadat
   };
 };
 
-const transformRenderResult = (renderResult: MdRenderResult): MdRenderResult => {
+const transformRenderResult = (
+  renderResult: MdRenderResult
+): MdRenderResult => {
   return {
     ...renderResult,
     html: renderResult.html.replaceAll('〈', '&lt;').replaceAll('〉', '&gt;')

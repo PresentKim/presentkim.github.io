@@ -10,8 +10,14 @@
   <title>Draft Posts - {title}</title>
   <meta property="og:title" content="Draft Posts - {title}" />
 
-  <meta name="description" content="{title} 블로그의 작성중인 포스트를 확인해보세요" />
-  <meta property="og:description" content="{title} 블로그의 작성중인 포스트를 확인해보세요" />
+  <meta
+    name="description"
+    content="{title} 블로그의 작성중인 포스트를 확인해보세요"
+  />
+  <meta
+    property="og:description"
+    content="{title} 블로그의 작성중인 포스트를 확인해보세요"
+  />
 </svelte:head>
 
 <PostList posts={data.posts} />

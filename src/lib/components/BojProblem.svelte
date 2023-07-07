@@ -16,7 +16,11 @@
 <details open={tier !== 0}>
   <summary>
     <div class="mb-8 text-2xl font-bold">
-      <a href={`https://www.acmicpc.net/problem/${id}`} target="_blank" rel="noopener noreferrer">
+      <a
+        href={`https://www.acmicpc.net/problem/${id}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <h1>
           <img
             class="inline-flex w-9"
@@ -42,14 +46,17 @@
 
     {#if data.sample}
       {#each data.sample as io_puts, i}
-        <div id="sample-{i}" class="flex flex-wrap flex-row items-start justify-between mb-8">
+        <div
+          id="sample-{i}"
+          class="flex flex-wrap flex-row items-start justify-between mb-8"
+        >
           {#each io_puts as put, j}
             <div id="sample-{i}-{j}" class="flex-1 basis-full">
               <h3 class="mb-4 pb-1 border-b-2 border-b-neutral-500">
                 {`예제 ${['입력', '출력'][j]} ${i + 1}`}
               </h3>
-              <pre class="p-2 min-h-[2rem] bg-nestable-neutral"><code class="overflow-scroll"
-                  >{put}</code
+              <pre class="p-2 min-h-[2rem] bg-nestable-neutral"><code
+                  class="overflow-scroll">{put}</code
                 ></pre>
             </div>
           {/each}

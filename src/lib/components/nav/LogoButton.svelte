@@ -7,7 +7,11 @@
          transition-shape duration-500 ease-spring
          {shorten ? 'shorten w-8 max-xs:w-6' : ''}"
 >
-  <a href="/" data-sveltekit-preload-data="hover" aria-label="메인페이지로 이동">
+  <a
+    href="/"
+    data-sveltekit-preload-data="hover"
+    aria-label="메인페이지로 이동"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       role="link"
@@ -16,7 +20,10 @@
     >
       <g class="fill-none stroke-round stroke-[6px]">
         <g id="pr">
-          <path class="stroke-emerald-900" d="M04,37 V9 l14,-4 v12 l-14,4 m11,-2 4,17" />
+          <path
+            class="stroke-emerald-900"
+            d="M04,37 V9 l14,-4 v12 l-14,4 m11,-2 4,17"
+          />
           <path class="stroke-emerald-500" d="M03,36 V8 l14,-4 v12 l-14,4" />
         </g>
         <g id="name" class="stroke-current stroke-[5px]">
@@ -42,7 +49,10 @@
           <g id="bal" class="[&>*]:translate-x-[170px]">
             <path d="M03,06 03,19 14,19 14,06 14,11 03,11" />
             <path d="M22,06 22,20 22,11 27,11" />
-            <path class="stroke-[4px]" d="M04,26 23,26 23,31 04,31 04,36 23,36" />
+            <path
+              class="stroke-[4px]"
+              d="M04,26 23,26 23,31 04,31 04,36 23,36"
+            />
           </g>
           <g id="jung" class="[&>*]:translate-x-[210px]">
             <path d="M05,07 23,07 14,07 14,12M05,17 14,12 23,17" />

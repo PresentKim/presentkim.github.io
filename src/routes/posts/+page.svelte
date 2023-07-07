@@ -11,7 +11,10 @@
   <meta property="og:title" content="Posts - {title}" />
 
   <meta name="description" content="{title} 블로그의 포스트들을 확인해보세요" />
-  <meta property="og:description" content="{title} 블로그의 포스트들을 확인해보세요" />
+  <meta
+    property="og:description"
+    content="{title} 블로그의 포스트들을 확인해보세요"
+  />
 </svelte:head>
 
 <PostList posts={data.posts} />

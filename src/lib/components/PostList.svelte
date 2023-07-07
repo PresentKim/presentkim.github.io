@@ -17,7 +17,9 @@
           {post.summary}
         </p>
 
-        <p class="flex text-sm text-right text-neutral-550 dark:text-neutral-350">
+        <p
+          class="flex text-sm text-right text-neutral-550 dark:text-neutral-350"
+        >
           {post.formattedDate}
         </p>
       </a>

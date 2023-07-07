@@ -99,7 +99,9 @@ pre[class*='language-'] {
     color: var(--hue3);
   }
 
-  &.template-string > .token.interpolation > .token.interpolation-punctuation.punctuation {
+  &.template-string
+    > .token.interpolation
+    > .token.interpolation-punctuation.punctuation {
     color: var(--hue5_2);
   }
 }
@@ -208,7 +210,9 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item {
 }
 
 .line-highlight.line-highlight,
-pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows > span:hover:before {
+pre[id].linkable-line-numbers.linkable-line-numbers
+  span.line-numbers-rows
+  > span:hover:before {
   @apply bg-neutral-500 bg-opacity-80;
 }
 

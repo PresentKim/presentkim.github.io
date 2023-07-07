@@ -20,7 +20,10 @@
   onMount(() => {
     function updateReadProgress() {
       readProgress =
-        Math.min(1, window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100;
+        Math.min(
+          1,
+          window.pageYOffset / (document.body.scrollHeight - window.innerHeight)
+        ) * 100;
       requestAnimationFrame(() => updateReadProgress());
     }
 

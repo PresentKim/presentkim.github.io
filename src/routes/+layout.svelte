@@ -25,13 +25,18 @@
   <script>
     document.documentElement.classList.add(
       localStorage.getItem('color-scheme') ||
-        (window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        (window &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
           ? 'dark'
           : 'light')
     );
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"></script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"
+  ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {

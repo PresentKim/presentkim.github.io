@@ -12,7 +12,8 @@
   let style: string;
   let giscusTheme = 'noborder_light';
   theme.subscribe(
-    (theme) => (giscusTheme = theme === 'dark' ? 'transparent_dark' : 'noborder_light')
+    (theme) =>
+      (giscusTheme = theme === 'dark' ? 'transparent_dark' : 'noborder_light')
   );
   $: {
     post = data.metadata;
@@ -52,7 +53,10 @@
   </p>
   <div class="flex flex-wrap font-bold text-emerald-500 dark:text-emerald-400">
     {#each post.tags as tag}
-      <a class="mx-1 my-auto px-2 py-1 rounded-sm bg-nestable-neutral" href="/tags/{tag}">
+      <a
+        class="mx-1 my-auto px-2 py-1 rounded-sm bg-nestable-neutral"
+        href="/tags/{tag}"
+      >
         <code>#{tag}</code>
       </a>
     {/each}

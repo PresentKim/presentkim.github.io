@@ -19,13 +19,33 @@
   <defs>
     <g id="paper-file">
       <rect rx="1" class="fill-neutral-100" y="6" width="34" height="42" />
-      <rect rx="1" class="fill-none stroke-black stroke-[0.3]" y="6" width="34" height="42" />
-      <rect rx="1" class="fill-neutral-200" x="3" y="8" width="28" height="38" />
+      <rect
+        rx="1"
+        class="fill-none stroke-black stroke-[0.3]"
+        y="6"
+        width="34"
+        height="42"
+      />
+      <rect
+        rx="1"
+        class="fill-neutral-200"
+        x="3"
+        y="8"
+        width="28"
+        height="38"
+      />
       <rect rx="1" class="fill-emerald-600" x="6" y="4" width="20" height="6" />
-      <circle r="2" class="fill-none stroke-emerald-600 stroke-[1.5]" cx="16" cy="2" />
+      <circle
+        r="2"
+        class="fill-none stroke-emerald-600 stroke-[1.5]"
+        cx="16"
+        cy="2"
+      />
     </g>
   </defs>
   <use href="#paper-file" class="-rotate-12" x="-2" y="6" />
   <use href="#paper-file" x="25" y="9" />
 </svg>
-<div class="justify-center text-center text-4xl">페이지를 찾을 수 없습니다.</div>
+<div class="justify-center text-center text-4xl">
+  페이지를 찾을 수 없습니다.
+</div>
