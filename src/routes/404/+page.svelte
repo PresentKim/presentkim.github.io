@@ -1,18 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
   import { title } from '$lib/assets/site-info.json';
-
-  let path = ' ';
-  let countDown = 5;
-  onMount(() => {
-    path = window.location.pathname;
-
-    setInterval(() => {
-      if (!--countDown) {
-        location.replace('/');
-      }
-    }, 1000);
-  });
 </script>
 
 <svelte:head>
@@ -41,16 +28,4 @@
   <use href="#paper-file" class="-rotate-12" x="-2" y="6" />
   <use href="#paper-file" x="25" y="9" />
 </svg>
-<div class="justify-center text-center text-4xl">
-  [<span class="underline underline-offset-4 decoration-dashed decoration-red-600"
-    >{path.substring(1)}</span
-  >] 페이지를 찾을 수 없습니다.
-  <br /><br />
-  {countDown}초 후
-  <a
-    class="font-bold underline underline-offset-4 decoration-dashed decoration-emerald-500 dark:decoration-emerald-400"
-    href="/"
-  >
-    메인 페이지</a
-  >로 이동합니다
-</div>
+<div class="justify-center text-center text-4xl">페이지를 찾을 수 없습니다.</div>
