@@ -22,10 +22,6 @@
     <meta property="og:url" content="{domain}{path}" />
   {/if}
 
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"
-  ></script>
   <script>
     /** Load color scheme from device setting */
     document.documentElement.classList.add(
@@ -60,14 +56,6 @@
     window.addEventListener('resize', updateVh);
     window.addEventListener('touchend', updateVh);
 
-    /** Register GoogleTagManager */
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-NNGC41131C');
   </script>
 
   <!-- TODO
