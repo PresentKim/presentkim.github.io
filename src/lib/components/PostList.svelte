@@ -9,7 +9,7 @@
     <article
       class="flex flex-col w-full p-3 border-b border-b-neutral-500 dark:border-b-neutral-700"
     >
-      <a href={`/${permalink}`}>
+      <a href={`/${permalink}`} data-sveltekit-preload-data="hover">
         <h4 class="text-xl font-bold">
           {title}
         </h4>

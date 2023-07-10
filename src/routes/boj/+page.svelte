@@ -19,6 +19,7 @@
     data-tier={Math.floor((tier + 4) / 5)}
     class="inline-flex w-full rounded mx-1 my-2 border-variable border-2 font-bold text-xl"
     href={`/boj/${id}`}
+    data-sveltekit-preload-data="hover"
   >
     <img
       class="inline-block h-7 pl-1"
