@@ -16,31 +16,21 @@ export declare type BojProblemDocument = {
 
 export declare type BojProblemData = BojProblemMetadata & BojProblemDocument;
 
-const modules = import.meta.glob('/src/lib/assets/boj/*.json') as Record<
-  string,
-  () => Promise<{ default: BojProblemData }>
->;
+const bojInfoMap = new Map(
+  Object.entries(
+    import.meta.glob('/src/lib/assets/boj/*.json', {
+      eager: true
+    }) as Record<string, { default: BojProblemData }>
+  )
+    .map(([, module]): [number, BojProblemData] => [
+      module.default.id,
+      module.default
+    ])
+    .sort(([, a], [, b]) => a.id - b.id)
+);
 
-export async function getBojInfos() {
-  return (
-    await Promise.all(
-      Object.values(modules).map(async (resolver) => {
-        const { default: info } = await resolver();
-        return {
-          id: info.id,
-          title: info.title,
-          tier: info.tier,
-          tags: info.tags
-        };
-      })
-    )
-  ).sort((a, b) => a.id - b.id);
-}
+export const getBojInfos = (): BojProblemData[] =>
+  Array.from(bojInfoMap.values());
 
-export async function getBojInfoById(id: string): Promise<BojProblemData> {
-  const module = modules[`/src/lib/assets/boj/${id}.json`];
-  if (module === undefined) throw Error(`Post not found : ${id}`);
-
-  const { default: info } = await module();
-  return info;
-}
+export const getBojInfo = (id: number): BojProblemData | null =>
+  bojInfoMap.get(id) ?? null;

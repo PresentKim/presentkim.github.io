@@ -1,4 +1,4 @@
-import { getBojInfoById } from '$lib/utils/boj';
+import { getBojInfo } from '$lib/utils/boj';
 
-export const load = async ({ params }: LoadArguments) =>
-  getBojInfoById(params.id);
+export const load = ({ params }: LoadArguments) =>
+  getBojInfo(Number(params.id));

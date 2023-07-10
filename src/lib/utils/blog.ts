@@ -1,98 +1,103 @@
 import dayjs from 'dayjs';
+import { pickKeys } from '$lib/utils/utils';
 
-declare type MdMetadata = {
+declare type PostMetadata = {
+  permalink: string;
   title: string;
   summary: string;
   date: string;
   tags: string[];
-  draft?: boolean;
+  draft: boolean;
 };
 
-export declare type MdRenderResult = {
-  html: string;
-  head: string;
-  css: { code: string; map: string | null };
-};
-
-export declare type PostMetadata = MdMetadata & {
+export declare type Post = PostMetadata & {
+  time: number;
   formattedDate: string;
-  permalink: string;
+  content: string;
+  rawContent: string;
 };
 
-export declare type PostData = {
-  metadata: PostMetadata;
-  content: MdRenderResult;
+const DEFAULT_METADATA: PostMetadata = {
+  permalink: '',
+  title: '',
+  summary: '',
+  date: '0',
+  tags: [],
+  draft: false
 };
 
-const modules = Object.fromEntries(
+const rawPostMap: Record<string, string> = import.meta.glob(
+  '/static/posts/**/*.md',
+  { eager: true, as: 'raw' }
+);
+const postMap: Map<string, Post> = new Map(
   Object.entries(
-    import.meta.glob('/static/posts/**/*.md') as Record<
+    import.meta.glob('/static/posts/**/*.md', { eager: true }) as Record<
       string,
-      () => Promise<{
-        metadata: MdMetadata;
-        default: { render: () => MdRenderResult };
-      }>
+      {
+        metadata: Partial<PostMetadata>;
+        default: { render: () => { html: string } };
+      }
     >
-  ).map(([path, b]) => [(/\/posts\/(.+?)\.md/i.exec(path) || [])[1], b])
+  )
+    .map(([path, value]): [string, Post] => {
+      const permalink: string = (/\/static\/(.+?)\.md/i.exec(path) || [])[1];
+      const metadata: PostMetadata = Object.assign(
+        {},
+        DEFAULT_METADATA,
+        value.metadata
+      );
+      const html: string = value.default.render().html;
+
+      const post: Post = {
+        ...metadata,
+        permalink,
+        content: html
+          .replaceAll('〈', '&lt;')
+          .replaceAll('〉', '&gt;')
+          .replaceAll(/data-svelte-h=".+?"/gi, ''),
+        rawContent: rawPostMap[path]
+          .replaceAll(/[\r\n]+/g, ' ')
+          .replaceAll(/---\s+title.+? ---/gim, ''),
+        time: new Date(metadata.date).getTime(),
+        date: dayjs(metadata.date).toString(),
+        formattedDate: dayjs(metadata.date).format('YYYY-MM-DD')
+      };
+
+      return [permalink, post];
+    })
+    .sort(([, a], [, b]) => b.time - a.time)
 );
 
-const transformMetadata = (
-  metadata: MdMetadata,
-  permalink: string
-): PostMetadata => {
-  return {
-    ...metadata,
-    formattedDate: dayjs(metadata.date).format('YYYY-MM-DD'),
-    permalink
-  };
+export const getPosts = (
+  filter: (post: Post) => boolean = () => true
+): Post[] => Array.from(postMap.values()).filter(filter);
+
+export const getPost = (permalink: string): Post => {
+  const post = postMap.get(permalink) ?? postMap.get(`posts/${permalink}`);
+  if (post === undefined) {
+    throw new Error(`'${permalink}' is invalid post permalink`);
+  }
+  return post;
 };
 
-const transformRenderResult = (
-  renderResult: MdRenderResult
-): MdRenderResult => {
-  return {
-    ...renderResult,
-    html: renderResult.html.replaceAll('〈', '&lt;').replaceAll('〉', '&gt;')
-  };
-};
+const POST_INFO_KEYS = [
+  'permalink',
+  'title',
+  'summary',
+  'formattedDate'
+] as const;
+export type PostInfo = Pick<Post, (typeof POST_INFO_KEYS)[number]>;
+export const pickPostInfo = (post: Post): PostInfo =>
+  pickKeys(post, Array.from(POST_INFO_KEYS));
 
-export async function getBlogPosts() {
-  return (
-    await Promise.all(
-      Object.entries(modules).map(async ([permalink, resolver]) => {
-        const { metadata } = await resolver();
-
-        return transformMetadata(metadata, permalink);
-      })
-    )
-  )
-    .filter((post) => !post.draft)
-    .sort((a, b) => b.date.localeCompare(a.date));
-}
-
-export async function getDraftPosts() {
-  return (
-    await Promise.all(
-      Object.entries(modules).map(async ([permalink, resolver]) => {
-        const { metadata } = await resolver();
-
-        return transformMetadata(metadata, permalink);
-      })
-    )
-  )
-    .filter((post) => post.draft)
-    .sort((a, b) => b.date.localeCompare(a.date));
-}
-
-export async function getBlogPostByPermalink(permalink: string) {
-  const module = modules[permalink];
-  if (module === undefined) return null;
-
-  const { metadata, default: renderer } = await module();
-  const postData: PostData = {
-    metadata: transformMetadata(metadata, permalink),
-    content: transformRenderResult(renderer.render())
-  };
-
-  return postData;
-}
+const POST_CONTENTS_KEYS = [
+  'title',
+  'summary',
+  'formattedDate',
+  'content',
+  'tags'
+] as const;
+export type PostContents = Pick<Post, (typeof POST_CONTENTS_KEYS)[number]>;
+export const pickPostContents = (post: Post): PostContents =>
+  pickKeys(post, Array.from(POST_CONTENTS_KEYS));

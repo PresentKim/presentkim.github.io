@@ -1,8 +1,9 @@
-<script>
+<script lang="ts">
+  import type { PostInfo } from '$lib/utils/blog';
   import PostList from '$lib/components/PostList.svelte';
   import { title } from '$lib/assets/site-info.json';
 
-  export let data;
+  export let data: { tag: string; posts: PostInfo };
 </script>
 
 <svelte:head>

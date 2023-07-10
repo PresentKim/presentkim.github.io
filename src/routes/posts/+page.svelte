@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { PostMetadata } from '$lib/utils/blog';
+  import type { PostInfo } from '$lib/utils/blog';
   import PostList from '$lib/components/PostList.svelte';
   import { title } from '$lib/assets/site-info.json';
 
-  export let data: { posts: PostMetadata[] } = {};
+  export let data: { posts: PostInfo[] };
 </script>
 
 <svelte:head>

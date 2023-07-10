@@ -1,4 +1,4 @@
-import { getBlogPostByPermalink } from '$lib/utils/blog';
+import { getPost, pickPostContents } from '$lib/utils/blog';
 
-export const load = async ({ params }: LoadArguments) =>
-  getBlogPostByPermalink(params.permalink);
+export const load = ({ params }: LoadArguments) =>
+  pickPostContents(getPost(params.permalink));

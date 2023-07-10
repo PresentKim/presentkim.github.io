@@ -1,3 +1,5 @@
-import { getDraftPosts } from '$lib/utils/blog';
+import { getPosts, pickPostInfo } from '$lib/utils/blog';
 
-export const load = async () => ({ posts: getDraftPosts() });
+export const load = () => ({
+  posts: getPosts((post) => post.draft).map(pickPostInfo)
+});

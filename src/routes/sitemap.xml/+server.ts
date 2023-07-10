@@ -1,17 +1,17 @@
-import { getBlogPosts } from '$lib/utils/blog';
+import { getPosts } from '$lib/utils/blog';
 import { domain } from '$lib/assets/site-info.json';
 import { minifyXML } from '$lib/utils/utils';
 import dayjs from 'dayjs';
 
 export const prerender = true;
 
-export const GET = async () =>
+export const GET = () =>
   new Response(
     minifyXML(`
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${(await getBlogPosts())
+    ${getPosts()
       .map(({ permalink, date }) =>
-        url(`posts/${permalink}`, 'daily', 0.7, dayjs(date).toString())
+        url(`${permalink}`, 'daily', 0.7, dayjs(date).toString())
       )
       .join('')}
     ${url('posts', 'daily', 0.7)}
