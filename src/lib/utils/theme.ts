@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { derived, writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
 declare type Theme = 'light' | 'dark';
@@ -63,6 +63,9 @@ userTheme.subscribe((theme) => {
 });
 
 export const theme = userTheme;
+export const giscusTheme = derived(theme, ($theme) =>
+  $theme === 'dark' ? 'transparent_dark' : 'noborder_light'
+);
 
 export const toggleTheme = () =>
   userTheme.update(() => (_user_theme === 'dark' ? 'light' : 'dark'));

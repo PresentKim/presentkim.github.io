@@ -1,17 +1,11 @@
 <script lang="ts">
   import type { PostContents } from '$lib/utils/blog';
-  import { theme } from '$lib/utils/theme';
+  import { giscusTheme } from '$lib/utils/theme';
   import site from '$lib/assets/site-info.json';
   import { page } from '$app/stores';
   import Giscus from '@giscus/svelte';
 
   export let data: PostContents;
-
-  let giscusTheme = 'noborder_light';
-  theme.subscribe(
-    (theme) =>
-      (giscusTheme = theme === 'dark' ? 'transparent_dark' : 'noborder_light')
-  );
 </script>
 
 <svelte:head>
@@ -64,6 +58,6 @@
   reactionsEnabled="1"
   emitMetadata="0"
   inputPosition="top"
-  theme={giscusTheme}
+  theme={$giscusTheme}
   lang="ko"
 />
