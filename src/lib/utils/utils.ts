@@ -14,3 +14,17 @@ export const pickKeys = <T extends object, K extends keyof T>(
     }
     return acc;
   }, {} as Pick<T, K>);
+
+export const debounce = <F extends (...args: any[]) => void>(
+  func: F,
+  delay: number
+): ((...args: Parameters<F>) => void) => {
+  let id: NodeJS.Timeout | null;
+
+  return (...args: Parameters<F>) => {
+    clearTimeout(id!);
+    id = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+};
