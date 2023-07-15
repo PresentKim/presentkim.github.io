@@ -2,16 +2,15 @@
   import '$lib/assets/styles/index.scss';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import { page } from '$app/stores';
   import { title, domain } from '$lib/assets/site-info.json';
 
   import { onMount } from 'svelte';
   import { themeMount } from '$lib/utils/theme.ts';
   import { debounce } from '$lib/utils/utils.ts';
 
-  let path = '';
   onMount(() => {
     themeMount();
-    path = window.location.pathname;
 
     /** Load color scheme from device setting */
     document.documentElement.classList.add(
@@ -40,9 +39,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content={title} />
-  {#if path}
-    <meta property="og:url" content="{domain}{path}" />
-  {/if}
+  <meta property="og:url" content="{domain}{$page.url.pathname}" />
 
   <!-- TODO
   <meta property="og:image" content="https://example.com/image.jpg">
