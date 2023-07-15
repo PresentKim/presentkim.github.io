@@ -2,19 +2,11 @@
   import type { Post } from '$lib/utils/blog';
   import PostList from '$lib/components/PostList.svelte';
 
-  import { title, description } from '$lib/assets/site-info.json';
+  import MetaTags from '$lib/components/MetaTags.svelte';
   export let data: { posts: Post[] } = { posts: [] };
 </script>
 
-<svelte:head>
-  <title>{title}</title>
-  <meta property="og:title" content={title} />
-
-  <meta name="description" content={description} />
-  <meta property="og:description" content={description} />
-
-  <meta property="og:type" content="website" />
-</svelte:head>
+<MetaTags />
 
 <h1 class="block text-3xl mb-5">
   전체 포스트

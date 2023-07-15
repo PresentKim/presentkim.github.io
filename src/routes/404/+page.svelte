@@ -1,14 +1,11 @@
 <script>
-  import { title } from '$lib/assets/site-info.json';
+  import MetaTags from '$lib/components/MetaTags.svelte';
 </script>
 
-<svelte:head>
-  <title>페이지를 찾을 수 없습니다 - {title}</title>
-  <meta property="og:title" content="페이지를 찾을 수 없습니다 - {title}" />
-
-  <meta name="description" content="페이지를 찾을 수 없습니다" />
-  <meta property="og:description" content="페이지를 찾을 수 없습니다" />
-</svelte:head>
+<MetaTags
+  pageName="페이지를 찾을 수 없습니다"
+  description="페이지를 찾을 수 없습니다"
+/>
 
 <svg
   xmlns="http://www.w3.org/2000/svg"

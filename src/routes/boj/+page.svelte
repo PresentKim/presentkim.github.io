@@ -1,17 +1,14 @@
 <script lang="ts">
   import type { BojProblemMetadata } from '$lib/utils/boj';
-  import { title, description } from '$lib/assets/site-info.json';
+  import MetaTags from '$lib/components/MetaTags.svelte';
 
   export let data: { infos: BojProblemMetadata[] };
 </script>
 
-<svelte:head>
-  <title>{title}</title>
-  <meta property="og:title" content={title} />
-
-  <meta name="description" content={description} />
-  <meta property="og:description" content={description} />
-</svelte:head>
+<MetaTags
+  pageName="해결한 BOJ 문제 목록"
+  description="지금까지 해결한 BOJ 문제 목록입니다"
+/>
 
 <h1 class="text-center text-4xl font-bold my-10">해결한 BOJ 문제 목록</h1>
 {#each data.infos as { id, title, tier, tags }}

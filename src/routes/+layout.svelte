@@ -2,8 +2,6 @@
   import '$lib/assets/styles/index.scss';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import { page } from '$app/stores';
-  import { title, domain } from '$lib/assets/site-info.json';
 
   import { onMount } from 'svelte';
   import { themeMount } from '$lib/utils/theme.ts';
@@ -34,18 +32,6 @@
     window.addEventListener('touchend', updateVh);
   });
 </script>
-
-<svelte:head>
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ko_KR" />
-  <meta property="og:site_name" content={title} />
-  <meta property="og:url" content="{domain}{$page.url.pathname}" />
-
-  <!-- TODO
-  <meta property="og:image" content="https://example.com/image.jpg">
-  <meta property="og:image:alt" content="A description of what is in the image (not a caption)">
-  -->
-</svelte:head>
 
 <Header />
 

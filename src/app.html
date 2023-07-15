@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="theme-color" content="#333333" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no, address=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon/any.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/32.png" />
@@ -24,13 +28,20 @@
     <meta name="msapplication-square150x150logo" content="/favicon/150.png" />
     <meta name="msapplication-square310x310logo" content="/favicon/310.png" />
 
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <!-- Sitemap and RSS feed xml -->
+    <link
+      rel="sitemap"
+      type="application/xml"
+      href="https://present.kim/sitemap.xml"
+    />
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="RSS Feed"
-      href="/rss.xml"
+      href="https://present.kim/rss.xml"
+      title="PresentKim RSS Feed"
     />
+
+    <!-- Google Tag Manager (gtag.js) - Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-NNGC41131C"

@@ -21,8 +21,7 @@ export const GET = () =>
 `),
     {
       headers: {
-        'Content-Type': 'application/xml',
-        'Cache-Control': 'max-age=0, s-maxage=3600'
+        'Content-Type': 'application/xml'
       }
     }
   );

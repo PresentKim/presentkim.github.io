@@ -1,6 +1,6 @@
 import type { Post } from '$lib/utils/blog';
 import { getPosts } from '$lib/utils/blog';
-import { title, domain, description } from '$lib/assets/site-info.json';
+import { domain, name, description } from '$lib/assets/site-info.json';
 import dayjs from 'dayjs';
 import { minifyXML } from '$lib/utils/utils';
 export const prerender = true;
@@ -11,7 +11,7 @@ export function GET() {
     minifyXML(`
 <rss xmlns:content="https://purl.org/rss/1.0/modules/content/" version="2.0">
     <channel>
-        <title><![CDATA[ ${title}'s RSS Feed ]]></title>
+        <title><![CDATA[ ${name} RSS Feed ]]></title>
         <description><![CDATA[ ${description} ]]></description>
         <link>${domain}</link>
         <generator>SvelteKit v1.20.5</generator>
@@ -22,8 +22,7 @@ export function GET() {
 </rss>`),
     {
       headers: {
-        'Content-Type': 'application/xml',
-        'Cache-Control': 'max-age=0, s-maxage=3600'
+        'Content-Type': 'application/xml'
       }
     }
   );

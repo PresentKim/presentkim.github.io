@@ -4,19 +4,13 @@
   import site from '$lib/assets/site-info.json';
   import { page } from '$app/stores';
   import Giscus from '@giscus/svelte';
+  import MetaTags from '$lib/components/MetaTags.svelte';
 
   export let data: PostContents;
 </script>
 
+<MetaTags pageName={data.title} description={data.summary} />
 <svelte:head>
-  <title>{data.title} - {site.title}</title>
-  <meta property="og:title" content="{data.title} - {site.title}" />
-
-  <meta name="description" content={data.summary} />
-  <meta property="og:description" content={data.summary} />
-
-  <meta property="og:type" content="article" />
-
   <meta name="giscus:backlink" content="{site.domain}{$page.url.pathname}" />
 </svelte:head>
 
