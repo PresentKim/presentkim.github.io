@@ -33,6 +33,11 @@
   });
 </script>
 
+<svelte:body
+  on:mousedown={() => document.body.classList.add('focus-hide')}
+  on:keydown={() => document.body.classList.remove('focus-hide')}
+/>
+
 <Header />
 
 <main class="blog-container flex-1 flex flex-col items-center justify-center">

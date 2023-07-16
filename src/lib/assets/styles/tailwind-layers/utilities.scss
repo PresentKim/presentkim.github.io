@@ -19,4 +19,8 @@
   .bg-nestable-neutral {
     @apply bg-neutral-500 bg-opacity-5;
   }
+
+  .focus-hide *:focus{
+    outline: 0;
+  }
 }
