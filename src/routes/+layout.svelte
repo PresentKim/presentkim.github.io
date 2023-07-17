@@ -5,7 +5,6 @@
 
   import { onMount } from 'svelte';
   import { themeMount } from '$lib/utils/theme.ts';
-  import { debounce } from '$lib/utils/utils.ts';
 
   onMount(() => {
     themeMount();
@@ -19,17 +18,6 @@
           ? 'dark'
           : 'light')
     );
-
-    /** Calculate real view port and register css variable */
-    const updateVh = debounce(function () {
-      document.documentElement.style.setProperty(
-        '--vh',
-        window.innerHeight * 0.01 + 'px'
-      );
-    }, 100);
-    updateVh();
-    window.addEventListener('resize', updateVh);
-    window.addEventListener('touchend', updateVh);
   });
 </script>
 

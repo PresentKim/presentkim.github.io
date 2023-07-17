@@ -15,20 +15,6 @@ export const pickKeys = <T extends object, K extends keyof T>(
     return acc;
   }, {} as Pick<T, K>);
 
-export const debounce = <F extends (...args: any[]) => void>(
-  func: F,
-  delay: number
-): ((...args: Parameters<F>) => void) => {
-  let id: number | null;
-
-  return (...args: Parameters<F>) => {
-    clearTimeout(id!);
-    id = setTimeout(() => {
-      func(...args);
-    }, delay);
-  };
-};
-
 /** Returns a keyboard event handler that executes a given callback function when entering Space or Enter */
 export const runOnEnter = (callback: () => void) => (event: KeyboardEvent) => {
   if (event.code === 'Space' || event.code === 'Enter') {
