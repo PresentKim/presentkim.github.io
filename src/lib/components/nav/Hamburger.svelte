@@ -2,6 +2,7 @@
   import { runOnEnter } from '$lib/utils/utils';
 
   export let open: boolean = false;
+  export let tabindex: number = 0;
 
   let input: HTMLInputElement;
 </script>
@@ -11,8 +12,8 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     role="button"
-    tabindex="0"
     viewBox="0 0 50 50"
+    {tabindex}
     on:keydown={runOnEnter(() => input.click())}
     class="fill-none stroke-round stroke-[6px] stroke-current"
   >

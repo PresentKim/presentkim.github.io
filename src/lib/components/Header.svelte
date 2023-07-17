@@ -49,17 +49,20 @@
       <div class="flex gap-2 my-auto">
         <div
           class="flex justify-end mr-2 gap-x-2
-               {menuOpened || widthEnough ? 'w-36' : 'w-0'}
-               md:w-36 overflow-hidden my-auto"
+               {menuOpened || widthEnough ? '' : 'w-0'}
+                overflow-hidden my-auto"
         >
-          <a href="/portfolio" class="h-fit">
-            <p class="text-xl max-xs:text-base font-bold">Portfolio</p>
-          </a>
-          <a href="/posts" class="h-fit">
-            <p class="text-xl max-xs:text-base font-bold">Posts</p>
-          </a>
+          {#each [['portfolio', 'Portfolio'], ['posts', 'Posts']] as [pathname, name]}
+            <a
+              href="/{pathname}"
+              class="h-fit m-1"
+              tabindex={menuOpened || widthEnough ? 0 : -1}
+            >
+              <p class="text-xl max-xs:text-base font-bold">{name}</p>
+            </a>
+          {/each}
         </div>
-        <Hamburger bind:open={menuOpened} />
+        <Hamburger bind:open={menuOpened} tabindex={widthEnough ? -1 : 0} />
         <ThemeButton />
       </div>
     </div>
