@@ -52,7 +52,7 @@
                {menuOpened || widthEnough ? '' : 'w-0'}
                 overflow-hidden my-auto"
         >
-          {#each [['portfolio', 'Portfolio'], ['posts', 'Posts']] as [pathname, name]}
+          {#each [['portfolio', 'Portfolio'], ['posts', 'Posts'], ['tags', 'Tags']] as [pathname, name]}
             <a
               href="/{pathname}"
               class="h-fit m-1"
