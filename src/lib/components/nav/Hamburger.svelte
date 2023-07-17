@@ -7,7 +7,7 @@
   let input: HTMLInputElement;
 </script>
 
-<label class="block select-none w-8 max-xs:w-6 sm:w-0 my-auto">
+<label class="block select-none w-7 sm:w-8 my-auto">
   <input type="checkbox" class="hidden" bind:this={input} bind:checked={open} />
   <svg
     xmlns="http://www.w3.org/2000/svg"

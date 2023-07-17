@@ -33,24 +33,23 @@
 
 <svelte:window bind:innerWidth={screenWidth} />
 
-<header class="w-full m-0">
+<header class="w-full m-auto">
   <div id="top" class="h-0 mb-14" />
   <nav
-    class="fixed top-0 z-50 w-full backdrop-blur-sm
+    class="fixed top-0 z-50 w-full backdrop-blur-sm select-none
          text-neutral-700 dark:text-neutral-200
          bg-white dark:bg-neutral-900 !bg-opacity-80
          border-b border-neutral-200 dark:border-neutral-800"
   >
     <div
-      class="blog-container flex justify-between px-2 py-3
+      class="blog-container flex justify-between
            [&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring"
     >
-      <LogoButton shorten={menuOpened && !widthEnough} />
+      <LogoButton />
       <div class="flex gap-2 my-auto">
         <div
-          class="flex justify-end mr-2 gap-x-2
-               {menuOpened || widthEnough ? '' : 'w-0'}
-                overflow-hidden my-auto"
+          class="flex justify-end gap-x-0.5 my-auto overflow-hidden
+                 {menuOpened || widthEnough ? '' : 'w-0'}"
         >
           {#each [['portfolio', 'Portfolio'], ['posts', 'Posts'], ['tags', 'Tags']] as [pathname, name]}
             <a
@@ -59,7 +58,7 @@
               tabindex={menuOpened || widthEnough ? 0 : -1}
               data-sveltekit-preload-data="hover"
             >
-              <p class="text-xl max-xs:text-base font-bold">{name}</p>
+              <p class="text-base sm:text-xl font-bold">{name}</p>
             </a>
           {/each}
         </div>

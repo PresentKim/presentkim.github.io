@@ -13,7 +13,7 @@
   }
 
   .blog-container {
-    @apply mx-auto px-6 py-2 md:px-0 w-full md:w-[548px] xl:w-[768px] transition-shape duration-500 ease-spring;
+    @apply mx-auto p-2 w-full md:w-[548px] xl:w-[768px] transition-shape duration-500 ease-spring;
   }
 
   .bg-nestable-neutral {

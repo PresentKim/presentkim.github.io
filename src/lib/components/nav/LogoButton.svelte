@@ -1,90 +1,54 @@
-<script lang="ts">
-  export let shorten: boolean = false;
-</script>
-
-<div
-  class="select-none overflow-hidden w-60 max-xs:w-54
-         {shorten ? 'shorten w-8 max-xs:w-6' : ''}"
+<a
+  href="/"
+  data-sveltekit-preload-data="hover"
+  aria-label="메인페이지로 이동"
+  class="select-none overflow-clip transition-opacity"
 >
-  <a
-    href="/"
-    data-sveltekit-preload-data="hover"
-    aria-label="메인페이지로 이동"
+  <svg
+    class="h-7 sm:h-9"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 220 42"
   >
-    <svg
-      class="h-8 max-xs:h-6 my-auto"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 315 42"
-    >
-      <g class="fill-none stroke-round stroke-[6px]">
-        <g id="pr">
-          <path
-            class="stroke-emerald-900"
-            d="M04,37 V9 l14,-4 v12 l-14,4 m11,-2 4,17"
-          />
-          <path class="stroke-emerald-500" d="M03,36 V8 l14,-4 v12 l-14,4" />
-        </g>
-        <g id="name" class="stroke-current stroke-[5px]">
-          <g id="hyeun" class="[&>*]:translate-x-[40px]">
-            <path d="M00,10 16,10M08,10 08,06" />
-            <circle r="6" cx="08" cy="17" />
-            <path d="M23,06 23,27M20,14 23,14 23,20 20,20" />
-            <path d="M06,29 06,36 24,36" />
-          </g>
-          <g id="jae" class="[&>*]:translate-x-[70px]">
-            <path d="M00,10 12,10 06,10 06,17M02,32 06,17 12,32" />
-            <path d="M18,06 18,36 18,21 24,21 24,06, 24,36" />
-          </g>
-          <g id="neon" class="[&>*]:translate-x-[100px]">
-            <path d="M03,06 03,15 22,15" />
-            <path d="M00,23 24,23" />
-            <path d="M03,29 03,36 22,36" />
-          </g>
-          <g id="gae" class="[&>*]:translate-x-[140px]">
-            <path d="M02,08 12,08 08,35" />
-            <path d="M19,06 19,36 19,21 25,21 25,06, 25,36" />
-          </g>
-          <g id="bal" class="[&>*]:translate-x-[170px]">
-            <path d="M03,06 03,19 14,19 14,06 14,11 03,11" />
-            <path d="M22,06 22,20 22,11 27,11" />
-            <path
-              class="stroke-[4px]"
-              d="M04,26 23,26 23,31 04,31 04,36 23,36"
-            />
-          </g>
-          <g id="jung" class="[&>*]:translate-x-[210px]">
-            <path d="M05,07 23,07 14,07 14,12M05,17 14,12 23,17" />
-            <path d="M03,23 25,23 14,23 15,28" />
-            <ellipse class="stroke-[4.5px]" rx="9" ry="4" cx="14" cy="33" />
-          </g>
-        </g>
+    <g id="pr" class="fill-none stroke-round stroke-[6px]">
+      <path
+        class="stroke-emerald-900"
+        d="M04,37 V9 l14,-4 v12 l-14,4 m11,-2 4,17"
+      />
+      <path class="stroke-emerald-500" d="M03,36 V8 l14,-4 v12 l-14,4" />
+    </g>
+    <g id="name" class="fill-none stroke-round stroke-current stroke-[5px]">
+      <g id="hyeun">
+        <path d="M35,10 51,10M43,10 43,06" />
+        <circle r="6" cx="43" cy="17" />
+        <path d="M58,06 58,27M55,14 58,14 58,20 55,20" />
+        <path d="M41,29 41,36 59,36" />
       </g>
-    </svg>
-  </a>
-</div>
-
-<style lang="scss">
-  svg path {
-    @apply duration-500 ease-spring;
-    transition-property: transform, stroke;
-  }
-
-  .shorten {
-    #code-wrap path {
-      @apply translate-x-[-22px];
-    }
-
-    #name-chars path {
-      @apply translate-x-[-28px];
-      @apply -skew-y-6;
-
-      &:nth-child(1) {
-        @apply translate-x-[002px] translate-y-[002px] stroke-emerald-900;
-      }
-
-      &:nth-child(2) {
-        @apply translate-x-[002px] translate-y-[002px] stroke-emerald-500;
-      }
-    }
-  }
-</style>
+      <g id="jae">
+        <path d="M65,10 77,10 71,10 71,17M67,32 71,17 77,32" />
+        <path d="M83,06 83,36 83,21 89,21 89,06 89,36" />
+      </g>
+      <g id="neon">
+        <path d="M98,06 98,15 117,15" />
+        <path d="M95,23 119,23" />
+        <path d="M98,29 98,36 117,36" />
+      </g>
+      <g id="gae">
+        <path d="M132,08 142,08 138,35" />
+        <path d="M149,06 149,36 149,21 156,21 156,06 156,36" />
+      </g>
+      <g id="bal">
+        <path d="M163,06 163,19 174,19 174,06 174,11 163,11" />
+        <path d="M182,06 182,20 182,11 187,11" />
+        <path
+          class="stroke-[4px]"
+          d="M164,25 183,25 183,30.5 164,30.5 164,36 183,36"
+        />
+      </g>
+      <g id="jung">
+        <path d="M193,07 211,07 202,07 202,12M193,17 202,12 211,17" />
+        <path d="M191,23 213,23 202,23 203,28" />
+        <ellipse rx="9" ry="4" cx="202" cy="33" />
+      </g>
+    </g>
+  </svg>
+</a>

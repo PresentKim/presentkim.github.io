@@ -8,7 +8,7 @@
   role="button"
   tabindex="0"
   viewBox="0 0 50 50"
-  class="w-8 max-xs:w-6 my-auto select-none"
+  class="w-7 sm:w-8 my-auto"
   on:keydown={runOnEnter(toggleTheme)}
   on:mousedown={toggleTheme}
 >
