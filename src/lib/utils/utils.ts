@@ -28,3 +28,11 @@ export const debounce = <F extends (...args: any[]) => void>(
     }, delay);
   };
 };
+
+/** Returns a keyboard event handler that executes a given callback function when entering Space or Enter */
+export const runOnEnter = (callback: () => void) => (event: KeyboardEvent) => {
+  if (event.code === 'Space' || event.code === 'Enter') {
+    callback();
+    event.preventDefault();
+  }
+};

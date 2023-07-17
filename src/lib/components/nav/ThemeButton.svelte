@@ -1,5 +1,6 @@
 <script>
-  import { toggleTheme } from '$lib/utils/theme.ts';
+  import { toggleTheme } from '$lib/utils/theme';
+  import { runOnEnter } from '$lib/utils/utils';
 </script>
 
 <svg
@@ -8,6 +9,7 @@
   tabindex="0"
   viewBox="0 0 50 50"
   class="w-8 max-xs:w-6 my-auto select-none"
+  on:keydown={runOnEnter(toggleTheme)}
   on:mousedown={toggleTheme}
 >
   <mask id="moonMask">
