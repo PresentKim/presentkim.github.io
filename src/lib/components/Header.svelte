@@ -57,6 +57,7 @@
               href="/{pathname}"
               class="h-fit m-1"
               tabindex={menuOpened || widthEnough ? 0 : -1}
+              data-sveltekit-preload-data="hover"
             >
               <p class="text-xl max-xs:text-base font-bold">{name}</p>
             </a>
