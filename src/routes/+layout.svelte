@@ -28,7 +28,7 @@
 
 <Header />
 
-<main class="blog-container flex-1 flex flex-col items-center justify-center">
+<main class="blog-container flex-1 flex flex-col">
   <slot />
 </main>
 
