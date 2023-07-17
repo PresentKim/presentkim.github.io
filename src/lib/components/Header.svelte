@@ -45,7 +45,7 @@
       class="blog-container flex justify-between px-2 py-3
            [&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring"
     >
-      <LogoButton />
+      <LogoButton shorten={menuOpened && !widthEnough} />
       <div class="flex gap-2 my-auto">
         <div
           class="flex justify-end mr-2 gap-x-2
