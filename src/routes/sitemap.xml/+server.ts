@@ -1,3 +1,4 @@
+import type { RequestHandler } from './$types';
 import { getPosts } from '$lib/utils/blog';
 import { domain } from '$lib/assets/site-info.json';
 import { minifyXML } from '$lib/utils/utils';
@@ -5,7 +6,7 @@ import dayjs from 'dayjs';
 
 export const prerender = true;
 
-export const GET = () =>
+export const GET: RequestHandler = () =>
   new Response(
     minifyXML(`
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -1,3 +1,4 @@
+import type { RequestHandler } from './$types';
 import type { Post } from '$lib/utils/blog';
 import { getPosts } from '$lib/utils/blog';
 import { domain, name, description } from '$lib/assets/site-info.json';
@@ -5,7 +6,7 @@ import dayjs from 'dayjs';
 import { minifyXML } from '$lib/utils/utils';
 export const prerender = true;
 
-export function GET() {
+export const GET: RequestHandler = () => {
   const posts = getPosts();
   return new Response(
     minifyXML(`
@@ -26,7 +27,7 @@ export function GET() {
       }
     }
   );
-}
+};
 
 function item({ title, permalink, summary, date, rawContent }: Post) {
   return `

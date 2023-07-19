@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { BojProblemData } from '$lib/utils/boj';
+  import type { PageData } from './$types';
   import MetaTags from '$lib/components/MetaTags.svelte';
 
-  export let data: BojProblemData;
+  export let data: PageData;
 </script>
 
 <MetaTags pageName="{data.id} :: {data.title}" description={data.description} />

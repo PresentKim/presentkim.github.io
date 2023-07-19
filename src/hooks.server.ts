@@ -1,9 +1,10 @@
 import { minify } from 'html-minifier';
+import type { Handle } from '@sveltejs/kit';
 
-export async function handle({ event, resolve }) {
+export const handle: Handle = async ({ event, resolve }) => {
   const response = await resolve(event);
 
-  if (response.headers.get('content-type').startsWith('text/html')) {
+  if (response.headers.get('content-type')?.startsWith('text/html')) {
     let body = await response.text();
 
     /** Remove 'data-sveltekit-fetched' json data */
@@ -34,4 +35,4 @@ export async function handle({ event, resolve }) {
   }
 
   return response;
-}
+};

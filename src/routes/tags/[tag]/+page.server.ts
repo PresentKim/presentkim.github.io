@@ -1,8 +1,9 @@
+import type { PageServerLoad } from './$types';
 import { getPosts, pickPostInfo } from '$lib/utils/blog';
 
-export const load = ({ params }: LoadArguments) => ({
-  tag: params.tag,
+export const load: PageServerLoad = ({ params: { tag } }) => ({
+  tag,
   posts: getPosts()
-    .filter((post) => post.tags.includes(params.tag))
+    .filter((post) => post.tags.includes(tag))
     .map(pickPostInfo)
 });

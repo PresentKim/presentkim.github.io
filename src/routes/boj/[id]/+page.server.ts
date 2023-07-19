@@ -1,4 +1,5 @@
+import type { PageServerLoad } from './$types';
 import { getBojInfo } from '$lib/utils/boj';
 
-export const load = ({ params }: LoadArguments) =>
-  getBojInfo(Number(params.id));
+export const load: PageServerLoad = ({ params: { id } }) =>
+  getBojInfo(Number(id));

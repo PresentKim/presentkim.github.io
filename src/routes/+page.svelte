@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Post } from '$lib/utils/blog';
+  import type { PageData } from './$types';
   import PostList from '$lib/components/PostList.svelte';
 
   import MetaTags from '$lib/components/MetaTags.svelte';
-  export let data: { posts: Post[] } = { posts: [] };
+  export let data: PageData;
 </script>
 
 <MetaTags />

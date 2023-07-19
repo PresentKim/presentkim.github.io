@@ -1,6 +1,7 @@
+import type { PageServerLoad } from './$types';
 import { getPosts } from '$lib/utils/blog';
 
-export const load = () => {
+export const load: PageServerLoad = () => {
   const tagMap: Record<string, number> = {};
 
   getPosts().forEach((post) => {

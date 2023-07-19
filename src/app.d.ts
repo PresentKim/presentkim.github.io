@@ -7,10 +7,3 @@ declare namespace App {
   // interface Error {}
   // interface Platform {}
 }
-
-declare type LoadArguments = {
-  url: URL;
-  params: Record<string, string>;
-  route: { id: string };
-  fetch: (url: string) => Promise<Response>;
-};

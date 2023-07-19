@@ -32,5 +32,10 @@ const bojInfoMap = new Map(
 export const getBojInfos = (): BojProblemData[] =>
   Array.from(bojInfoMap.values());
 
-export const getBojInfo = (id: number): BojProblemData | null =>
-  bojInfoMap.get(id) ?? null;
+export const getBojInfo = (id: number): BojProblemData => {
+  const info = bojInfoMap.get(id);
+  if (info === undefined) {
+    throw new Error(`'${id}' is invalid boj problem number`);
+  }
+  return info;
+};

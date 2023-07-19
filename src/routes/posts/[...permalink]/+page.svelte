@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { PostContents } from '$lib/utils/blog';
+  import type { PageData } from './$types';
   import { giscusTheme } from '$lib/utils/theme';
   import site from '$lib/assets/site-info.json';
   import { page } from '$app/stores';
   import Giscus from '@giscus/svelte';
   import MetaTags from '$lib/components/MetaTags.svelte';
 
-  export let data: PostContents;
+  export let data: PageData;
 </script>
 
 <MetaTags pageName={data.title} description={data.summary} />

@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { PageData } from './$types';
   import MetaTag from '$lib/components/MetaTags.svelte';
 
-  export let data: Record<string, number>;
+  export let data: PageData;
 </script>
 
 <MetaTag pageName="전체 태그 목록" description="전체 태그 목록" />
