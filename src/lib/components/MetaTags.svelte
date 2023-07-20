@@ -26,7 +26,7 @@
   <meta name="creator" content={author} />
   <meta name="publisher" content={author} />
   <meta name="author" content={author} />
-  <meta name="canonical" href={url} />
+  <meta name="canonical" content={url} />
 
   <meta name="robots" content="index, follow" />
   <meta name="generator" content="SvelteKit v1.20.5" />
@@ -50,8 +50,8 @@
     <meta itemprop="image" content={preview} />
     <meta property="og:image:alt" content={title} />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1600" />
-    <meta property="og:image:height" content="900" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
   {/if}
 
   <!-- Twitter Meta Tags -->
