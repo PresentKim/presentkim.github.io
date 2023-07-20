@@ -13,14 +13,15 @@
   }
 
   .blog-container {
-    @apply mx-auto p-2 w-full md:w-[548px] xl:w-[768px] transition-shape duration-500 ease-spring;
+    @apply mx-auto w-full p-2 md:w-[548px] xl:w-[768px];
+    @apply transition-shape duration-500 ease-spring;
   }
 
   .bg-nestable-neutral {
     @apply bg-neutral-500 bg-opacity-5;
   }
 
-  .focus-hide *:focus{
+  .focus-hide *:focus {
     outline: 0;
   }
 }

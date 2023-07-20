@@ -7,7 +7,7 @@
   description="페이지를 찾을 수 없습니다"
 />
 
-<div class="flex flex-col justify-center items-center">
+<div class="flex flex-col items-center justify-center">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     role="img"

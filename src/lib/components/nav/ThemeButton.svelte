@@ -8,14 +8,14 @@
   role="button"
   tabindex="0"
   viewBox="0 0 50 50"
-  class="w-7 sm:w-8 my-auto"
+  class="my-auto w-7 sm:w-8"
   on:keydown={runOnEnter(toggleTheme)}
   on:mousedown={toggleTheme}
 >
   <mask id="moonMask">
     <rect class="fill-white" width="50" height="50" />
     <circle
-      class="fill-black origin-top-right scale-0 dark:scale-100"
+      class="origin-top-right scale-0 fill-black dark:scale-100"
       cx="34"
       cy="14"
       r="16"
@@ -24,14 +24,14 @@
 
   <g mask="url(#moonMask)">
     <circle
-      class="fill-current scale-50 dark:scale-125"
+      class="scale-50 fill-current dark:scale-125"
       cx="25"
       cy="25"
       r="16"
     />
 
     <g
-      class="fill-none stroke-current stroke-round stroke-[5px] scale-100 dark:scale-0"
+      class="stroke-round scale-100 fill-none stroke-current stroke-[5px] dark:scale-0"
     >
       <line x1="4" y1="25" x2="12" y2="25" />
       <line x1="46" y1="25" x2="38" y2="25" />

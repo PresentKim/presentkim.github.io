@@ -6,7 +6,8 @@
   }
 
   body {
-    @apply m-0 p-0 w-full flex flex-col text-lg sm:min-h-screen text-neutral-900 dark:text-neutral-100 font-normal bg-white dark:bg-zinc-800;
+    @apply m-0 flex w-full flex-col p-0 text-lg font-normal sm:min-h-screen;
+    @apply bg-white text-neutral-900 dark:bg-zinc-800 dark:text-neutral-100;
   }
 
   h1,

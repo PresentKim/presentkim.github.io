@@ -16,16 +16,16 @@
 
 <h1>{data.title}</h1>
 <div
-  class="flex flex-row mb-6 w-full text-sm text-center
-         border-b border-b-neutral-500 dark:border-b-neutral-700"
+  class="mb-6 flex w-full flex-row border-b border-b-neutral-500
+         text-center text-sm dark:border-b-neutral-700"
 >
-  <p class="py-6 my-auto text-neutral-550 dark:text-neutral-350">
+  <p class="my-auto py-6 text-neutral-550 dark:text-neutral-350">
     {data.formattedDate}
   </p>
   <div class="flex flex-wrap font-bold text-emerald-500 dark:text-emerald-400">
     {#each data.tags as tag}
       <a
-        class="mx-1 my-auto px-2 py-1 rounded-sm bg-nestable-neutral"
+        class="bg-nestable-neutral mx-1 my-auto rounded-sm px-2 py-1"
         href="/tags/{tag}"
       >
         <code>#{tag}</code>

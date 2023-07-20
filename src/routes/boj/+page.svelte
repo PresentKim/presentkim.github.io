@@ -10,11 +10,12 @@
   description="지금까지 해결한 BOJ 문제 목록입니다"
 />
 
-<h1 class="text-center text-4xl font-bold my-10">해결한 BOJ 문제 목록</h1>
+<h1 class="my-10 text-center text-4xl font-bold">해결한 BOJ 문제 목록</h1>
 {#each data.infos as { id, title, tier, tags }}
   <a
     data-tier={Math.floor((tier + 4) / 5)}
-    class="inline-flex w-full rounded mx-1 my-2 border-variable border-2 font-bold text-xl"
+    class="mx-1 my-2 inline-flex w-full rounded
+           border-2 border-variable text-xl font-bold"
     href={`/boj/${id}`}
     data-sveltekit-preload-data="hover"
   >

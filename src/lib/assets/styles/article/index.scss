@@ -1,5 +1,5 @@
 .article {
-  @apply w-full leading-loose text-neutral-700 dark:text-white break-all;
+  @apply w-full break-all leading-loose text-neutral-700 dark:text-white;
 
   p {
     @apply my-6;
@@ -16,7 +16,7 @@
   img {
     @apply mx-auto w-full rounded shadow;
     + em {
-      @apply block mx-auto text-center text-sm p-3;
+      @apply mx-auto block p-3 text-center text-sm;
     }
   }
 
@@ -29,16 +29,17 @@
   }
 
   a {
-    @apply underline underline-offset-4 decoration-dashed;
+    @apply underline decoration-dashed underline-offset-4;
   }
 
   :not(pre) > code {
-    @apply mx-1 px-1 py-0.5 rounded text-[calc(100%-0.125rem)] font-normal bg-emerald-50 text-emerald-500 shadow dark:bg-neutral-700 dark:text-emerald-400;
+    @apply mx-1 rounded px-1 py-0.5 text-[calc(100%-0.125rem)] font-normal;
+    @apply bg-emerald-50 text-emerald-500 shadow dark:bg-neutral-700  dark:text-emerald-400;
   }
 
   ul,
   ol {
-    @apply pl-3 ml-4 list-outside;
+    @apply ml-4 list-outside pl-3;
 
     p,
     li {
@@ -55,20 +56,20 @@
   }
 
   table {
-    @apply my-3 p-4 w-full;
+    @apply my-3 w-full p-4;
 
     th,
     td {
-      @apply px-1 py-0.5 border-2  border-neutral-350 dark:border-neutral-550;
+      @apply border-2 border-neutral-350 px-1  py-0.5 dark:border-neutral-550;
     }
 
     + p {
-      @apply block mx-auto text-center text-sm m-0 p-0;
+      @apply m-0 mx-auto block p-0 text-center text-sm;
     }
   }
 
   blockquote {
-    @apply rounded m-2 px-2 py-1 border-l-8 border-neutral-400 dark:border-neutral-700 shadow;
+    @apply m-2 rounded border-l-8 border-neutral-400 px-2 py-1 shadow dark:border-neutral-700;
   }
 
   blockquote + blockquote {

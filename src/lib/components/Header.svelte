@@ -11,6 +11,12 @@
 
   let readProgress = 0.0;
 
+  const navLinks = [
+    ['portfolio', 'Portfolio'],
+    ['posts', 'Posts'],
+    ['tags', 'Tags']
+  ];
+
   //For makes logo to long when (screen width > sm(640px))
   $: widthEnough = screenWidth > 640;
 
@@ -33,32 +39,32 @@
 
 <svelte:window bind:innerWidth={screenWidth} />
 
-<header class="w-full m-auto">
-  <div id="top" class="h-0 mb-14" />
+<header class="m-auto w-full">
+  <div id="top" class="mb-14 h-0" />
   <nav
-    class="fixed top-0 z-50 w-full backdrop-blur-sm select-none
-         text-neutral-700 dark:text-neutral-200
-         bg-white dark:bg-neutral-900 !bg-opacity-80
-         border-b border-neutral-200 dark:border-neutral-800"
+    class="fixed top-0 z-50 w-full select-none
+           border-b border-neutral-200
+           bg-white !bg-opacity-80 text-neutral-700 backdrop-blur-sm
+           dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200"
   >
     <div
       class="blog-container flex justify-between
-           [&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring"
+             [&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring"
     >
       <LogoButton />
-      <div class="flex gap-2 my-auto">
+      <div class="my-auto flex gap-2">
         <div
-          class="flex justify-end gap-x-0.5 my-auto overflow-hidden
+          class="my-auto flex justify-end gap-x-0.5 overflow-hidden
                  {menuOpened || widthEnough ? '' : 'w-0'}"
         >
-          {#each [['portfolio', 'Portfolio'], ['posts', 'Posts'], ['tags', 'Tags']] as [pathname, name]}
+          {#each navLinks as [pathname, name]}
             <a
               href="/{pathname}"
-              class="h-fit m-1"
+              class="m-1 h-fit"
               tabindex={menuOpened || widthEnough ? 0 : -1}
               data-sveltekit-preload-data="hover"
             >
-              <p class="text-base sm:text-xl font-bold">{name}</p>
+              <p class="text-base font-bold sm:text-xl">{name}</p>
             </a>
           {/each}
         </div>
@@ -68,7 +74,7 @@
     </div>
     <div class="w-full">
       <div
-        class="w-0 h-0.5 bg-neutral-700 dark:bg-neutral-200 rounded"
+        class="h-0.5 w-0 rounded bg-neutral-700 dark:bg-neutral-200"
         style="width: {readProgress}%;"
       />
     </div>

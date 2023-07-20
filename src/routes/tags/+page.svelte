@@ -7,16 +7,17 @@
 
 <MetaTag pageName="전체 태그 목록" description="전체 태그 목록" />
 <div class="flex flex-col divide-y divide-neutral-500">
-  <h1 class="text-4xl font-bold my-4 pb-2">Tags</h1>
-  <div class="flex flex-col sm:flex-row flex-wrap justify-center pt-2 gap-4">
+  <h1 class="my-4 pb-2 text-4xl font-bold">Tags</h1>
+  <div class="flex flex-col flex-wrap justify-center gap-4 pt-2 sm:flex-row">
     {#each Object.entries(data) as [tag, count]}
       <a
         href="/tags/{tag}"
         data-sveltekit-preload-data="hover"
-        class="flex gap-1 mx-2 my-auto px-2 py-1"
+        class="mx-2 my-auto flex gap-1 px-2 py-1"
       >
         <p
-          class="font-bold text-2xl sm:text-2xl text-emerald-500 dark:text-emerald-400"
+          class="text-2xl font-bold text-emerald-500
+                 dark:text-emerald-400 sm:text-2xl"
         >
           #{tag}
         </p>

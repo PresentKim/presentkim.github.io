@@ -8,15 +8,16 @@
 
 <MetaTags />
 
-<h1 class="block text-3xl mb-5">
+<h1 class="mb-5 block text-3xl">
   전체 포스트
-  <p class="text-sm inline">({data.posts.length})</p>
+  <p class="inline text-sm">({data.posts.length})</p>
 </h1>
 
 <PostList posts={data.posts} />
-<a href="/posts/" class="p-0 w-full">
+<a href="/posts/" class="w-full p-0">
   <p
-    class="w-4/6 mx-auto my-3 p-2 text-center text-base font-bold rounded-xl ring-2"
+    class="mx-auto my-3 w-4/6 rounded-xl p-2
+           text-center text-base font-bold ring-2"
   >
     🔽 모든 포스트 살펴보기
   </p>

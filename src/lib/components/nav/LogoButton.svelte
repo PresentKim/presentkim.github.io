@@ -9,14 +9,14 @@
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 220 42"
   >
-    <g id="pr" class="fill-none stroke-round stroke-[6px]">
+    <g id="pr" class="stroke-round fill-none stroke-[6px]">
       <path
         class="stroke-emerald-900"
         d="M04,37 V9 l14,-4 v12 l-14,4 m11,-2 4,17"
       />
       <path class="stroke-emerald-500" d="M03,36 V8 l14,-4 v12 l-14,4" />
     </g>
-    <g id="name" class="fill-none stroke-round stroke-current stroke-[5px]">
+    <g id="name" class="stroke-round fill-none stroke-current stroke-[5px]">
       <g id="hyeun">
         <path d="M35,10 51,10M43,10 43,06" />
         <circle r="6" cx="43" cy="17" />

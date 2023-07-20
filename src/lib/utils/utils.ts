@@ -15,7 +15,8 @@ export const pickKeys = <T extends object, K extends keyof T>(
     return acc;
   }, {} as Pick<T, K>);
 
-/** Returns a keyboard event handler that executes a given callback function when entering Space or Enter */
+/** Returns a keyboard event handler
+ * that executes a given callback function when entering Space or Enter */
 export const runOnEnter = (callback: () => void) => (event: KeyboardEvent) => {
   if (event.code === 'Space' || event.code === 'Enter') {
     callback();

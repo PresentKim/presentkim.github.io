@@ -1,18 +1,18 @@
 .admonition {
-  @apply my-4 p-2 rounded-sm border-l-4 border-variable bg-nestable-neutral;
+  @apply bg-nestable-neutral my-4 rounded-sm border-l-4 border-variable p-2;
 
   h5 {
-    @apply inline-block mb-2 font-bold text-xl text-variable;
+    @apply mb-2 inline-block text-xl font-bold text-variable;
   }
 
   &-icon {
-    @apply inline-block align-middle mr-1 w-6 md:w-7;
+    @apply mr-1 inline-block w-6 align-middle md:w-7;
 
     svg {
       @apply fill-variable stroke-none;
 
       .outlined {
-        @apply fill-none stroke-variable stroke-[2px] stroke-round;
+        @apply stroke-round fill-none stroke-variable stroke-[2px];
       }
     }
   }

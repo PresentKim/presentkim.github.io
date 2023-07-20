@@ -7,7 +7,7 @@
   let input: HTMLInputElement;
 </script>
 
-<label class="block select-none w-7 sm:w-8 my-auto">
+<label class="my-auto block w-7 select-none sm:w-8">
   <input type="checkbox" class="hidden" bind:this={input} bind:checked={open} />
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@
     viewBox="0 0 50 50"
     {tabindex}
     on:keydown={runOnEnter(() => input.click())}
-    class="fill-none stroke-round stroke-[6px] stroke-current"
+    class="stroke-round fill-none stroke-current stroke-[6px]"
   >
     <path class="-translate-y-3" d="M04,25 46,25" />
     <path d="M04,25 46,25" />
@@ -25,7 +25,7 @@
 
 <style lang="scss">
   svg path {
-    @apply transition-transform duration-500 ease-spring origin-center;
+    @apply origin-center transition-transform duration-500 ease-spring;
   }
 
   input:checked + svg path {
