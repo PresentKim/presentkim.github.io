@@ -2,9 +2,17 @@
   "useTabs": false,
   "singleQuote": true,
   "trailingComma": "none",
-  "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
   "pluginSearchDirs": ["."],
   "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }],
 
-  "tailwindFunctions": ["clsx"]
+  "tailwindFunctions": ["clsx"],
+
+  "importOrder": ["^([$]app/)|([./$]types)", "^[$]lib/(.*)", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

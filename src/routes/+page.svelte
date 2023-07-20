@@ -1,9 +1,11 @@
 <script lang="ts">
+  import clsx from 'clsx';
+
   import type { PageData } from './$types';
-  import PostList from '$lib/components/PostList.svelte';
 
   import MetaTags from '$lib/components/MetaTags.svelte';
-  import clsx from 'clsx';
+  import PostList from '$lib/components/PostList.svelte';
+
   export let data: PageData;
 </script>
 

@@ -1,6 +1,7 @@
 <script lang="ts">
-  import type { PostInfo } from '$lib/utils/blog';
   import clsx from 'clsx';
+
+  import type { PostInfo } from '$lib/utils/blog';
 
   export let posts: PostInfo[];
 </script>

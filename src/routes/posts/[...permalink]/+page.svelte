@@ -1,11 +1,13 @@
 <script lang="ts">
-  import type { PageData } from './$types';
-  import { giscusTheme } from '$lib/utils/theme';
-  import site from '$lib/assets/site-info.json';
-  import { page } from '$app/stores';
   import Giscus from '@giscus/svelte';
-  import MetaTags from '$lib/components/MetaTags.svelte';
   import clsx from 'clsx';
+
+  import { page } from '$app/stores';
+  import type { PageData } from './$types';
+
+  import site from '$lib/assets/site-info.json';
+  import MetaTags from '$lib/components/MetaTags.svelte';
+  import { giscusTheme } from '$lib/utils/theme';
 
   export let data: PageData;
 </script>

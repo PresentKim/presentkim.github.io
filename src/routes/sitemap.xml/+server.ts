@@ -1,8 +1,10 @@
-import type { RequestHandler } from './$types';
-import { getPosts } from '$lib/utils/blog';
-import { domain } from '$lib/assets/site-info.json';
-import { minifyXML } from '$lib/utils/utils';
 import dayjs from 'dayjs';
+
+import type { RequestHandler } from './$types';
+
+import { domain } from '$lib/assets/site-info.json';
+import { getPosts } from '$lib/utils/blog';
+import { minifyXML } from '$lib/utils/utils';
 
 export const prerender = true;
 

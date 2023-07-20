@@ -1,11 +1,10 @@
-import { mdsvex } from 'mdsvex';
-
 import fs from 'fs';
-import remarkEmoji from 'remark-emoji';
-import remarkAdmonitions from 'remark-admonitions';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex-svelte';
+import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeKatex from 'rehype-katex-svelte';
+import remarkAdmonitions from 'remark-admonitions';
+import remarkEmoji from 'remark-emoji';
+import remarkMath from 'remark-math';
 
 const ADMONITION_ICON_PATH = './src/lib/assets/admonitions-icon/';
 const customTypes = Object.fromEntries(

@@ -1,10 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
+
   import {
-    domain,
-    name,
+    author,
     description as defaultDescription,
-    author
+    domain,
+    name
   } from '$lib/assets/site-info.json';
 
   export let pageName: string = '';

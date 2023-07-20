@@ -1,9 +1,9 @@
 <script lang="ts">
-  import '$lib/assets/styles/index.scss';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-
   import { onMount } from 'svelte';
+
+  import '$lib/assets/styles/index.scss';
+  import Footer from '$lib/components/Footer.svelte';
+  import Header from '$lib/components/Header.svelte';
   import { themeMount } from '$lib/utils/theme.ts';
 
   onMount(() => {

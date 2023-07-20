@@ -1,4 +1,5 @@
 import { derived, writable } from 'svelte/store';
+
 import { browser } from '$app/environment';
 
 declare type Theme = 'light' | 'dark';

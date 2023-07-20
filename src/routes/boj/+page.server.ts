@@ -1,4 +1,5 @@
 import type { PageServerLoad } from './$types';
+
 import { getBojInfos } from '$lib/utils/boj';
 import { pickKeys } from '$lib/utils/utils';
 

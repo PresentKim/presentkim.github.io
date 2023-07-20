@@ -1,9 +1,12 @@
+import dayjs from 'dayjs';
+
 import type { RequestHandler } from './$types';
+
+import { description, domain, name } from '$lib/assets/site-info.json';
 import type { Post } from '$lib/utils/blog';
 import { getPosts } from '$lib/utils/blog';
-import { domain, name, description } from '$lib/assets/site-info.json';
-import dayjs from 'dayjs';
 import { minifyXML } from '$lib/utils/utils';
+
 export const prerender = true;
 
 export const GET: RequestHandler = () => {

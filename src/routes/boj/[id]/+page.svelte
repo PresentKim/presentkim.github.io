@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types';
+
   import MetaTags from '$lib/components/MetaTags.svelte';
 
   const dataKeys = [

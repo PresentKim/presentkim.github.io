@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { BojProblemMetadata } from '$lib/utils/boj';
-  import MetaTags from '$lib/components/MetaTags.svelte';
   import clsx from 'clsx';
+
+  import MetaTags from '$lib/components/MetaTags.svelte';
+  import type { BojProblemMetadata } from '$lib/utils/boj';
 
   export let data: { infos: BojProblemMetadata[] };
 </script>

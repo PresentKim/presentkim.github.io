@@ -1,7 +1,9 @@
 <script lang="ts">
-  import type { PageData } from './$types';
-  import MetaTag from '$lib/components/MetaTags.svelte';
   import clsx from 'clsx';
+
+  import type { PageData } from './$types';
+
+  import MetaTag from '$lib/components/MetaTags.svelte';
 
   export let data: PageData;
 </script>

@@ -1,4 +1,5 @@
 import type { PageServerLoad } from './$types';
+
 import { getPosts, pickPostInfo } from '$lib/utils/blog';
 
 export const load: PageServerLoad = ({ params: { tag } }) => ({
