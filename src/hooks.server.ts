@@ -7,12 +7,6 @@ export const handle: Handle = async ({ event, resolve }) => {
   if (response.headers.get('content-type')?.startsWith('text/html')) {
     let body = await response.text();
 
-    /** Remove 'data-sveltekit-fetched' json data */
-    body = body.replace(
-      /<script type="application\/json" data-sveltekit-fetched.*?>.*?<\/script>/,
-      ''
-    );
-
     /** Minify html */
     body = minify(body, {
       collapseBooleanAttributes: true,
