@@ -4,6 +4,7 @@
   import ThemeButton from '$lib/components/nav/ThemeButton.svelte';
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
+  import clsx from 'clsx';
 
   let menuOpened;
   let widthEnough;
@@ -42,20 +43,26 @@
 <header class="m-auto w-full">
   <div id="top" class="mb-14 h-0" />
   <nav
-    class="fixed top-0 z-50 w-full select-none
-           border-b border-neutral-200
-           bg-white !bg-opacity-80 text-neutral-700 backdrop-blur-sm
-           dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200"
+    class={clsx(
+      'fixed top-0 z-50 w-full select-none',
+      'border-b border-neutral-200 dark:border-neutral-800 ',
+      'bg-white !bg-opacity-80 backdrop-blur-sm dark:bg-neutral-900',
+      'text-neutral-700 dark:text-neutral-200'
+    )}
   >
     <div
-      class="blog-container flex justify-between
-             [&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring"
+      class={clsx(
+        'blog-container flex justify-between',
+        '[&_*]:transition-shape [&_*]:duration-500 [&_*]:ease-spring'
+      )}
     >
       <LogoButton />
       <div class="my-auto flex gap-2">
         <div
-          class="my-auto flex justify-end gap-x-0.5 overflow-hidden
-                 {menuOpened || widthEnough ? '' : 'w-0'}"
+          class={clsx(
+            'my-auto flex justify-end gap-x-0.5 overflow-hidden',
+            menuOpened || widthEnough ? '' : 'w-0'
+          )}
         >
           {#each navLinks as [pathname, name]}
             <a

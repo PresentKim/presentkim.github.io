@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { BojProblemMetadata } from '$lib/utils/boj';
   import MetaTags from '$lib/components/MetaTags.svelte';
+  import clsx from 'clsx';
 
   export let data: { infos: BojProblemMetadata[] };
 </script>
@@ -14,8 +15,11 @@
 {#each data.infos as { id, title, tier, tags }}
   <a
     data-tier={Math.floor((tier + 4) / 5)}
-    class="mx-1 my-2 inline-flex w-full rounded
-           border-2 border-variable text-xl font-bold"
+    class={clsx(
+      'mx-1 my-2 inline-flex w-full rounded',
+      'border-2 border-variable',
+      'text-xl font-bold'
+    )}
     href={`/boj/${id}`}
     data-sveltekit-preload-data="hover"
   >

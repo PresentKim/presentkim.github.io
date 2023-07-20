@@ -1,6 +1,12 @@
+<script>
+  import clsx from 'clsx';
+</script>
+
 <footer
-  class="min-h-14 mt-3 w-full bg-neutral-200 py-3
-         text-neutral-550 dark:bg-neutral-900 dark:text-neutral-350"
+  class={clsx(
+    'min-h-14 mt-3 w-full py-3',
+    'bg-neutral-200 text-neutral-550 dark:bg-neutral-900 dark:text-neutral-350'
+  )}
 >
   <nav class="mb-2 flex flex-row justify-center gap-5 text-center">
     <a

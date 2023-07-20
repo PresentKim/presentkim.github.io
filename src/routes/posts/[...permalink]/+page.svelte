@@ -5,6 +5,7 @@
   import { page } from '$app/stores';
   import Giscus from '@giscus/svelte';
   import MetaTags from '$lib/components/MetaTags.svelte';
+  import clsx from 'clsx';
 
   export let data: PageData;
 </script>
@@ -16,8 +17,11 @@
 
 <h1>{data.title}</h1>
 <div
-  class="mb-6 flex w-full flex-row border-b border-b-neutral-500
-         text-center text-sm dark:border-b-neutral-700"
+  class={clsx(
+    'flex w-full flex-row',
+    'mb-6 text-center text-sm',
+    'border-b border-b-neutral-500 dark:border-b-neutral-700'
+  )}
 >
   <p class="my-auto py-6 text-neutral-550 dark:text-neutral-350">
     {data.formattedDate}

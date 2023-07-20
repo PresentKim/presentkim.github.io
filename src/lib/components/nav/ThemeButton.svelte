@@ -1,6 +1,7 @@
 <script>
   import { toggleTheme } from '$lib/utils/theme';
   import { runOnEnter } from '$lib/utils/utils';
+  import clsx from 'clsx';
 </script>
 
 <svg
@@ -31,7 +32,10 @@
     />
 
     <g
-      class="stroke-round scale-100 fill-none stroke-current stroke-[5px] dark:scale-0"
+      class={clsx(
+        'stroke-round fill-none stroke-current stroke-[5px]',
+        'scale-100 dark:scale-0'
+      )}
     >
       <line x1="4" y1="25" x2="12" y2="25" />
       <line x1="46" y1="25" x2="38" y2="25" />
