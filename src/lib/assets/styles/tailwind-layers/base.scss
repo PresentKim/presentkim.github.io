@@ -41,6 +41,10 @@
     display: none;
   }
 
+  [data-input="mouse"] *:focus {
+    @apply outline-0;
+  }
+
   mrow {
     display: flex;
     flex-wrap: wrap;

@@ -18,22 +18,9 @@ function flattenColors(colors) {
   );
 }
 
-function mixin(first, second) {
-  const result = {};
-  entriesWithoutDefault(first).forEach(([firstKey, firstValue]) => {
-    entriesWithoutDefault(second).forEach(([secondKey, secondValue]) => {
-      result[`${firstKey}-${secondKey}`] = [firstValue, secondValue];
-    });
-  });
-
-  return result;
-}
-
-const flattenNums = (nums) => Object.fromEntries(nums.map((num) => [num, num]));
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
   content: ['./src/**/*.{html,js,svelte,ts}'],
   future: {
     hoverOnlyWhenSupported: true
@@ -85,8 +72,8 @@ module.exports = {
     }),
     plugin(function ({ addVariant }) {
       /** Variants for Header scroll motion */
-      addVariant('scrolled', '.scrolled &','.scrolled&');
-      addVariant('scroll-up', '.scroll-up &','.scroll-up&');
+      addVariant('scrolled', '[data-scrolled="true"] &');
+      addVariant('scroll-up', '[data-scroll="up"] &');
     })
   ]
 };

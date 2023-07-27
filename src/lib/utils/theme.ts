@@ -19,14 +19,7 @@ function applyTheme() {
     localStorage.setItem(LOCAL_STORAGE_KEY, _user_theme);
   }
 
-  const classList = document.documentElement.classList;
-  if (_user_theme === 'dark') {
-    classList.remove('light');
-    classList.add('dark');
-  } else {
-    classList.remove('dark');
-    classList.add('light');
-  }
+  document.documentElement.dataset['theme'] = _user_theme;
 }
 
 let initialized = false;

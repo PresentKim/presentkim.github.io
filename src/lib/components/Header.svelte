@@ -7,11 +7,7 @@
   import { runOnEnter } from '$lib/utils/utils';
 
   let navOpen: boolean;
-  let buttonShow: boolean;
-  let scrolled: boolean;
   let scrollY: number;
-  let scrollYDiff: number;
-  let innerWidth: number;
 
   const navLinks = [
     ['/portfolio', 'Portfolio'],
@@ -19,23 +15,11 @@
     ['/tags', 'Tags']
   ];
 
-  $: {
-    /** Header scroll motion works only screen minimal than sm(640px) */
-    if (innerWidth < 640) {
-      scrolled = scrolled ? scrollY > 0 : scrollY > 75;
-      buttonShow = scrollYDiff < 0 && scrolled;
-    }
-  }
-
   //Close hamburger menu when page redirected
   page.subscribe(() => (navOpen = false));
 </script>
 
-<svelte:window
-  on:scroll={() => (scrollYDiff = window.scrollY - scrollY)}
-  bind:scrollY
-  bind:innerWidth
-/>
+<svelte:window bind:scrollY />
 
 <header
   class={clsx(
@@ -44,8 +28,6 @@
     'flex select-none items-center justify-between',
     'm-auto h-[55px] w-full px-4'
   )}
-  class:scrolled
-  class:scroll-up={buttonShow}
 >
   <div id="Logo">
     <a
@@ -96,12 +78,13 @@
     id="buttons"
     class={clsx(
       'relative my-auto flex flex-row gap-2 sm:flex-row-reverse',
-      'scrolled:fixed scrolled:right-4 scrolled:top-2 scrolled:-translate-y-[55px]'
+      'max-sm:scrolled:fixed max-sm:scrolled:right-4 max-sm:scrolled:top-2',
+      'translate-y-0 max-sm:scrolled:-translate-y-[55px]'
     )}
   >
     <button
       id="topButton"
-      class="header-button-wrap hidden scrolled:block"
+      class="header-button-wrap hidden max-sm:scrolled:block sm:hidden"
       on:keydown={runOnEnter(() => (scrollY = 0))}
       on:mousedown={() => (scrollY = 0)}
     >
@@ -115,7 +98,7 @@
     </button>
     <button
       id="themeButton"
-      class="header-button-wrap scrolled:delay-150"
+      class="header-button-wrap max-sm:scrolled:delay-150"
       on:keydown={runOnEnter(toggleTheme)}
       on:mousedown={toggleTheme}
     >
@@ -162,7 +145,7 @@
     </button>
     <button
       id="hamburgerButton"
-      class="header-button-wrap scrolled:delay-300 sm:hidden"
+      class="header-button-wrap max-sm:scrolled:delay-300 sm:hidden"
       on:keydown={runOnEnter(() => (navOpen = !navOpen))}
       on:mousedown={() => (navOpen = !navOpen)}
     >

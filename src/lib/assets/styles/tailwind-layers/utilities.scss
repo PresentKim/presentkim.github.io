@@ -21,10 +21,6 @@
     @apply bg-neutral-500 bg-opacity-5;
   }
 
-  .focus-hide *:focus {
-    @apply outline-0;
-  }
-
   .header-button {
     @apply h-9 w-9 p-1 sm:h-10 sm:w-10 sm:p-1;
     @apply rounded-full border-2 border-neutral-500;
@@ -34,7 +30,7 @@
 
   .header-button-wrap {
     @apply transition-transform ease-in-out;
-    @apply translate-y-0 scroll-up:translate-y-[55px];
-    @apply delay-0 duration-0 scrolled:duration-500;
+    @apply translate-y-0 max-sm:scroll-up:translate-y-[55px];
+    @apply delay-0 duration-0 max-sm:scrolled:duration-500;
   }
 }
