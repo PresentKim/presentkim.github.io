@@ -6,10 +6,12 @@
   import { toggleTheme } from '$lib/utils/theme';
   import { runOnEnter } from '$lib/utils/utils';
 
-  let navOpen: boolean = false;
-  let buttonHide = false;
-  let scrolled;
+  let navOpen: boolean;
+  let buttonShow: boolean;
+  let scrolled: boolean;
   let scrollY: number;
+  let scrollYDiff: number;
+  let innerWidth: number;
 
   const navLinks = [
     ['/portfolio', 'Portfolio'],
@@ -17,28 +19,34 @@
     ['/tags', 'Tags']
   ];
 
-  $: scrolled = scrollY > 55;
+  $: {
+    /** Header scroll motion works only screen minimal than sm(640px) */
+    if (innerWidth < 640) {
+      scrolled = scrolled ? scrollY > 0 : scrollY > 75;
+      buttonShow = scrollYDiff < 0 && scrolled;
+    }
+  }
 
   //Close hamburger menu when page redirected
   page.subscribe(() => (navOpen = false));
 </script>
 
 <svelte:window
-  on:scroll={() => (buttonHide = scrollY < window.scrollY && scrolled)}
+  on:scroll={() => (scrollYDiff = window.scrollY - scrollY)}
   bind:scrollY
+  bind:innerWidth
 />
 
 <header
   class={clsx(
-    'relative md:fixed',
+    'absolute sm:fixed',
+    'bg-white dark:bg-neutral-900',
     'flex select-none items-center justify-between',
     'm-auto h-[55px] w-full px-4'
   )}
+  class:scrolled
+  class:scroll-up={buttonShow}
 >
-  <div
-    id="header-bg"
-    class="fixed -z-50 h-[55px] w-full bg-white !bg-opacity-90 dark:bg-neutral-900"
-  />
   <div id="Logo">
     <a
       href="/"
@@ -87,41 +95,34 @@
   <div
     id="buttons"
     class={clsx(
-      'my-auto flex flex-row gap-2 sm:flex-row-reverse',
-      'fixed right-4 top-2',
-      buttonHide && 'hide group'
+      'relative my-auto flex flex-row gap-2 sm:flex-row-reverse',
+      'scrolled:fixed scrolled:right-4 scrolled:top-2 scrolled:-translate-y-[55px]'
     )}
   >
     <button
       id="topButton"
+      class="header-button-wrap hidden scrolled:block"
       on:keydown={runOnEnter(() => (scrollY = 0))}
       on:mousedown={() => (scrollY = 0)}
-      class={clsx(
-        `header-button ${scrolled ? 'flex' : 'hidden'}`,
-        'delay-0 !duration-500 group-[.hide]:-translate-y-[55px]'
-      )}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 50 50"
-        class="stroke-round fill-none stroke-current stroke-[6px]"
+        class="header-button stroke-round fill-none stroke-current"
       >
-        <path d="M04,35 25,5 46,35" />
+        <path class="stroke-[8px]" d="M25,45 25,8 08,25 25,8 42,25" />
       </svg>
     </button>
     <button
       id="themeButton"
+      class="header-button-wrap scrolled:delay-150"
       on:keydown={runOnEnter(toggleTheme)}
       on:mousedown={toggleTheme}
-      class={clsx(
-        'header-button [&_*]:origin-center',
-        'delay-150 !duration-500 group-[.hide]:-translate-y-[55px]'
-      )}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 50 50"
-        class="[&_*]:transition-transform [&_*]:ease-spring-500"
+        class="header-button [&_*]:transition-transform [&_*]:ease-spring-500"
       >
         <mask id="moonMask">
           <rect class="fill-white" width="50" height="50" />
@@ -161,18 +162,15 @@
     </button>
     <button
       id="hamburgerButton"
+      class="header-button-wrap scrolled:delay-300 sm:hidden"
       on:keydown={runOnEnter(() => (navOpen = !navOpen))}
       on:mousedown={() => (navOpen = !navOpen)}
-      class={clsx(
-        'header-button sm:hidden',
-        'delay-300 !duration-500 group-[.hide]:-translate-y-[55px]'
-      )}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 50 50"
         class={clsx(
-          'stroke-round fill-none stroke-current stroke-[6px]',
+          'header-button stroke-round fill-none stroke-current stroke-[6px]',
           '[&_*]:transition-transform [&_*]:ease-spring-500',
           navOpen &&
             clsx(
@@ -187,24 +185,24 @@
         <path class="origin-center translate-y-3" d="M04,25 46,25" />
       </svg>
     </button>
+    <nav
+      class={clsx(
+        'hidden sm:flex',
+        'my-auto justify-end gap-x-2',
+        '[&>*]:transition-transform [&>*]:ease-in-out-500'
+      )}
+    >
+      {#each navLinks as [pathname, label]}
+        <a
+          href={pathname}
+          class="hover:text-blue-500 dark:hover:text-blue-400"
+          tabindex="0"
+          aria-label={label}
+          data-sveltekit-preload-data="hover"
+        >
+          <p class="text-base font-bold sm:text-xl">{label}</p>
+        </a>
+      {/each}
+    </nav>
   </div>
-  <nav
-    class={clsx(
-      'hidden sm:flex',
-      'my-auto justify-end gap-x-2',
-      '[&>*]:transition-transform [&>*]:ease-in-out-500'
-    )}
-  >
-    {#each navLinks as [pathname, label]}
-      <a
-        href={pathname}
-        class="hover:text-blue-500 dark:hover:text-blue-400"
-        tabindex="0"
-        aria-label={label}
-        data-sveltekit-preload-data="hover"
-      >
-        <p class="text-base font-bold sm:text-xl">{label}</p>
-      </a>
-    {/each}
-  </nav>
 </header>

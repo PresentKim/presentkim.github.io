@@ -65,8 +65,6 @@ module.exports = {
         },
         { values: flattenColors(theme('colors')) }
       );
-    }),
-    plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         Object.fromEntries(
           entriesWithoutDefault(theme('transitionTimingFunction')).map(
@@ -84,6 +82,11 @@ module.exports = {
           values: theme('transitionDuration')
         }
       );
+    }),
+    plugin(function ({ addVariant }) {
+      /** Variants for Header scroll motion */
+      addVariant('scrolled', '.scrolled &','.scrolled&');
+      addVariant('scroll-up', '.scroll-up &','.scroll-up&');
     })
   ]
 };

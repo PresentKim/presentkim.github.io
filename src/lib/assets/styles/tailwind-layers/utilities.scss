@@ -28,6 +28,13 @@
   .header-button {
     @apply h-9 w-9 p-1 sm:h-10 sm:w-10 sm:p-1;
     @apply rounded-full border-2 border-neutral-500;
-    @apply transition-transform ease-in-out-200 hover:scale-110;
+    @apply bg-white dark:bg-neutral-900;
+    @apply transition-transform ease-in-out-200 hover:scale-110 [&_*]:origin-center;
+  }
+
+  .header-button-wrap {
+    @apply transition-transform ease-in-out;
+    @apply translate-y-0 scroll-up:translate-y-[55px];
+    @apply delay-0 duration-0 scrolled:duration-500;
   }
 }
