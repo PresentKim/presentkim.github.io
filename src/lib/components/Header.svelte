@@ -26,7 +26,8 @@
     'absolute sm:fixed',
     'bg-white dark:bg-neutral-900',
     'flex select-none items-center justify-between',
-    'm-auto h-[55px] w-full px-4'
+    'm-auto h-[55px] w-full px-4',
+    'transition-shadow ease-in-out-200 scrolled:shadow-lg '
   )}
 >
   <div id="Logo">
