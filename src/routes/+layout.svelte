@@ -1,5 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+
+  import { page } from '$app/stores';
 
   import '$lib/assets/styles/index.scss';
   import Footer from '$lib/components/Footer.svelte';
@@ -45,8 +48,13 @@
 
 <Header />
 
-<main class="blog-container mt-[55px] flex flex-1 flex-col">
-  <slot />
-</main>
+{#key $page.url.pathname}
+  <main
+    class="blog-container mt-[55px] flex flex-1 flex-col"
+    in:fade={{ duration: 500 }}
+  >
+    <slot />
+  </main>
+{/key}
 
 <Footer />
