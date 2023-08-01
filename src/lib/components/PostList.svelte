@@ -15,9 +15,9 @@
       )}
     >
       <a href={`/${permalink}`} data-sveltekit-preload-data="hover">
-        <h4 class="text-xl font-bold">
+        <h2 class="text-xl font-bold">
           {title}
-        </h4>
+        </h2>
         <p class="my-3 line-clamp-3 overflow-hidden text-ellipsis text-base">
           {summary}
         </p>
