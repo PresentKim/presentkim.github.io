@@ -10,12 +10,12 @@
       'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', monospace, sans-serif;
   }
 
-  html{
+  html {
     @apply scroll-smooth;
   }
 
   body {
-    @apply m-0 flex w-full flex-col p-0 text-lg font-normal sm:min-h-screen scroll-smooth;
+    @apply m-0 flex w-full flex-col scroll-smooth p-0 text-lg font-normal sm:min-h-screen;
     @apply bg-white text-neutral-900 dark:bg-neutral-900 dark:text-white;
   }
 
@@ -46,7 +46,7 @@
     display: none;
   }
 
-  [data-input="mouse"] *:focus {
+  [data-input='mouse'] *:focus {
     @apply outline-0;
   }
 
