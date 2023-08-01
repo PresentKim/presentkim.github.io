@@ -84,7 +84,7 @@
     )}
   >
     <button
-      id="topButton"
+      aria-label="Go to Top"
       class="header-button-wrap hidden max-sm:scrolled:block sm:hidden"
       on:keydown={runOnEnter(() => (scrollY = 0))}
       on:mousedown={() => (scrollY = 0)}
@@ -98,7 +98,7 @@
       </svg>
     </button>
     <button
-      id="themeButton"
+      aria-label="Change Theme"
       class="header-button-wrap max-sm:scrolled:delay-150"
       on:keydown={runOnEnter(toggleTheme)}
       on:mousedown={toggleTheme}
@@ -145,7 +145,7 @@
       </svg>
     </button>
     <button
-      id="hamburgerButton"
+      aria-label="Open Menu"
       class="header-button-wrap max-sm:scrolled:delay-300 sm:hidden"
       on:keydown={runOnEnter(() => (navOpen = !navOpen))}
       on:mousedown={() => (navOpen = !navOpen)}
