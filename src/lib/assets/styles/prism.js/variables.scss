@@ -1,5 +1,5 @@
 @layer base {
-  .light {
+  :root {
     --mono1: hsl(230, 8%, 24%);
     --mono2: hsl(230, 6%, 44%);
     --mono3: hsl(230, 4%, 64%);
@@ -19,7 +19,7 @@
     --bg-line-cursor: hsla(230, 8%, 24%, 0.05);
   }
 
-  .dark {
+  [data-theme="dark"] {
     --mono1: hsl(220, 14%, 71%);
     --mono2: hsl(220, 9%, 55%);
     --mono3: hsl(220, 10%, 40%);
