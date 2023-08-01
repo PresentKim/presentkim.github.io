@@ -1,8 +1,13 @@
 @layer base {
-  * {
-    font-family: 'Pretendard Variable', Pretendard, -apple-system,
-      BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
-      'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI',
+      'Noto Sans KR', 'Malgun Gothic', Helvetica, Roboto, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  }
+
+  code {
+    font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono',
+      'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', monospace, sans-serif;
   }
 
   html{
