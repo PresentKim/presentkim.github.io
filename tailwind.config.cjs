@@ -1,11 +1,7 @@
 const plugin = require('tailwindcss/plugin');
 
-function entriesWithoutDefault(theme) {
-  const result = { ...theme };
-  if (result.DEFAULT) {
-    delete result.DEFAULT;
-  }
-  return Object.entries(result);
+function entriesWithoutDefault(obj) {
+  return Object.entries(obj).filter(([key]) => key !== 'DEFAULT');
 }
 
 function flattenColors(colors) {

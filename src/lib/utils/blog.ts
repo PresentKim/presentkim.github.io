@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { pickKeys } from '$lib/utils/utils';
+import { pick } from '$lib/utils/utils';
 
 declare type PostMetadata = {
   permalink: string;
@@ -90,7 +90,7 @@ const POST_INFO_KEYS = [
 ] as const;
 export type PostInfo = Pick<Post, (typeof POST_INFO_KEYS)[number]>;
 export const pickPostInfo = (post: Post): PostInfo =>
-  pickKeys(post, Array.from(POST_INFO_KEYS));
+  pick(post, Array.from(POST_INFO_KEYS));
 
 const POST_CONTENTS_KEYS = [
   'title',
@@ -101,4 +101,4 @@ const POST_CONTENTS_KEYS = [
 ] as const;
 export type PostContents = Pick<Post, (typeof POST_CONTENTS_KEYS)[number]>;
 export const pickPostContents = (post: Post): PostContents =>
-  pickKeys(post, Array.from(POST_CONTENTS_KEYS));
+  pick(post, Array.from(POST_CONTENTS_KEYS));
