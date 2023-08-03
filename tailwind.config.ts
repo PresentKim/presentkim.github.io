@@ -1,10 +1,16 @@
+import type { Config } from 'tailwindcss';
+
 const plugin = require('tailwindcss/plugin');
 
-function entriesWithoutDefault(obj) {
+interface RecursiveKeyValuePair<K extends keyof any = string, V = string> {
+  [key: string]: V | RecursiveKeyValuePair<K, V>;
+}
+
+function entriesWithoutDefault(obj: RecursiveKeyValuePair) {
   return Object.entries(obj).filter(([key]) => key !== 'DEFAULT');
 }
 
-function flattenColors(colors) {
+function flattenColors(colors: RecursiveKeyValuePair) {
   return Object.fromEntries(
     entriesWithoutDefault(colors).flatMap(([name, value]) => {
       return typeof value === 'string'
@@ -14,8 +20,7 @@ function flattenColors(colors) {
   );
 }
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: ['class', '[data-theme="dark"]'],
   content: ['./src/**/*.{html,js,svelte,ts}'],
   future: {
@@ -42,7 +47,7 @@ module.exports = {
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
-          variable: (value) => ({
+          variable: (value: string) => ({
             '--variable-color': value
           })
         },
@@ -72,4 +77,4 @@ module.exports = {
       addVariant('scroll-up', '[data-scroll="up"] &');
     })
   ]
-};
+} satisfies Config;
