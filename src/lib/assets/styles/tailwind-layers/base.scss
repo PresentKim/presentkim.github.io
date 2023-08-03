@@ -11,12 +11,16 @@
   }
 
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth antialiased;
   }
 
   body {
-    @apply m-0 flex w-full flex-col scroll-smooth p-0 text-lg font-normal sm:min-h-screen;
-    @apply bg-white text-neutral-900 dark:bg-neutral-900 dark:text-white;
+    @apply my-0 flex w-full flex-col p-0 text-base font-normal sm:min-h-screen;
+    @apply bg-background text-foreground;
+  }
+
+  *::selection {
+    @apply bg-primary bg-opacity-30;
   }
 
   h1,
@@ -27,15 +31,19 @@
   }
 
   h1 {
-    @apply text-3xl md:text-4xl xl:text-5xl;
+    @apply text-2xl;
   }
 
   h2 {
-    @apply text-2xl md:text-3xl xl:text-4xl;
+    @apply text-xl;
   }
 
   h3 {
-    @apply text-xl md:text-2xl xl:text-3xl;
+    @apply text-lg;
+  }
+
+  h4{
+    @apply text-base;
   }
 
   img {

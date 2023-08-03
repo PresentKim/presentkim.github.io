@@ -17,13 +17,9 @@
     @apply transition-shape duration-500 ease-spring;
   }
 
-  .bg-nestable-neutral {
-    @apply bg-neutral-500 bg-opacity-5;
-  }
-
   .header-button {
-    @apply rounded-xl border-2 border-neutral-500;
-    @apply bg-white dark:bg-neutral-900;
+    @apply rounded-xl border-2 border-mono5;
+    @apply bg-background text-mono1;
     @apply h-9 w-9 p-1 sm:h-10 sm:w-10 sm:p-1;
     @apply transition-transform ease-in-out-200 hover:scale-110 [&_*]:origin-center;
   }

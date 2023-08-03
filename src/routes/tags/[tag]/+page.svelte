@@ -12,5 +12,9 @@
   description="`{data.tag}` 태그의 글 목록"
 />
 
-<h1 class="mx-5 mb-3 text-4xl font-bold"># {data.tag}</h1>
+<h1 class="my-4 border-b-2 border-mono6 text-2xl font-bold">
+  <code class="rounded bg-primary bg-opacity-10 px-2 py-1 text-primary"
+    >#{data.tag}</code
+  > 태그의 글 목록
+</h1>
 <PostList posts={data.posts} />

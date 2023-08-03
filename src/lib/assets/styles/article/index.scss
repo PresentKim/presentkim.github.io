@@ -1,5 +1,5 @@
 .article {
-  @apply w-full break-all leading-loose;
+  @apply w-full break-all leading-loose px-1;
 
   p {
     @apply my-6;
@@ -34,7 +34,20 @@
 
   :not(pre) > code {
     @apply mx-1 rounded px-1 py-0.5 text-[calc(100%-0.125rem)] font-normal;
-    @apply bg-emerald-50 text-emerald-500 shadow dark:bg-neutral-700  dark:text-emerald-400;
+    @apply bg-primary bg-opacity-5 text-primary shadow;
+    @apply border-mono5 text-primary;
+  }
+
+  pre {
+    @apply my-4 min-h-[2rem] overflow-auto whitespace-pre rounded-md p-2;
+    @apply bg-foreground bg-opacity-5 shadow;
+    @apply border-mono5 bg-foreground bg-opacity-5 shadow;
+  }
+
+  blockquote {
+    @apply rounded px-2 py-1 shadow;
+    @apply bg-foreground bg-opacity-5 shadow;
+    @apply border-[2px] border-l-8 border-mono5 border-l-mono1;
   }
 
   ul,
@@ -60,16 +73,12 @@
 
     th,
     td {
-      @apply border-2 border-neutral-350 px-1  py-0.5 dark:border-neutral-550;
+      @apply border-2 border-foreground border-opacity-50 px-1 py-0.5;
     }
 
     + p {
       @apply m-0 mx-auto block p-0 text-center text-sm;
     }
-  }
-
-  blockquote {
-    @apply m-2 rounded border-l-8 border-neutral-400 px-2 py-1 shadow dark:border-neutral-700;
   }
 
   blockquote + blockquote {

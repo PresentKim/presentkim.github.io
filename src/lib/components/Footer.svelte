@@ -15,8 +15,8 @@
 <footer
   class={clsx(
     'min-h-14 mt-3 w-full py-3',
-    'text-neutral-550 dark:text-neutral-350',
-    'hover:[&_a]:text-blue-500 dark:hover:[&_a]:text-blue-400'
+    'text-mono2',
+    'hover:[&_a]:text-secondary'
   )}
 >
   <nav class="flex flex-row justify-center gap-4">

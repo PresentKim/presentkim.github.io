@@ -12,14 +12,13 @@
   description="지금까지 해결한 BOJ 문제 목록입니다"
 />
 
-<h1 class="my-10 text-center text-4xl font-bold">해결한 BOJ 문제 목록</h1>
+<h1 class="my-6 text-center text-2xl font-bold">해결한 백준 문제 목록</h1>
 {#each data.infos as { id, title, tier, tags }}
   <a
     data-tier={Math.floor((tier + 4) / 5)}
     class={clsx(
       'mx-1 my-2 inline-flex w-full rounded',
-      'border-2 border-variable',
-      'text-xl font-bold'
+      'border-2 border-variable'
     )}
     href={`/boj/${id}`}
     data-sveltekit-preload-data="hover"
@@ -29,7 +28,7 @@
       alt="BOJ tier-{tier}"
       src="https://static.solved.ac/tier_small/{tier}.svg"
     />
-    <p class="px-2 py-0.5">{id} {title}</p>
+    <p class="px-2 py-0.5 text-base font-bold">{id} {title}</p>
   </a>
 {/each}
 

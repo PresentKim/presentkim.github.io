@@ -24,7 +24,7 @@
 <header
   class={clsx(
     'absolute sm:fixed',
-    'bg-white dark:bg-neutral-900',
+    'bg-white dark:bg-mono8',
     'flex select-none items-center justify-between',
     'm-auto h-[55px] w-full px-4',
     'transition-shadow ease-in-out-200 sm:scrolled:shadow-lg'
@@ -48,26 +48,26 @@
         class={clsx(
           'mr-1 h-7 w-7 md:h-8 md:w-8',
           'stroke-round fill-none stroke-[6px]',
-          'group-hover:[&_path]:stroke-emerald-500',
+          'group-hover:[&_path]:stroke-primary',
           '[&_path]:transition-all [&_path]:ease-in-out-200'
         )}
       >
         <path
           class={clsx(
-            'stroke-emerald-900',
+            'stroke-primary brightness-50 group-hover:brightness-100',
             'group-hover:-translate-y-[3px] group-hover:translate-x-[7px]'
           )}
           d="M17 37V10l14-4v12l-14 4m11-2 4 17"
         />
         <path
-          class={clsx('stroke-emerald-500', 'group-hover:-translate-x-[10px]')}
+          class={clsx('stroke-primary', 'group-hover:-translate-x-[10px]')}
           d="M13 35V7l14-4v12l-14 4"
         />
       </svg>
 
       <span
         class={clsx(
-          'whitespace-nowrap text-xl font-extrabold md:text-2xl',
+          'whitespace-nowrap font-extrabold text-xl',
           '[@media(max-width:17rem)]:hidden'
         )}
       >
@@ -179,12 +179,12 @@
       {#each navLinks as [pathname, label]}
         <a
           href={pathname}
-          class="hover:text-blue-500 dark:hover:text-blue-400"
+          class="hover:text-secondary"
           tabindex="0"
           aria-label={label}
           data-sveltekit-preload-data="hover"
         >
-          <p class="text-base font-bold sm:text-xl">{label}</p>
+          <p class="font-bold text-base">{label}</p>
         </a>
       {/each}
     </nav>
