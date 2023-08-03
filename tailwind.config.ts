@@ -8,6 +8,9 @@ import variablePlugin from './src/lib/utils/tailwindcss/variable-plugin';
 module.exports = {
   darkMode: ['class', '[data-theme="dark"]'],
   content: ['./src/**/*.{html,js,svelte,ts}'],
+  corePlugins: {
+    fontSize: false
+  },
   future: {
     hoverOnlyWhenSupported: true
   },
@@ -25,6 +28,7 @@ module.exports = {
     colorThemePlugin,
     scrollVariantsPlugin,
     transitionDurableMixinPlugin,
-    variablePlugin
+    variablePlugin,
+    require('tailwindcss-fluid-type')
   ]
 } satisfies Config;
