@@ -24,7 +24,7 @@ jobs:
       - name: Removing markdown files
         run: |
           find . -type f -iname \*.md -delete
-          ls -Rla ./build
+          ls -Rl ./build
 
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
@@ -35,7 +35,6 @@ jobs:
           target_branch: gh-pages
           # deploy the default output dir of SvelteKit
           build_dir: build
-          keep_history: true
           jekyll: false
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
