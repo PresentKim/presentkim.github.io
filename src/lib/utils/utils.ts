@@ -55,3 +55,19 @@ export const runOnEnter = (callback: () => void) => (event: KeyboardEvent) => {
     event.preventDefault();
   }
 };
+
+export interface RecursiveKeyValuePair<
+  K extends keyof any = string,
+  V = string
+> {
+  [key: string]: V | RecursiveKeyValuePair<K, V>;
+}
+
+/**
+ * Filters out the 'DEFAULT' key from the given object and returns an array of key-value pairs.
+ *
+ * @param obj - The input object from which the 'DEFAULT' key will be excluded.
+ * @returns An array of key-value pairs, excluding the 'DEFAULT' key.
+ */
+export const entriesWithoutDefault = (obj: RecursiveKeyValuePair) =>
+  Object.entries(obj).filter(([key]) => key !== 'DEFAULT');

@@ -28,8 +28,6 @@
 
 /* Color variable for each admonition types */
 .admonition {
-  @apply variable-current;
-
   &-info {
     @apply variable-blue-500 dark:variable-blue-400;
   }
