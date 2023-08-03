@@ -23,8 +23,8 @@ jobs:
       # remove useless .md files
       - name: Removing markdown files
         run: |
-          find build -type f -name "*.md" -delete
-          ls -Rla
+          find . -type f -iname \*.md -delete
+          ls -Rla ./build
 
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
