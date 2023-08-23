@@ -12,7 +12,7 @@
   description="`{data.tag}` 태그의 글 목록"
 />
 
-<h1 class="my-4 border-b-2 border-mono6 text-2xl font-bold">
+<h1 class="my-4 border-b-2 border-mono6 font-bold text-2xl">
   <code class="rounded bg-primary bg-opacity-10 px-2 py-1 text-primary"
     >#{data.tag}</code
   > 태그의 글 목록

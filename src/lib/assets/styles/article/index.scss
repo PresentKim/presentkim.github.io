@@ -1,5 +1,5 @@
 .article {
-  @apply w-full break-all leading-loose px-1;
+  @apply w-full break-all px-1 leading-loose;
 
   p {
     @apply my-6;
@@ -33,7 +33,7 @@
   }
 
   :not(pre) > code {
-    @apply mx-1 rounded px-1 py-0.5 text-[calc(100%-0.125rem)] font-normal;
+    @apply mx-1 rounded px-1 py-0.5 font-normal text-[calc(100%-0.125rem)];
     @apply bg-primary bg-opacity-5 text-primary shadow;
     @apply border-mono5 text-primary;
   }

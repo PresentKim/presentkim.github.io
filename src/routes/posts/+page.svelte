@@ -9,5 +9,5 @@
 
 <MetaTags pageName="전체 글 목록" description="전체 글 목록" />
 
-<h1 class="my-4 border-b-2 border-mono6 text-2xl font-bold">전체 글 목록</h1>
+<h1 class="my-4 border-b-2 border-mono6 font-bold text-2xl">전체 글 목록</h1>
 <PostList posts={data.posts} />
