@@ -11,7 +11,9 @@
 
 <MetaTags />
 
-<h1 class="my-4 border-b-2 border-mono6 font-bold text-2xl">최근 포스트</h1>
+<h1 class="my-4 border-b-2 border-mono-200 pb-4 font-bold text-2xl">
+  최근 포스트
+</h1>
 
 <PostList posts={data.posts} />
 <a href="/posts/" class="my-2 w-full rounded-xl p-2 ring-2 ring-secondary">

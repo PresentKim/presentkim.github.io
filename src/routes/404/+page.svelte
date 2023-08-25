@@ -17,7 +17,7 @@
   >
     <defs>
       <g id="paper-file">
-        <rect rx="1" class="fill-mono9" y="6" width="34" height="42" />
+        <rect rx="1" class="fill-gray-50" y="6" width="34" height="42" />
         <rect
           rx="1"
           class="fill-none stroke-black stroke-[0.3]"
@@ -25,7 +25,7 @@
           width="34"
           height="42"
         />
-        <rect rx="1" class="fill-mono8" x="3" y="8" width="28" height="38" />
+        <rect rx="1" class="fill-gray-200" x="3" y="8" width="28" height="38" />
         <rect rx="1" class="fill-primary" x="6" y="4" width="20" height="6" />
         <circle
           r="2"

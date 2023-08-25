@@ -15,7 +15,7 @@
 <footer
   class={clsx(
     'min-h-14 mt-3 w-full py-3',
-    'text-mono2',
+    'text-mono-500',
     'hover:[&_a]:text-secondary'
   )}
 >

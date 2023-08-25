@@ -18,8 +18,8 @@
   }
 
   .header-button {
-    @apply rounded-xl border-2 border-mono5;
-    @apply bg-background text-mono1;
+    @apply rounded-xl border-2 border-mono-100;
+    @apply bg-background opacity-90;
     @apply h-9 w-9 p-1 sm:h-10 sm:w-10 sm:p-1;
     @apply transition-transform ease-in-out-200 hover:scale-110 [&_*]:origin-center;
   }

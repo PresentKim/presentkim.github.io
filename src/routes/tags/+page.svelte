@@ -14,7 +14,7 @@
 <div
   class={clsx(
     'flex flex-col sm:flex-row',
-    'divide-y divide-mono6 sm:divide-x sm:divide-y-0'
+    'divide-y divide-mono-100 sm:divide-x sm:divide-y-0'
   )}
 >
   <h1 class="my-4 pb-2 font-bold text-2xl">전체 태그 목록</h1>

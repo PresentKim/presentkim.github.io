@@ -2,19 +2,13 @@ import color from 'color';
 import plugin from 'tailwindcss/plugin';
 
 const theme: { [name: string]: [light: string, dark: string] } = {
-  background: ['#ffffff', '#242424'],
-  foreground: ['#1c1c1c', '#f1f1f1'],
+  background: ['#ffffff', '#1b1b1b'], //배경색
+  foreground: ['#1c1c1c', '#f1f1f1'], //글자색
 
-  mono0: ['#383838', '#e6e6e6'],
-  mono1: ['#545454', '#cccccc'],
-  mono2: ['#6b6b6b', '#b3b3b3'],
-  mono3: ['#808080', '#999999'],
-  mono4: ['#999999', '#808080'],
-  mono5: ['#a8a8a8', '#666666'],
-  mono6: ['#b8b8b8', '#4d4d4d'],
-  mono7: ['#cccccc', '#333333'],
-  mono8: ['#e0e0e0', '#1a1a1a'],
-  mono9: ['#f5f5f5', '#000000'],
+  'mono-100': ['#f5f5f5', '#333333'], //테두리색
+  'mono-200': ['#f5f5f5', '#333333'], //내부 요소 배경색
+  'mono-500': ['#6b6b6b', '#b3b3b3'], //주석용 회색
+  'mono-900': ['#f2f2f2', '#212121'], //살짝 가벼운 배경색
 
   primary: ['#10b981', '#34d399'],
   secondary: ['#388ff5', '#3592d4']

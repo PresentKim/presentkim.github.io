@@ -12,7 +12,9 @@
   description="지금까지 해결한 BOJ 문제 목록입니다"
 />
 
-<h1 class="my-6 text-center font-bold text-2xl">해결한 백준 문제 목록</h1>
+<h1 class="my-4 border-b-2 border-mono-200 pb-4 font-bold text-2xl">
+  해결한 백준 문제 목록
+</h1>
 {#each data.infos as { id, title, tier, tags }}
   <a
     data-tier={Math.floor((tier + 4) / 5)}

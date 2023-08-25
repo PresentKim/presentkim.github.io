@@ -179,13 +179,13 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item {
   > button,
   > a,
   > span {
-    @apply bg-mono5 bg-opacity-30;
+    @apply bg-mono-200;
     color: var(--mono2);
     padding: 0.1em 0.4em;
     border-radius: 0.3em;
     &:hover,
     &:focus {
-      @apply bg-mono5 bg-opacity-30;
+      @apply bg-mono-200;
       color: var(--mono1);
     }
   }
@@ -193,7 +193,7 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item {
 
 .line-highlight.line-highlight:before,
 .line-highlight.line-highlight[data-end] :after {
-  @apply rounded-sm bg-mono5 bg-opacity-30 px-3 py-1.5 shadow-sm;
+  @apply rounded-sm bg-mono-200 px-3 py-1.5 shadow-sm;
   color: var(--mono1);
 }
 
@@ -201,7 +201,7 @@ div.code-toolbar > .toolbar.toolbar > .toolbar-item {
 pre[id].linkable-line-numbers.linkable-line-numbers
   span.line-numbers-rows
   > span:hover:before {
-  @apply bg-mono5 bg-opacity-80;
+  @apply bg-mono-200;
 }
 
 .line-numbers.line-numbers .line-numbers-rows,

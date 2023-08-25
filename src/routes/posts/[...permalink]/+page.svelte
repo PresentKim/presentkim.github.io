@@ -17,15 +17,15 @@
   <meta name="giscus:backlink" content="{site.domain}{$page.url.pathname}" />
 </svelte:head>
 
-<h1 class="my-4 border-b-2 text-xl">{data.title}</h1>
+<h1 class="my-2 text-xl">{data.title}</h1>
 <div
   class={clsx(
     'flex w-full flex-row',
     'mb-6 text-center text-sm',
-    'border-b border-mono6'
+    'border-b border-mono-200'
   )}
 >
-  <p class="my-auto py-6 text-mono3">
+  <p class="my-auto py-6 text-mono-500">
     {data.formattedDate}
   </p>
   <div class="flex flex-wrap font-bold text-primary">
@@ -46,7 +46,7 @@
   <hr />
 </section>
 
-<div class="rounded-2xl border-2 border-mono6 border-opacity-10 p-2 shadow">
+<div class="rounded-2xl border border-mono-200 px-2 py-4 shadow">
   <Giscus
     id="comments"
     repo="PresentKim/presentkim.github.io"

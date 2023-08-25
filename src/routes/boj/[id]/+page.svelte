@@ -36,7 +36,9 @@
   {#each dataKeys as [key, name]}
     {#if data[key]}
       <div class="mb-8" id={key}>
-        <h2 class="mb-4 border-b-2 border-mono6 pb-1 text-lg">{name}</h2>
+        <h2 class="mb-4 border-b-2 border-mono-200 text-lg">
+          {name}
+        </h2>
         <div class="max-w-full text-base">
           {@html data[key]}
         </div>
@@ -52,7 +54,7 @@
       >
         {#each io_puts as put, j}
           <div id="sample-{i}-{j}" class="flex-1 basis-full">
-            <h2 class="mb-4 border-b-2 border-b-mono6 pb-1 text-lg">
+            <h2 class="mb-4 border-b-2 border-b-mono-200 pb-2 text-lg">
               {`예제 ${['입력', '출력'][j]} ${i + 1}`}
             </h2>
             <pre class="min-h-[2rem] p-2 text-base"><code

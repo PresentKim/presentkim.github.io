@@ -15,9 +15,7 @@
   let title: string;
   let url: string = `${domain}${$page.url.pathname}`;
 
-  $: {
-    title = pageName ? `${pageName} - ${name}` : name;
-  }
+  $: title = pageName ? `${pageName} - ${name}` : name;
 </script>
 
 <svelte:head>

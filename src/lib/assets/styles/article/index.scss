@@ -35,19 +35,19 @@
   :not(pre) > code {
     @apply mx-1 rounded px-1 py-0.5 font-normal text-[calc(100%-0.125rem)];
     @apply bg-primary bg-opacity-5 text-primary shadow;
-    @apply border-mono5 text-primary;
+    @apply border-mono-100 border text-primary;
   }
 
   pre {
     @apply my-4 min-h-[2rem] overflow-auto whitespace-pre rounded-md p-2;
     @apply bg-foreground bg-opacity-5 shadow;
-    @apply border-mono5 bg-foreground bg-opacity-5 shadow;
+    @apply border-mono-100 bg-foreground bg-opacity-5 shadow;
   }
 
   blockquote {
     @apply rounded px-2 py-1 shadow;
     @apply bg-foreground bg-opacity-5 shadow;
-    @apply border-[2px] border-l-8 border-mono5 border-l-mono1;
+    @apply border-[2px] border-l-8 border-mono-100;
   }
 
   ul,
