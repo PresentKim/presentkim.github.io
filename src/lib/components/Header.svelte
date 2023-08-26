@@ -23,7 +23,7 @@
 
 <header
   class={clsx(
-    'absolute sm:fixed',
+    'absolute z-50 sm:fixed',
     'bg-background scrolled:dark:bg-mono-900',
     'flex select-none items-center justify-between',
     'm-auto h-[55px] w-full px-4',
