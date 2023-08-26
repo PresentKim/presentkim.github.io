@@ -16,6 +16,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        xs: '475px'
+      },
       transitionProperty: {
         shape: 'width, height, margin, padding, transform'
       },
