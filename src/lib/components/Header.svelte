@@ -10,7 +10,7 @@
   let scrollY: number;
 
   const navLinks = [
-    ['/portfolio', 'Portfolio'],
+    ['/about', 'About'],
     ['/posts', 'Posts'],
     ['/tags', 'Tags']
   ];
