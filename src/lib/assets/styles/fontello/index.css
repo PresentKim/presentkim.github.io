@@ -156,3 +156,6 @@ i.facebook:before {
 i.telegram:before {
   content: '\f2c6';
 } /* '' */
+i.search:before {
+  content: '\e80e';
+} /* '' */
