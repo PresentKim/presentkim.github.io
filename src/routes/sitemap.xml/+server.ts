@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-
 import type { RequestHandler } from './$types';
 
 import { domain } from '$lib/assets/site-info.json';
@@ -11,33 +9,33 @@ export const prerender = true;
 export const GET: RequestHandler = () =>
   new Response(
     minifyXML(`
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+    xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="https://www.w3.org/1999/xhtml">
     ${getPosts()
       .map(({ permalink, date }) =>
-        url(`${permalink}`, 'daily', 0.7, dayjs(date).toString())
+        url(`${permalink}`, 0.7, new Date(date).toISOString())
       )
       .join('')}
-    ${url('posts', 'daily', 0.7)}
-    ${url('portfolio', 'daily', 1.0)}
-    ${url('', 'weekly', 1.0)}
+    ${url('posts', 0.7)}
+    ${url('portfolio', 1.0)}
+    ${url('', 1.0)}
 </urlset>
 `),
     {
       headers: {
-        'Content-Type': 'application/xml'
+        'content-type': 'application/xml; charset=utf-8'
       }
     }
   );
 
 const url = (
   permalink: string,
-  changefreq: string,
   priority: number,
   lastmod: string | null = null
 ) => `
 <url>
     <loc>${domain}/${permalink}</loc>
-    <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
     ${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}
 </url>`;
