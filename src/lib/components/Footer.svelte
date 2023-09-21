@@ -8,7 +8,7 @@
   const navLinks = [
     ['mailto:contanct@present.kim', '김현재의 이메일', mail],
     ['https://github.com/PresentKim', '김현재의 깃허브', github],
-    ['https://present.kim/rss.xml', '블로그 RSS', rss]
+    ['https://present.kim/atom.xml', '블로그 RSS', rss]
   ];
 </script>
 

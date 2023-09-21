@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-
 import type { RequestHandler } from './$types';
 
 import { description, domain, name } from '$lib/assets/site-info.json';
@@ -19,8 +17,8 @@ export const GET: RequestHandler = () => {
         <description><![CDATA[ ${description} ]]></description>
         <link>${domain}</link>
         <generator>SvelteKit v1.20.5</generator>
-        <lastBuildDate>${dayjs(new Date())}</lastBuildDate>
-        <pubDate>${dayjs(new Date(posts[0].date))}</pubDate>
+        <lastBuildDate>${new Date().toISOString()}</lastBuildDate>
+        <pubDate>${new Date(posts[0].date).toISOString()}</pubDate>
         ${posts.map((post) => item(post)).join(' ')}
     </channel>
 </rss>`),
@@ -39,7 +37,7 @@ function item({ title, permalink, summary, date, rawContent }: Post) {
     <link>${domain}${permalink}</link>
     <guid isPermaLink="false">${domain}/${permalink}</guid>
     <description><![CDATA[ ${summary} ]]></description>
-    <pubDate>${date}</pubDate>
+    <pubDate>${new Date(date).toISOString()}</pubDate>
     <content:encoded><![CDATA[ ${rawContent} ]]></content:encoded>
 </item>
 `;
