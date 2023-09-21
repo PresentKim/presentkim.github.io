@@ -7,6 +7,7 @@
   import '$lib/assets/styles/index.scss';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
+  import { setDocumentDataset } from '$lib/utils/document-dateset';
   import { themeMount } from '$lib/utils/theme.ts';
 
   export let data: LayoutData;
@@ -14,38 +15,35 @@
   let scrollY: number = 0;
   let scrolled: boolean;
 
-  const oninput = (inputType: string) => {
-    document.documentElement.dataset['input'] = inputType;
-  };
-
-  const onscroll = () => {
-    const lastScrollY = scrollY;
-    scrollY = window.scrollY;
-    scrolled = scrolled ? scrollY > 0 : scrollY > 75;
-
-    document.documentElement.dataset['scrolled'] = String(scrolled);
-    document.documentElement.dataset['scroll'] =
-      scrolled && scrollY - lastScrollY < 0 ? 'up' : 'down';
-  };
-
   onMount(() => {
     themeMount();
 
     /** Load color scheme from device setting */
-    document.documentElement.dataset['theme'] =
+    setDocumentDataset(
+      'theme',
       localStorage.getItem('color-scheme') ||
-      (window &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light');
+        (window &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light')
+    );
   });
 </script>
 
 <svelte:window
-  on:scroll={() => onscroll()}
-  on:mousedown={() => oninput('mouse')}
-  on:keydown={() => oninput('keyboard')}
+  on:scroll={() => {
+    const lastScrollY = scrollY;
+    scrollY = window.scrollY;
+    scrolled = scrollY > 72;
+    setDocumentDataset('scrolled', String(scrolled));
+    setDocumentDataset(
+      'scroll',
+      scrolled && scrollY - lastScrollY < 0 ? 'up' : 'down'
+    );
+  }}
+  on:mousedown={() => setDocumentDataset('input', 'mouse')}
+  on:keydown={() => setDocumentDataset('input', 'keyboard')}
 />
 
 <Header />

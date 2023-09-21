@@ -2,6 +2,8 @@ import { derived, writable } from 'svelte/store';
 
 import { browser } from '$app/environment';
 
+import { setDocumentDataset } from '$lib/utils/document-dateset';
+
 declare type Theme = 'light' | 'dark';
 const LOCAL_STORAGE_KEY = 'color-scheme';
 
@@ -18,8 +20,7 @@ function applyTheme() {
     //store the color scheme if it doesn't match the current window color scheme
     localStorage.setItem(LOCAL_STORAGE_KEY, _user_theme);
   }
-
-  document.documentElement.dataset['theme'] = _user_theme;
+  setDocumentDataset('theme', _user_theme);
 }
 
 let initialized = false;
