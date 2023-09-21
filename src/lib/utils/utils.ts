@@ -4,7 +4,7 @@
  * @returns The minified XML content.
  */
 export const minifyXML = (innerText: string): string =>
-  `<?xml version="1.0" encoding="UTF-8" ?>${innerText}`
+  `<?xml version='1.0' encoding='utf-8'?>${innerText}`
     .replaceAll(/[\r\n ]+/gi, ' ')
     .replaceAll(/> </gi, '><')
     .replaceAll(/<!--(.+?)-->/gi, '');
