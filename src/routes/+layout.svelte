@@ -2,12 +2,14 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
 
-  import { page } from '$app/stores';
+  import type { LayoutData } from './$types';
 
   import '$lib/assets/styles/index.scss';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import { themeMount } from '$lib/utils/theme.ts';
+
+  export let data: LayoutData;
 
   let scrollY: number = 0;
   let scrolled: boolean;
@@ -48,7 +50,7 @@
 
 <Header />
 
-{#key $page.url.pathname}
+{#key data.path}
   <main
     class="blog-container mt-[55px] flex flex-1 flex-col"
     in:fade={{ duration: 500 }}
