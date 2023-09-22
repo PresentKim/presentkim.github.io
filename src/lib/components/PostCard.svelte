@@ -4,7 +4,7 @@
   export let title: string;
   export let summary: string;
   export let date: string;
-  export let tags: string[] = [];
+  export let tags: string[];
 </script>
 
 <div
@@ -22,7 +22,14 @@
     {summary}
   </p>
 
-  <p class="text-right text-mono-500 text-sm">
-    {date}
-  </p>
+  <div class="flex flex-row items-center gap-1">
+    <i class="calendar before:text-sm" />
+    <p class="mr-4 text-sm text-mono-500">
+      {date}
+    </p>
+    <i class="tags before:text-sm" />
+    <p class="text-sm text-mono-500">
+      {tags.join(', ')}
+    </p>
+  </div>
 </div>

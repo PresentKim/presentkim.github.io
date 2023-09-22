@@ -86,7 +86,8 @@ const POST_INFO_KEYS = [
   'permalink',
   'title',
   'summary',
-  'formattedDate'
+  'formattedDate',
+  'tags'
 ] as const;
 export type PostInfo = Pick<Post, (typeof POST_INFO_KEYS)[number]>;
 export const pickPostInfo = (post: Post): PostInfo =>

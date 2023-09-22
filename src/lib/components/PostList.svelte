@@ -7,9 +7,9 @@
 </script>
 
 <section class="justify-left mx-auto flex flex-col gap-y-5">
-  {#each posts as { permalink, title, summary, formattedDate }}
+  {#each posts as { permalink, title, summary, formattedDate, tags }}
     <a href={`/${permalink}`} data-sveltekit-preload-data="hover">
-      <PostCard {title} {summary} date={formattedDate} tags={['a', 'bn']} />
+      <PostCard {title} {summary} date={formattedDate} {tags} />
     </a>
   {/each}
 </section>
