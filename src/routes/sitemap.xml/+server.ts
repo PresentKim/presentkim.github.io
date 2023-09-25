@@ -10,15 +10,15 @@ export const GET: RequestHandler = () =>
   new Response(
     minifyXML(`
 <urlset
-    xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-    ${url('', 1.0)}
-    ${url('posts', 0.7)}
-    ${url('about', 1.0)}
-    ${getPosts((post) => !post.draft)
-      .map(({ permalink, date }) =>
-        url(`${permalink}`, 0.7, new Date(date).toISOString())
-      )
-      .join('')}
+  xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  ${url('', 1.0)}
+  ${url('posts', 0.7)}
+  ${url('about', 1.0)}
+  ${getPosts((post) => !post.draft)
+    .map(({ permalink, date }) =>
+      url(`${permalink}`, 0.7, new Date(date).toISOString())
+    )
+    .join('')}
 </urlset>
 `),
     {
@@ -34,7 +34,7 @@ const url = (
   lastmod: string | null = null
 ) => `
 <url>
-    <loc>${domain}/${permalink}</loc>
-    ${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}
-    <priority>${priority}</priority>
+  <loc>${domain}/${permalink}</loc>
+  ${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}
+  <priority>${priority}</priority>
 </url>`;

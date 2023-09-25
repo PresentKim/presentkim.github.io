@@ -12,15 +12,15 @@ export const GET: RequestHandler = () => {
   return new Response(
     minifyXML(`
 <rss xmlns:content="https://purl.org/rss/1.0/modules/content/" version="2.0">
-    <channel>
-        <title><![CDATA[ ${name} RSS Feed ]]></title>
-        <description><![CDATA[ ${description} ]]></description>
-        <link>${domain}</link>
-        <generator>SvelteKit v1.20.5</generator>
-        <lastBuildDate>${new Date().toISOString()}</lastBuildDate>
-        <pubDate>${new Date(posts[0].date).toISOString()}</pubDate>
-        ${posts.map((post) => item(post)).join(' ')}
-    </channel>
+  <channel>
+    <title><![CDATA[ ${name} RSS Feed ]]></title>
+    <description><![CDATA[ ${description} ]]></description>
+    <link>${domain}</link>
+    <generator>SvelteKit v1.20.5</generator>
+    <lastBuildDate>${new Date().toISOString()}</lastBuildDate>
+    <pubDate>${new Date(posts[0].date).toISOString()}</pubDate>
+    ${posts.map((post) => item(post)).join(' ')}
+  </channel>
 </rss>`),
     {
       headers: {
@@ -33,12 +33,12 @@ export const GET: RequestHandler = () => {
 function item({ title, permalink, summary, date, rawContent }: Post) {
   return `
 <item>
-    <title><![CDATA[ ${title} ]]></title>
-    <link>${domain}${permalink}</link>
-    <guid isPermaLink="false">${domain}/${permalink}</guid>
-    <description><![CDATA[ ${summary} ]]></description>
-    <pubDate>${new Date(date).toISOString()}</pubDate>
-    <content:encoded><![CDATA[ ${rawContent} ]]></content:encoded>
+  <title><![CDATA[ ${title} ]]></title>
+  <link>${domain}${permalink}</link>
+  <guid isPermaLink="false">${domain}/${permalink}</guid>
+  <description><![CDATA[ ${summary} ]]></description>
+  <pubDate>${new Date(date).toISOString()}</pubDate>
+  <content:encoded><![CDATA[ ${rawContent} ]]></content:encoded>
 </item>
 `;
 }

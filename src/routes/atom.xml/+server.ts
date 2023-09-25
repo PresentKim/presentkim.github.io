@@ -7,9 +7,8 @@ import { minifyXML } from '$lib/utils/utils';
 
 export const prerender = true;
 
-export const GET: RequestHandler = () => {
-  const posts = getPosts((post) => !post.draft);
-  return new Response(
+export const GET: RequestHandler = () =>
+  new Response(
     minifyXML(`
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>${domain}</id>
@@ -27,7 +26,9 @@ export const GET: RequestHandler = () => {
   <logo>${domain}/favicon/96.png</logo>
   <updated>${new Date().toISOString()}</updated>
   <rights>© 2023 ${author} </rights>
-  ${posts.map((post) => item(post)).join(' ')}
+  ${getPosts((post) => !post.draft)
+    .map((post) => item(post))
+    .join(' ')}
 </feed>`),
     {
       headers: {
@@ -35,7 +36,6 @@ export const GET: RequestHandler = () => {
       }
     }
   );
-};
 
 function item({ title, permalink, summary, date, tags }: Post) {
   return `
@@ -47,7 +47,7 @@ function item({ title, permalink, summary, date, tags }: Post) {
   <id>${domain}/${permalink}</id>
   <content src="${domain}/${permalink}"/>
   <author>
-      <name>${author}</name>
+    <name>${author}</name>
   </author>
   ${tags.map((tag) => `<category term="${tag}"/>`).join(' ')}
   <summary>${summary}</summary>
