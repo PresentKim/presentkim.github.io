@@ -12,19 +12,21 @@
   id="contents-container"
   class={clsx(
     'translate-x-0 sidebar:translate-x-64 lg:translate-x-64',
-    'w-full lg:w-[calc(100%-16rem)]',
+    'w-full overflow-x-hidden sidebar:w-[calc(100vw-16rem)] lg:w-[calc(100vw-16rem)]',
     'transition-[transform,width] ease-in-out-500'
   )}
 >
-  <Header />
-  {#key path}
-    <main
-      class="blog-container"
-      in:fly={{ y: 50, duration: 200, delay: 200 }}
-      out:fly={{ y: -50, duration: 200 }}
-    >
-      <slot />
-    </main>
-  {/key}
-  <Footer />
+  <div class="w-screen">
+    <Header />
+    {#key path}
+      <main
+        class="blog-container"
+        in:fly={{ y: 50, duration: 200, delay: 200 }}
+        out:fly={{ y: -50, duration: 200 }}
+      >
+        <slot />
+      </main>
+    {/key}
+    <Footer />
+  </div>
 </div>
