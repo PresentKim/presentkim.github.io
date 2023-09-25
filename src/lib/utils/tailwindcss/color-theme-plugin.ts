@@ -6,9 +6,8 @@ const theme: { [name: string]: [light: string, dark: string] } = {
   foreground: ['#1c1c1c', '#f1f1f1'], //글자색
 
   'mono-100': ['#f5f5f5', '#333333'], //테두리색
-  'mono-200': ['#f5f5f5', '#333333'], //내부 요소 배경색
+  'mono-200': ['#f2f2f2', '#212121'], //내부 요소 배경색
   'mono-500': ['#6b6b6b', '#b3b3b3'], //주석용 회색
-  'mono-900': ['#f2f2f2', '#212121'], //살짝 가벼운 배경색
 
   primary: ['#10b981', '#34d399'],
   secondary: ['#388ff5', '#3592d4']
