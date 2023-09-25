@@ -149,6 +149,7 @@
     </button>
     {#each footerLinks as [icon, label, url, external = false]}
       <a
+        aria-label={label}
         href={url}
         class="sidebar-button"
         target={external ? '_blank' : '_self'}
