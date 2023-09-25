@@ -51,6 +51,17 @@
       gtag('config', 'G-NNGC41131C');
     </script>
 
+    <!-- Load color scheme from device setting -->
+    <script>
+      document.documentElement.dataset['theme'] =
+        localStorage.getItem('color-scheme') ||
+        (window &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light');
+    </script>
+
     %sveltekit.head%
   </head>
   <body class="h-full overflow-x-hidden sidebar:overflow-y-hidden">

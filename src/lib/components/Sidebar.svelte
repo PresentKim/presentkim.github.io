@@ -2,7 +2,7 @@
   import clsx from 'clsx';
 
   import { sidebar } from '$lib/utils/document-dateset';
-  import { toggleTheme } from '$lib/utils/theme';
+  import { darkMode } from '$lib/utils/theme';
 
   const navLinks = [
     ['home', 'Home', '/'],
@@ -104,7 +104,7 @@
     <button
       aria-label="Change Theme"
       class="sidebar-button [&_*]:origin-center"
-      on:click={toggleTheme}
+      on:click={() => ($darkMode = !$darkMode)}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

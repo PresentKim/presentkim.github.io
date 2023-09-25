@@ -1,33 +1,15 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-
   import type { LayoutData } from './$types';
 
   import '$lib/assets/styles/index.scss';
   import Contents from '$lib/components/Contents.svelte';
   import Sidebar from '$lib/components/Sidebar.svelte';
   import { setDocumentDataset } from '$lib/utils/document-dateset';
-  import { themeMount } from '$lib/utils/theme.ts';
 
   export let data: LayoutData;
 
   let scrollY: number = 0;
   let scrolled: boolean;
-
-  onMount(() => {
-    themeMount();
-
-    /** Load color scheme from device setting */
-    setDocumentDataset(
-      'theme',
-      localStorage.getItem('color-scheme') ||
-        (window &&
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light')
-    );
-  });
 </script>
 
 <svelte:window
