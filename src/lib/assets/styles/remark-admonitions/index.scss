@@ -2,7 +2,7 @@
   @apply my-4 rounded-sm border-l-4 border-variable bg-foreground bg-opacity-5 p-2;
 
   h5 {
-    @apply mb-2 inline-block font-bold text-variable text-xl;
+    @apply mb-2 inline-block text-xl font-bold text-variable;
   }
 
   &-icon {

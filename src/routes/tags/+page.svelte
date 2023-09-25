@@ -17,7 +17,7 @@
     'divide-y divide-mono-100 sm:divide-x sm:divide-y-0'
   )}
 >
-  <h1 class="my-4 pb-2 font-bold text-2xl">전체 태그 목록</h1>
+  <h1 class="my-4 pb-2 text-2xl font-bold">전체 태그 목록</h1>
   <div
     class={clsx(
       'justify-left flex flex-col flex-wrap sm:flex-row',
@@ -30,7 +30,7 @@
         data-sveltekit-preload-data="hover"
         class="mx-2 my-auto flex gap-1 px-2 py-1"
       >
-        <p class="font-bold text-primary text-xl">
+        <p class="text-xl font-bold text-primary">
           #{tag}
         </p>
         <p class="text-sm">({count})</p>

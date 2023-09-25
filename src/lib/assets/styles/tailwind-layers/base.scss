@@ -19,10 +19,6 @@
     @apply bg-background text-foreground;
   }
 
-  *::selection {
-    @apply bg-primary bg-opacity-30;
-  }
-
   h1,
   h2,
   h3,
@@ -48,6 +44,10 @@
 
   img {
     max-width: 100%;
+  }
+
+  *::selection {
+    @apply bg-primary bg-opacity-30;
   }
 
   [aria-hidden='true'] {

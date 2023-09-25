@@ -13,11 +13,11 @@
     'border-[1px] border-mono-100 shadow'
   )}
 >
-  <h2 class="line-clamp-1 font-bold text-base">
+  <h2 class="line-clamp-1 text-base font-bold">
     {title}
   </h2>
   <p
-    class="my-3 line-clamp-2 overflow-hidden text-ellipsis text-mono-500 text-sm"
+    class="my-3 line-clamp-2 overflow-hidden text-ellipsis text-sm text-mono-500"
   >
     {summary}
   </p>

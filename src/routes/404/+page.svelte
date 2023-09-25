@@ -38,5 +38,5 @@
     <use href="#paper-file" class="-rotate-12" x="-2" y="6" />
     <use href="#paper-file" x="25" y="9" />
   </svg>
-  <div class="font-bold text-2xl">페이지를 찾을 수 없습니다</div>
+  <div class="text-2xl font-bold">페이지를 찾을 수 없습니다</div>
 </div>

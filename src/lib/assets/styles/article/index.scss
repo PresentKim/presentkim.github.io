@@ -33,9 +33,9 @@
   }
 
   :not(pre) > code {
-    @apply mx-1 rounded px-1 py-0.5 font-normal text-[calc(100%-0.125rem)];
+    @apply mx-1 rounded px-1 py-0.5 text-[calc(100%-0.125rem)] font-normal;
     @apply bg-primary bg-opacity-5 text-primary shadow;
-    @apply border-mono-100 border text-primary;
+    @apply border border-mono-100 text-primary;
   }
 
   pre {

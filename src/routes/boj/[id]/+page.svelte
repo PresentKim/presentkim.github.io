@@ -23,7 +23,7 @@
       rel="noopener noreferrer"
       class="!no-underline"
     >
-      <h1 class="mb-8 font-bold text-2xl">
+      <h1 class="mb-8 text-2xl font-bold">
         <img
           class="inline-flex !w-9"
           alt="BOJ tier-{data.tier}"
