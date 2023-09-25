@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply my-0 flex w-full flex-col p-0 font-normal text-base sm:min-h-screen;
+    @apply my-0 min-h-screen w-full p-0 text-base font-normal;
     @apply bg-background text-foreground;
   }
 

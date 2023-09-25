@@ -5,4 +5,5 @@ import plugin from 'tailwindcss/plugin';
 export default plugin(function ({ addVariant }) {
   addVariant('scrolled', '[data-scrolled="true"] &');
   addVariant('scroll-up', '[data-scroll="up"] &');
+  addVariant('sidebar', '[data-sidebar="visible"] &');
 });

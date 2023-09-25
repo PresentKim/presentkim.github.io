@@ -32,7 +32,7 @@
       </a>
     {/each}
   </nav>
-  <div class="text-center leading-loose text-sm [&_a]:underline">
+  <div class="text-center text-sm leading-loose [&_a]:underline">
     <p>© 2023 PresentKim. All Rights Reserved.</p>
     <p>
       Made with

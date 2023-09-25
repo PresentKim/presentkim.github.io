@@ -1,12 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
 
   import type { LayoutData } from './$types';
 
   import '$lib/assets/styles/index.scss';
-  import Footer from '$lib/components/Footer.svelte';
-  import Header from '$lib/components/Header.svelte';
+  import Contents from '$lib/components/Contents.svelte';
+  import Sidebar from '$lib/components/Sidebar.svelte';
   import { setDocumentDataset } from '$lib/utils/document-dateset';
   import { themeMount } from '$lib/utils/theme.ts';
 
@@ -35,7 +34,7 @@
   on:scroll={() => {
     const lastScrollY = scrollY;
     scrollY = window.scrollY;
-    scrolled = scrollY > 72;
+    scrolled = scrollY > 32;
     setDocumentDataset('scrolled', String(scrolled));
     setDocumentDataset(
       'scroll',
@@ -46,15 +45,7 @@
   on:keydown={() => setDocumentDataset('input', 'keyboard')}
 />
 
-<Header />
-
-{#key data.path}
-  <main
-    class="blog-container mt-[55px] flex flex-1 flex-col"
-    in:fade={{ duration: 500 }}
-  >
-    <slot />
-  </main>
-{/key}
-
-<Footer />
+<Sidebar />
+<Contents path={data}>
+  <slot />
+</Contents>
