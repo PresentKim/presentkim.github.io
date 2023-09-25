@@ -8,7 +8,7 @@ import { minifyXML } from '$lib/utils/utils';
 export const prerender = true;
 
 export const GET: RequestHandler = () => {
-  const posts = getPosts();
+  const posts = getPosts((post) => !post.draft);
   return new Response(
     minifyXML(`
 <feed xmlns="http://www.w3.org/2005/Atom">

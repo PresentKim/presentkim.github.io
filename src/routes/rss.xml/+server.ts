@@ -8,7 +8,7 @@ import { minifyXML } from '$lib/utils/utils';
 export const prerender = true;
 
 export const GET: RequestHandler = () => {
-  const posts = getPosts();
+  const posts = getPosts((post) => !post.draft);
   return new Response(
     minifyXML(`
 <rss xmlns:content="https://purl.org/rss/1.0/modules/content/" version="2.0">

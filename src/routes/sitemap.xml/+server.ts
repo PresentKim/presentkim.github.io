@@ -14,7 +14,7 @@ export const GET: RequestHandler = () =>
     ${url('', 1.0)}
     ${url('posts', 0.7)}
     ${url('about', 1.0)}
-    ${getPosts()
+    ${getPosts((post) => !post.draft)
       .map(({ permalink, date }) =>
         url(`${permalink}`, 0.7, new Date(date).toISOString())
       )
