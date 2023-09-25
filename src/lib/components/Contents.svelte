@@ -16,7 +16,7 @@
     'transition-[transform,width] ease-in-out-500'
   )}
 >
-  <div class="w-screen">
+  <div class="w-screen lg:w-[calc(100vw-16rem)]">
     <Header />
     {#key path}
       <main
