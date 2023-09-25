@@ -24,7 +24,7 @@
       'gap-2 pt-2'
     )}
   >
-    {#each Object.entries(data) as [tag, count]}
+    {#each Object.entries(data.tagMap) as [tag, count]}
       <a
         href="/tags/{tag}"
         data-sveltekit-preload-data="hover"
