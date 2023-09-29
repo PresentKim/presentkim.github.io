@@ -11,10 +11,10 @@ export const GET: RequestHandler = () =>
   new Response(
     minifyXML(`
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>${domain}</id>
+  <id>${domain}/</id>
   <title><![CDATA[${name}]]></title>
   <subtitle><![CDATA[${description}]]></subtitle>
-  <link>${domain}</link>
+  <link rel="self" href="${domain}"></link>
   <author>
     <name>${author}</name>
     <uri>${domain}</uri>
@@ -45,7 +45,7 @@ function item({ title, permalink, summary, date, tags }: Post) {
   <published>${new Date(date).toISOString()}</published>
   <updated>${new Date(date).toISOString()}</updated>
   <id>${domain}/${permalink}</id>
-  <content src="${domain}/${permalink}"/>
+  <content type="html" src="${domain}/${permalink}"/>
   <author>
     <name>${author}</name>
   </author>
