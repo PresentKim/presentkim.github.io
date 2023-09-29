@@ -14,13 +14,12 @@ export const GET: RequestHandler = () =>
   <id>${domain}/</id>
   <title><![CDATA[${name}]]></title>
   <subtitle><![CDATA[${description}]]></subtitle>
-  <link rel="self" href="${domain}"></link>
   <author>
     <name>${author}</name>
     <uri>${domain}</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="${domain}/atom.xml"/>
-  <link rel="alternate" type="text/html" hreflang="en" href="${domain}"/>
+  <link href="${domain}/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="${domain}/" rel="alternate" type="text/html" hreflang="en"/>
   <generator>SvelteKit v1.20.5</generator>
   <icon>${domain}/favicon/any.svg</icon>
   <logo>${domain}/favicon/96.png</logo>
@@ -45,7 +44,7 @@ function item({ title, permalink, summary, date, tags }: Post) {
   <published>${new Date(date).toISOString()}</published>
   <updated>${new Date(date).toISOString()}</updated>
   <id>${domain}/${permalink}</id>
-  <content type="html" src="${domain}/${permalink}"/>
+  <content type="text/html" src="${domain}/${permalink}"/>
   <author>
     <name>${author}</name>
   </author>
