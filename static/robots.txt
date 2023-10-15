@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://present.kim/sitemap.xml
+sitemap: https://present.kim/sitemap.xml
+sitemap: https://present.kim/atom.xml
