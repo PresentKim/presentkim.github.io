@@ -46,7 +46,7 @@
   <hr />
 </section>
 
-<div class="rounded-2xl border border-mono-200 px-2 py-4 shadow">
+<div class="rounded-2xl border border-mono-200 px-2 py-4 shadow" data-nosnippet>
   <Giscus
     id="comments"
     repo="PresentKim/presentkim.github.io"
