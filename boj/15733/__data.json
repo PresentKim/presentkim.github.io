@@ -1,0 +1,1 @@
+{"type":"data","nodes":[null,{"type":"data","data":[{"id":1,"title":2,"description":3,"tier":4,"input":5,"output":6,"sample":7,"tags":11},15733,"나는 누구인가","\u003Cp>당신은 지금 코딩을 하고있다. 그럼 당신은 어떤 사람인가.\u003C/p>",1,"\u003Cp>없다.\u003C/p>","\u003Cp>“I'm Sexy”를 출력한다.\u003C/p>",[8],[9,10],"","I'm Sexy\n",[12],"구현"],"uses":{"params":["id"]}}]}

@@ -1,0 +1,1 @@
+{"type":"data","nodes":[null,{"type":"data","data":[{"id":1,"title":2,"description":3,"tier":4,"input":5,"output":6,"sample":7,"tags":11},10171,"고양이","\u003Cp>아래 예제와 같이 고양이를 출력하시오.\u003C/p>",1,"\u003Cp>없음.\u003C/p>","\u003Cp>고양이를 출력한다.\u003C/p>",[8],[9,10],"","\\    /\\\n )  ( ')\n(  /  )\n \\(__)|\n",[12],"구현"],"uses":{"params":["id"]}}]}

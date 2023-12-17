@@ -1,0 +1,1 @@
+{"type":"data","nodes":[null,{"type":"data","data":[{"id":1,"title":2,"description":3,"tier":4,"output":5,"sample":6,"tags":10},11942,"고려대는 사랑입니다","\u003Cp>고려대학교는 사랑입니다.\u003C/p>",1,"\u003Cp>첫째 줄에 “고려대학교”를 출력하세요.\u003C/p>",[7],[8,9],"","고려대학교\n",[11],"구현"],"uses":{"params":["id"]}}]}

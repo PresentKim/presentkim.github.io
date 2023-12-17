@@ -1,0 +1,1 @@
+{"type":"data","nodes":[null,{"type":"data","data":[{"tag":1,"posts":2},"cleancoding",[3],{"permalink":4,"title":5,"summary":6,"formattedDate":7,"tags":8},"posts/cleancoding/nested-if-statement","🎨 코드개선 : 중첩된 조건문을 개선하는 방법","개발을 하다보면 코드가 뭔가 복잡하고 읽고 이해하기 힘들때가 있습니다. 코드의 가독성이 떨어지는 이유 중 가장 흔한 중첩된 조건문을 개선하는 방법에 대해 생각해봅시다.","2023-10-24",[1]],"uses":{"params":["tag"]}}]}
