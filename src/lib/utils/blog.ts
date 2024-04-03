@@ -29,7 +29,7 @@ const DEFAULT_METADATA: PostMetadata = {
 
 const rawPostMap: Record<string, string> = import.meta.glob(
   '/static/posts/**/*.md',
-  { eager: true, as: 'raw' }
+  { eager: true, query: '?raw', import: 'default' }
 );
 const postMap: Map<string, Post> = new Map(
   Object.entries(
