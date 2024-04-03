@@ -28,6 +28,6 @@
 />
 
 <Sidebar />
-<Contents path={data}>
+<Contents path={data.path}>
   <slot />
 </Contents>
