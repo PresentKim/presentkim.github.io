@@ -34,7 +34,7 @@ function item({ title, permalink, summary, date, rawContent }: Post) {
   return `
 <item>
   <title><![CDATA[ ${title} ]]></title>
-  <link>${domain}${permalink}</link>
+  <link>${domain}/${permalink}</link>
   <guid isPermaLink="false">${domain}/${permalink}</guid>
   <description><![CDATA[ ${summary} ]]></description>
   <pubDate>${new Date(date).toISOString()}</pubDate>
