@@ -1,7 +1,7 @@
 ---
 title: '📝 Google Search Console의 사이트맵을 가져올 수 없음 문제를 해결한 과정'
 summary: 'Google Search Console에서 사이트맵을 가져올 수 없음 문제를 해결한 과정을 기록합니다.'
-date: 2024-04-04 12:42:00
+date: 2024-04-02 12:42:00
 tags: [ 블로그 ]
 ---
 

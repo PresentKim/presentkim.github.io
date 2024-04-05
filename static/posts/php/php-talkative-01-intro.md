@@ -3,7 +3,6 @@ title: '🐘 PHP 수다떨기 - PHP 자체에 대한 이야기'
 summary: 'PHP에 대해 수다를 떨기 위해 먼저 PHP에 대해 이야기해보는 글입니다.'
 date: 2024-04-03 10:12:00
 tags: [ php ]
-draft: true
 ---
 
 ![P-H-P-H-P](p-h-p-h-p.png)
