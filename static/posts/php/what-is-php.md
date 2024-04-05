@@ -1,6 +1,6 @@
 ---
 title: '🐘 PHP에 대한 매우 짧은 소개'
-summary: 'PHP 관련된 글은 많이 작성했지만 정작 PHP 자체는 다룬적이 없습니다. 어머나...'
+summary: 'PHP 자체에 대한 매우 짧은 소개를 남겨봅니다.'
 date: 2023-11-07 12:43:00
 tags: [ php ]
 draft: true

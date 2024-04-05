@@ -1,8 +1,8 @@
 ---
 title: '🎨 코드개선 : 중첩된 조건문을 개선하는 방법'
-summary: '개발을 하다보면 코드가 뭔가 복잡하고 읽고 이해하기 힘들때가 있습니다. 코드의 가독성이 떨어지는 이유 중 가장 흔한 중첩된 조건문을 개선하는 방법에 대해 생각해봅시다.'
+summary: '중첩된 조건문을 개선하는 방법에 대해 서술합니다.'
 date: 2023-10-24 16:24:00
-tags: [cleancoding]
+tags: [ cleancoding ]
 ---
 
 ## _**![Nested If Statements Meme](nested-if-statement_title.png)**_
@@ -24,25 +24,24 @@ tags: [cleancoding]
 
 ![sample-01](nested-if-statement_sample_01.png)
 
-
 ![sample-01](nested-if-statement_sample_02.png)
 
 </div>
 
 1번의 Bubble Style의 경우 이 포스트의 주제인 중첩 조건문(nested if statement) 방식입니다.
-조건식이 위쪽에 모여있어 상단의 분기로 가는 첫번째 흐름은 보기 쉽지만, 아래쪽 라인처럼 `else`가 모여있는 곳의 코드를 파악하기가 굉장히 어렵습니다.
+조건식이 위쪽에 모여있어 상단의 분기로 가는 첫번째 흐름은 보기 쉽지만, 아래쪽 라인처럼 `else`가 모여있는 곳의 코드를 파악하기가 굉장히
+어렵습니다.
 
 2번의 Gateway Style의 경우 `빠른 반환(early return)`이라고도 불리는 방식입니다.
 기존의 코드의 조건식을 반대로 뒤집어 스코프를 벗어나는 되는 부분을 먼저 처리하는 구조이기 때문에,
 1번에 비해 훨씬 읽기가 편하고 코드의 흐름이 어디서 중단되는지 파악하기 쉬운 구조를 갖고 있습니다.
-
 
 위 예제에선 단순하게 `condition1`같은 형식으로 적어서 읽기가 편하지만, 만약 조건문이 아래와 같다면 굉장히 난해한 코드가 됩니다.
 
 <div class='flex flex-row gap-4'>
 
 
-![sample-01](nested-if-statement_sample_03.png)  
+![sample-01](nested-if-statement_sample_03.png)
 
 ![sample-01](nested-if-statement_sample_04.png)
 

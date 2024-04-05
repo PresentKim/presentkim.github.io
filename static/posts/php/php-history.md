@@ -1,8 +1,8 @@
 ---
 title: '🐘 PHP : 간단하게 알아보는 PHP의 역사'
-summary: 'PHP는 1994년부터 꾸준한 발전을 거듭하여 현재까지도 업데이트되고 있는 프로그래밍 언어입니다.많은 개발자들에게 레거시 언어라는 악명으로 유명한 언어인데, 그럼에도 꾸준한 개선이 이뤄지고 있다는 점이 꽤 매력적이었습니다.이번 기회에 28년이라는 긴 세월 동안 수많은 개발자들의 기여로 발전해온 PHP의 역사를 정리해보고자 이 포스트를 작성하게 되었습니다.'
+summary: 'PHP의 역사를 버전별로 간단히 정리해보았습니다.'
 date: 2023-10-24 12:43:00
-tags: [php]
+tags: [ php ]
 ---
 
 ## _**![PHP Logo](php-history_title.png)**_
@@ -63,7 +63,7 @@ Gateway Interface) 도구로부터 시작되었습니다.
   ```
 
     -
-    출처: [Lerdorf, Rasmus (2007). "Slide 3". slides for 'PHP on Hormones' talk. The PHP Group](http://talks.php.net/show/mysql07key/3)
+  출처: [Lerdorf, Rasmus (2007). "Slide 3". slides for 'PHP on Hormones' talk. The PHP Group](http://talks.php.net/show/mysql07key/3)
 
 ---
 

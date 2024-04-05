@@ -1,8 +1,8 @@
 ---
-title: 'CodeTest :: 구슬치기 (cpp)'
-summary: 'SAMSUNG 모의고사 (ver.22091501)'
+title: '🏅 CodeTest : 구슬치기 (C++)'
+summary: '삼성 코딩테스트 : 구슬치기 문제를 C++로 풀이한 내용입니다.'
 date: 2022-11-08 15:34:00
-tags: [algorithm, cpp, codetest]
+tags: [알고리즘, cpp, codetest]
 draft: true
 ---
 

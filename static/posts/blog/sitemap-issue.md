@@ -2,10 +2,11 @@
 title: '📝 Google Search Console의 사이트맵을 가져올 수 없음 문제를 해결한 과정'
 summary: 'Google Search Console에서 사이트맵을 가져올 수 없음 문제를 해결한 과정을 기록합니다.'
 date: 2024-04-04 12:42:00
-tags: [블로그]
+tags: [ 블로그 ]
 ---
 
-오늘은 오랜기간 저를 고통스럽게 했던 Google Search Console의 `사이트맵을 가져올 수 없음` 문제를 해결한 과정을 기록해보려고 합니다.
+오늘은 오랜기간 저를 고통스럽게 했던 Google Search Console의 `사이트맵을 가져올 수 없음` 문제를 해결한 과정을 기록해보려고
+합니다.
 
 ![sitemap-issue-failed.png](sitemap-issue-failed.png) _모든 방법에 실패해버린 슬픈 사진_
 
@@ -42,10 +43,11 @@ tags: [블로그]
 어제 "블로그를 다시 하긴 해야하는데..." 하는 생각에 해결 방법을 고민하던 중,
 "이거 결국 *.github.io에서 리디렉션 되는거잖아?"라는 생각이 들었습니다.
 
-그래서 그냥 해보긴 해야지 하는 심정으로 별 기대없이 Google Search Console에 들어가 
+그래서 그냥 해보긴 해야지 하는 심정으로 별 기대없이 Google Search Console에 들어가
 `https://presentkim.github.io` 사이트를 추가하고 사이트맵을 등록했더니 바로 등록이 되었습니다.
 
-![sitemap-issue-success.png](sitemap-issue-success.png) _허무할 정도로 간단하게 사이트맵 등록 성공_
+![sitemap-issue-success.png](sitemap-issue-success.png)
+_허무할 정도로 간단하게 사이트맵 등록 성공_
 
 # 결론
 

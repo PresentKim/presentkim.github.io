@@ -1,8 +1,8 @@
 ---
 title: 'PHP로 숏코딩 하기'
-summary: 'PHP에서 사용 가능한 여러 숏코딩 방식을 설명하는 글'
+summary: 'PHP에서 사용 가능한 여러 숏코딩 방식을 서술합니다'
 date: 2022-11-09 12:43:00
-tags: [php, shortcode]
+tags: [ php, codegolf ]
 draft: true
 ---
 

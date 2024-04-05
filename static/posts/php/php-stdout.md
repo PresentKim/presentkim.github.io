@@ -1,8 +1,8 @@
 ---
 title: 'PHP에서 문자를 출력하는 방법'
-summary: 'PHP에서 사용 가능한 여러 문자 출력 방식을 설명하는 글'
+summary: 'PHP에서 사용 가능한 여러 문자 출력 방식을 설명합니다'
 date: 2022-11-09 12:43:00
-tags: [php]
+tags: [ php ]
 draft: true
 ---
 
