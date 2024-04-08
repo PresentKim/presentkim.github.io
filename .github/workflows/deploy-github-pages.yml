@@ -15,10 +15,21 @@ jobs:
           node-version: 18
           cache: 'yarn'
       - run: yarn --frozen-lockfile
+      - uses: actions/cache@v3
+        with:
+          path: '.jampack'
+          key: jampack-${{ github.run_id }}
+          restore-keys: |
+            jampack
 
       # run build script
-      - name: Build project
+      - name: Build project via vite
         run: yarn build
+
+      - name: Build project via jampack
+        run: |
+          npm i -g @divriots/jampack
+          jampack ./build
 
       # remove useless .md files
       - name: Removing markdown files

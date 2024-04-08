@@ -5,12 +5,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --port=80 --host=0.0.0.0",
-    "build": "vite build && jampack ./build",
+    "build": "vite build",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@divriots/jampack": "^0.23.4",
     "@giscus/svelte": "^3.0.0",
     "@sveltejs/adapter-static": "^3.0.1",
     "@sveltejs/kit": "^2.5.5",
@@ -50,12 +49,5 @@
     "vite": "^5.2.7",
     "yarn-audit-fix": "^10.0.7"
   },
-  "type": "module",
-  "dependencies": {
-    "sharp": "^0.33.3"
-  },
-  "optionalDependencies": {
-    "@img/sharp-win32-x64": "^0.33.3",
-    "@img/sharp-linux-x64": "^0.33.3"
-  }
+  "type": "module"
 }
