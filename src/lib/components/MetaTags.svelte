@@ -28,6 +28,20 @@
   <meta name="author" content={author} />
   <meta name="canonical" content={url} />
   <link rel="canonical" href={url} />
+  <link
+    rel="sitemap"
+    type="application/xml"
+    title="Sitemap"
+    href="/sitemap.xml"
+  />
+  <link rel="self" type="application/atom+xml" href="/atom.xml" />
+
+  <link
+    rel="alternate"
+    href="/rss.xml"
+    type="application/rss+xml"
+    title="RSS"
+  />
 
   <meta name="robots" content="index, follow" />
   <meta name="generator" content="SvelteKit v1.20.5" />
