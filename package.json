@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --port=80 --host=0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && jampack ./build",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write ."
   },
