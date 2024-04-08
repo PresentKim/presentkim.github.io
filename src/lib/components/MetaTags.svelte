@@ -15,7 +15,6 @@
   let title: string;
   let url: string = `${domain}${$page.url.pathname}`;
 
-  console.log($page.url.pathname);
   $: title = pageName ? `${pageName} - ${name}` : name;
 </script>
 
