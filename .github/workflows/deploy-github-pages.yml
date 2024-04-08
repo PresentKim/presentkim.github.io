@@ -28,7 +28,8 @@ jobs:
 
       - name: Build project via jampack
         run: |
-          npm i -g @divriots/jampack
+          yarn global add @divriots/jampack 
+          yarn global add sharp --ignore-engines
           jampack ./build
 
       # remove useless .md files
