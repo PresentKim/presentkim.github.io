@@ -15,6 +15,7 @@
   let title: string;
   let url: string = `${domain}${$page.url.pathname}`;
 
+  console.log($page.url.pathname);
   $: title = pageName ? `${pageName} - ${name}` : name;
 </script>
 
@@ -26,6 +27,7 @@
   <meta name="publisher" content={author} />
   <meta name="author" content={author} />
   <meta name="canonical" content={url} />
+  <link rel="canonical" href={url} />
 
   <meta name="robots" content="index, follow" />
   <meta name="generator" content="SvelteKit v1.20.5" />
