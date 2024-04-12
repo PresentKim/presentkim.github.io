@@ -115,6 +115,8 @@ CREATE TABLE rentlist (
 );
 ```
 
+:::
+
 ### 유일값 (Unique)
 
 UNIQUE는 필드에 중복된 값을 허용하지 않는 제약조건입니다.
