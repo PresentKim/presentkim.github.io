@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+sitemap: https://present.kim/sitemap.xml
+sitemap: https://present.kim/atom.xml
+sitemap: https://present.kim/rss.xml
